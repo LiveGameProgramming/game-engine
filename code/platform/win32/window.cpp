@@ -11,7 +11,7 @@ namespace engine::win32
         UINT style = WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_OVERLAPPEDWINDOW;
 
         _handle = CreateWindowEx(extra, MAKEINTATOM(_classex), _title.c_str(),
-                                 style, CW_USEDEFAULT, CW_USEDEFAULT, 800, 600, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
+                                 style, CW_USEDEFAULT, CW_USEDEFAULT, _size.width, _size.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
     }
 
     void Window::destroy() const
