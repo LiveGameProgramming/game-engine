@@ -1,6 +1,7 @@
 #pragma once
 
 #include "window_size.hpp"
+#include "window_state.hpp"
 
 namespace engine::core
 {
@@ -21,7 +22,8 @@ namespace engine::core
         }
 
     protected:
-        window_size _size { };
+        window_state _state { };
+        window_size  _size  { };
 
         std::string _title;
     };

@@ -7,11 +7,14 @@ namespace engine::win32
     {
         register_window_class();
 
-        UINT extra = WS_EX_APPWINDOW;
-        UINT style = WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_OVERLAPPEDWINDOW;
+        constexpr int32_t x = CW_USEDEFAULT;
+        constexpr int32_t y = CW_USEDEFAULT;
+
+        constexpr uint32_t extra = WS_EX_APPWINDOW;
+        constexpr uint32_t style = WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_OVERLAPPEDWINDOW;
 
         _handle = CreateWindowEx(extra, MAKEINTATOM(_classex), _title.c_str(),
-                                 style, CW_USEDEFAULT, CW_USEDEFAULT, _size.width, _size.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
+                                 style, x, y, _size.width, _size.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
     }
 
     void Window::destroy() const
