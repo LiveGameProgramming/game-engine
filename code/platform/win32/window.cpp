@@ -29,6 +29,11 @@ namespace engine::win32
         ShowWindow(_handle, SW_SHOW);
     }
 
+    std::any Window::handle() const
+    {
+        return _handle;
+    }
+
     void Window::register_window_class()
     {
         const WNDCLASSEX classex

@@ -11,9 +11,11 @@ namespace engine::win32
         void destroy() const override;
         void display() const override;
 
+        [[nodiscard]] std::any handle() const override;
+
     private:
         void   register_window_class();
-        void unregister_window_class() const;
+        void unregister_window_class()  const;
 
         ATOM _classex { };
         HWND _handle  { };
