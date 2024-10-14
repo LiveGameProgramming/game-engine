@@ -17,7 +17,7 @@ namespace engine::win32
         void   register_window_class();
         void unregister_window_class()  const;
 
-        ATOM _classex { };
-        HWND _handle  { };
+        ATOM _atom { };
+        HWND _hwnd { };
     };
 }
