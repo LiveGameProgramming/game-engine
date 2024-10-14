@@ -13,25 +13,25 @@ namespace engine::win32
         constexpr uint32_t extra = WS_EX_APPWINDOW;
         constexpr uint32_t style = WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_OVERLAPPEDWINDOW;
 
-        _handle = CreateWindowEx(extra, MAKEINTATOM(_classex), _title.c_str(),
-                                 style, x, y, _size.width, _size.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
+        _hwnd = CreateWindowEx(extra, MAKEINTATOM(_atom), _title.c_str(),
+                               style, x, y, _size.width,  _size.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
     }
 
     void Window::destroy() const
     {
-        DestroyWindow(_handle);
+        DestroyWindow(_hwnd);
 
         unregister_window_class();
     }
 
     void Window::display() const
     {
-        ShowWindow(_handle, SW_SHOW);
+        ShowWindow(_hwnd, SW_SHOW);
     }
 
     std::any Window::handle() const
     {
-        return _handle;
+        return _hwnd;
     }
 
     void Window::register_window_class()
@@ -46,11 +46,11 @@ namespace engine::win32
             .lpszClassName = _title.c_str(),
         };
 
-        _classex = RegisterClassEx(&classex);
+        _atom = RegisterClassEx(&classex);
     }
 
-    void Window::unregister_window_class() const
+    void Window::unregister_window_class()  const
     {
-        UnregisterClass(MAKEINTATOM(_classex), GetModuleHandle(nullptr));
+        UnregisterClass(MAKEINTATOM(_atom), GetModuleHandle(nullptr));
     }
 }
