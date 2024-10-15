@@ -3,6 +3,7 @@
 
 #include "functions_loader.hpp"
 #include "functions.hpp"
+
 #include "macros.hpp"
 
 namespace engine::win32
