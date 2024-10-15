@@ -12,7 +12,8 @@ namespace engine::win32
         void update()               const override;
 
     private:
-        static void create_core_context();
+        void create_core(const     std::any& hwnd);
+        void create_extended(const std::any& hwnd);
 
         HGLRC _hrc { };
         HDC   _hdc { };
