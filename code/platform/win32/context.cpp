@@ -69,7 +69,7 @@ namespace engine::win32
             0
         };
              int32_t format;                        _hdc = GetDC(std::any_cast<HWND>(hwnd));
-        if (uint32_t formats; !wglChoosePixelFormat(_hdc, pixel_attributes, nullptr, 1, &format, &formats) || !formats)
+        if (uint32_t formats; !wglChoosePixelFormat(_hdc,  pixel_attributes, nullptr, 1, &format, &formats) || !formats)
         {
             std::exit(EXIT_FAILURE);
         }
