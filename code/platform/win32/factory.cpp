@@ -1,4 +1,3 @@
-#include "factory.hpp"
 #include "window.hpp"
 #include "window_events.hpp"
 #include "context.hpp"
