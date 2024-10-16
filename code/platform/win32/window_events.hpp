@@ -6,9 +6,11 @@ namespace engine::win32
 {
     class WindowEvents final : public core::WindowEvents
     {
+    friend class Window;
     public:
         void update()  const override;
 
+    private:
         static LRESULT process(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
     };
 }
