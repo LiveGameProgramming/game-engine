@@ -10,6 +10,6 @@ namespace engine::core
 
         virtual void create(const std::any& hwnd) = 0;
         virtual void destroy()              const = 0;
-        virtual void update()               const = 0;
+        virtual void swap_buffers()         const = 0;
     };
 }
