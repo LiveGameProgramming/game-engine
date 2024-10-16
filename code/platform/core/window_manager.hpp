@@ -14,10 +14,13 @@ namespace engine::core
         void destroy()    const;
         void update()     const;
 
-        void display() const;
-        void close()   const;
+        void display()    const;
+        void close()      const;
 
-        [[nodiscard]]  bool is_active() const;
+        [[nodiscard]] int32_t width()  const;
+        [[nodiscard]] int32_t height() const;
+
+        [[nodiscard]] bool is_active() const;
 
     private:
         std::unique_ptr<Window>       _window;

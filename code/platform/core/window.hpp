@@ -19,7 +19,7 @@ namespace engine::core
         [[nodiscard]] virtual std::any handle() const = 0;
 
     protected:
-        window_state _state { };
+        window_state  state { };
         window_size  _size  { };
 
         std::string  _title;
