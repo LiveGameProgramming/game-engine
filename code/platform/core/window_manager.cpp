@@ -30,17 +30,27 @@ namespace engine::core
 
     void WindowManager::display() const
     {
-        _window->_state = window_state::active;
+        _window->state = window_state::active;
         _window->display();
     }
 
     void WindowManager::close() const
     {
-        _window->_state = window_state::closed;
+        _window->state = window_state::closed;
+    }
+
+    int32_t WindowManager::width() const
+    {
+        return _window->_size.width;
+    }
+
+    int32_t WindowManager::height() const
+    {
+        return _window->_size.height;
     }
 
     bool WindowManager::is_active() const
     {
-        return _window->_state == window_state::active;
+        return _window->state == window_state::active;
     }
 }
