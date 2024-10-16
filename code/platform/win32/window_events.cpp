@@ -30,6 +30,10 @@ namespace engine::win32
             {
                 return 0;
             }
+            case WM_ERASEBKGND:
+            {
+                return 1;
+            }
         }
 
         return DefWindowProc(hwnd, msg, wparam, lparam);

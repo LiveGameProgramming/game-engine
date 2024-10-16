@@ -1,3 +1,4 @@
 target_include_directories(${PROJECT_NAME} PRIVATE PUBLIC ..)
 target_precompile_headers(${PROJECT_NAME}  PRIVATE private.hpp)
-target_sources(${PROJECT_NAME}             PRIVATE window.cpp window_factory.cpp)
+target_link_libraries(${PROJECT_NAME}      PRIVATE engine_core)
+target_sources(${PROJECT_NAME}             PRIVATE window.cpp window_factory.cpp window_manager.cpp)
