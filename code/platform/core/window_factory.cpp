@@ -4,7 +4,7 @@ namespace engine::core
 {
     std::unique_ptr<Factory> WindowFactory::create()
     {
-        #ifdef _WIN32
+        #ifdef _WINDOWS
         return std::make_unique<win32::Factory>();
         #endif
     }
