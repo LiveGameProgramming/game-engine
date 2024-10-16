@@ -30,7 +30,7 @@ namespace engine::win32
         wglDeleteContext(_hrc);
     }
 
-    void Context::update() const
+    void Context::swap_buffers() const
     {
         SwapBuffers(_hdc);
     }

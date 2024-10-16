@@ -9,7 +9,7 @@ namespace engine::win32
     public:
         void create(const std::any& hwnd) override;
         void destroy()              const override;
-        void update()               const override;
+        void swap_buffers()         const override;
 
     private:
         void create_core(const     std::any& hwnd);

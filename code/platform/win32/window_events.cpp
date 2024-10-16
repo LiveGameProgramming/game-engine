@@ -1,5 +1,7 @@
 #include "window_events.hpp"
 
+#include <core/window_manager.hpp>
+
 namespace engine::win32
 {
     void WindowEvents::update() const
@@ -10,6 +12,7 @@ namespace engine::win32
         {
             if (msg.message == WM_QUIT)
             {
+                core::WindowManager::instance().close();
                 break;
             }
 
@@ -24,6 +27,7 @@ namespace engine::win32
         {
             case WM_CLOSE:
             {
+                PostQuitMessage(0);
                 return 0;
             }
             case WM_SIZE:
