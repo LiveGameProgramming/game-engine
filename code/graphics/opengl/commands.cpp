@@ -8,8 +8,8 @@ namespace engine::gl
         glClearColor(r, g, b, a);
     }
 
-    void Commands::clear(const uint32_t flag)
+    void Commands::clear(const uint32_t flags)
     {
-        glClear(flag);
+        glClear(flags);
     }
 }
