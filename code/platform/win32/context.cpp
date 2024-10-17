@@ -1,29 +1,11 @@
 #include "context.hpp"
 #include "window.hpp"
 
-#include "functions_loader.hpp"
 #include "functions.hpp"
-
 #include "macros.hpp"
 
 namespace engine::win32
 {
-    void Context::create(const std::any& hwnd)
-    {
-        Window window;
-        window.title("CoreContext").size({ 0, 0 }).create();
-
-        Context context;
-        context.create_core(window.handle());
-
-        FunctionsLoader::load_functions();
-
-        context.destroy();
-        window.destroy();
-
-        create_extended(hwnd);
-    }
-
     void Context::destroy() const
     {
         wglMakeCurrent(_hdc, nullptr);
@@ -52,7 +34,13 @@ namespace engine::win32
         _hrc = wglCreateContext(_hdc); wglMakeCurrent(_hdc, _hrc);
     }
 
-    void Context::create_extended(const std::any& hwnd)
+    void Context::init_functions() const
+    {
+        wglCreateContextAttribs =  reinterpret_cast<PFNWGLCREATECONTEXTATTRIBSARBPROC>(wglGetProcAddress("wglCreateContextAttribsARB"));
+        wglChoosePixelFormat    =  reinterpret_cast<PFNWGLCHOOSEPIXELFORMATARBPROC>(wglGetProcAddress("wglChoosePixelFormatARB"));
+    }
+
+    void Context::create(const std::any& hwnd)
     {
         constexpr int32_t pixel_attributes[]
         {

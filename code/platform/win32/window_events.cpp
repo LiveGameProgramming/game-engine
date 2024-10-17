@@ -38,6 +38,16 @@ namespace engine::win32
             {
                 return 1;
             }
+            case WM_SYSCOMMAND:
+            {
+                switch (wparam)
+                {
+                    case   SC_SCREENSAVE:
+                    case   SC_MONITORPOWER:
+                    return 0;
+                }
+                break;
+            }
         }
 
         return DefWindowProc(hwnd, msg, wparam, lparam);
