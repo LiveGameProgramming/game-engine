@@ -16,7 +16,7 @@ namespace engine::win32
         Context context;
         context.create_core(window.handle());
 
-        FunctionsLoader::load_extended();
+        FunctionsLoader::load_functions();
 
         context.destroy();
         window.destroy();
