@@ -1,5 +1,7 @@
 #pragma once
 
+#include "window_size.hpp"
+
 namespace engine::core
 {
     struct window_config
