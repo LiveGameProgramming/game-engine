@@ -8,6 +8,7 @@ namespace engine::gl
         const auto     instance = LoadLibrary("opengl32.dll");
         glClear      = reinterpret_cast<PFNGLCLEARPROC>(GetProcAddress(instance,      "glClear"));
         glClearColor = reinterpret_cast<PFNGLCLEARCOLORPROC>(GetProcAddress(instance, "glClearColor"));
+        glEnable     = reinterpret_cast<PFNGLENABLEPROC>(GetProcAddress(instance,     "glEnable"));
 
         FreeLibrary(instance);
     }

@@ -44,14 +44,15 @@ namespace engine::win32
     {
         constexpr int32_t pixel_attributes[]
         {
-            draw_to_window, 1,
-            support_opengl, 1,
-            double_buffer,  1,
-            acceleration,   full_acceleration,
-            pixel_type,     type_rgba,
-            color_bits,     24,
-            depth_bits,     24,
-            stencil_bits,   8,
+            draw_to_window,   1,
+            support_opengl,   1,
+            double_buffer,    1,
+            acceleration,     full_acceleration,
+            pixel_type,       type_rgba,
+            color_bits,       24,
+            depth_bits,       24,
+            stencil_bits,     8,
+            framebuffer_srgb, 1,
             0
         };
              int32_t format;                        _hdc = GetDC(std::any_cast<HWND>(hwnd));
