@@ -40,10 +40,8 @@ namespace engine::win32
         constexpr PIXELFORMATDESCRIPTOR pfd
         {
             .nSize      = sizeof(PIXELFORMATDESCRIPTOR),
-            .nVersion   = 1,
             .dwFlags    = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER,
-            .iPixelType = PFD_TYPE_RGBA,
-            .cColorBits = 24
+            .iPixelType = PFD_TYPE_RGBA
         };
                             _hdc = GetDC(std::any_cast<HWND>(hwnd));
         if (!SetPixelFormat(_hdc,  ChoosePixelFormat(_hdc, &pfd), &pfd))
