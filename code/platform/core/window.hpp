@@ -13,8 +13,8 @@ namespace engine::core
         virtual void destroy() const = 0;
         virtual void display() const = 0;
 
-        Window& size(const  window_size& size);
-        Window& title(const std::string& title);
+        Window& size(const    window_size& size);
+        Window& title(const   std::string& title);
 
         [[nodiscard]] virtual std::any handle() const = 0;
 
