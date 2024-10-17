@@ -4,7 +4,7 @@
 
 namespace engine::core
 {
-    class WindowFactory
+    class PlatformFactory
     {
     public:
         static std::unique_ptr<Factory> create();
