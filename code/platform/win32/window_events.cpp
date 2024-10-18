@@ -21,7 +21,7 @@ namespace engine::win32
         }
     }
 
-    LRESULT WindowEvents::process(const HWND hwnd, const UINT msg, const WPARAM wparam, const LPARAM lparam)
+    LRESULT WindowEvents::process(HWND hwnd, const UINT msg, const WPARAM wparam, const LPARAM lparam)
     {
         switch (msg)
         {
@@ -45,11 +45,14 @@ namespace engine::win32
                     case   SC_SCREENSAVE:
                     case   SC_MONITORPOWER:
                     return 0;
+                default:
+                    break;
                 }
-                break;
             }
+            default:
+                 DefWindowProc(hwnd, msg, wparam, lparam);
         }
 
-        return DefWindowProc(hwnd, msg, wparam, lparam);
+        return 1;
     }
 }

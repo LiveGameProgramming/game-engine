@@ -15,7 +15,7 @@ namespace engine::win32
         void swap_buffers()    const override;
 
     private:
-        HGLRC _hrc { };
-        HDC   _hdc { };
+        HGLRC hrc { };
+        HDC   hdc { };
     };
 }
