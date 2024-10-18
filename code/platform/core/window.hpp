@@ -20,9 +20,9 @@ namespace engine::core
     protected:
         friend class WindowManager;
 
-        window_state  state { };
-        window_size  _size  { };
+        window_state state { };
+        window_size  size_ { };
 
-        std::string  _title;
+        std::string  title_;
     };
 }

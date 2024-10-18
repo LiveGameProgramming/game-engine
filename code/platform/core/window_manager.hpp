@@ -24,9 +24,9 @@ namespace engine::core
     private:
         WindowManager() = default;
 
-        std::unique_ptr<Window>       _window;
-        std::unique_ptr<WindowEvents> _events;
-        std::unique_ptr<Context>      _context;
+        std::unique_ptr<Window>       window  { };
+        std::unique_ptr<WindowEvents> events  { };
+        std::unique_ptr<Context>      context { };
 
         friend class Singleton;
     };
