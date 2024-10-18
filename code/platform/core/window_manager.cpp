@@ -7,50 +7,50 @@ namespace engine::core
     {
         const auto factory = PlatformFactory::create();
 
-        _events = factory->create_events();
-        _window = factory->create_window();
+        events = factory->create_events();
+        window = factory->create_window();
 
-        _window->title(config.title).size(config.size).create();
+        window->title(config.title).size(config.size).create();
 
-        _context = factory->create_context();
-        _context->create(_window->handle());
+        context = factory->create_context();
+        context->create(window->handle());
     }
 
     void WindowManager::destroy() const
     {
-        _context->destroy();
-        _window->destroy();
+        context->destroy();
+        window->destroy();
     }
 
     void WindowManager::update() const
     {
-        _context->swap_buffers();
-        _events->update();
+        context->swap_buffers();
+        events->update();
     }
 
     void WindowManager::display() const
     {
-        _window->state = window_state::active;
-        _window->display();
+        window->state = window_state::active;
+        window->display();
     }
 
     void WindowManager::close() const
     {
-        _window->state = window_state::closed;
+        window->state = window_state::closed;
     }
 
     int32_t WindowManager::width() const
     {
-        return _window->_size.width;
+        return window->size_.width;
     }
 
     int32_t WindowManager::height() const
     {
-        return _window->_size.height;
+        return window->size_.height;
     }
 
     bool WindowManager::is_active() const
     {
-        return _window->state == window_state::active;
+        return window->state == window_state::active;
     }
 }

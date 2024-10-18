@@ -8,13 +8,13 @@ namespace engine::win32
 {
     void Context::destroy() const
     {
-        wglMakeCurrent(_hdc, nullptr);
-        wglDeleteContext(_hrc);
+        wglMakeCurrent(hdc, nullptr);
+        wglDeleteContext(hrc);
     }
 
     void Context::swap_buffers() const
     {
-        SwapBuffers(_hdc);
+        SwapBuffers(hdc);
     }
 
     void Context::create_core(const std::any& hwnd)
@@ -25,13 +25,13 @@ namespace engine::win32
             .dwFlags    = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER,
             .iPixelType = PFD_TYPE_RGBA
         };
-                            _hdc = GetDC(std::any_cast<HWND>(hwnd));
-        if (!SetPixelFormat(_hdc,  ChoosePixelFormat(_hdc, &pfd), &pfd))
+                            hdc = GetDC(std::any_cast<HWND>(hwnd));
+        if (!SetPixelFormat(hdc,  ChoosePixelFormat(hdc, &pfd), &pfd))
         {
             std::exit(EXIT_FAILURE);
         }
 
-        _hrc = wglCreateContext(_hdc); wglMakeCurrent(_hdc, _hrc);
+        hrc = wglCreateContext(hdc); wglMakeCurrent(hdc, hrc);
     }
 
     void Context::init_functions() const
@@ -55,18 +55,18 @@ namespace engine::win32
             framebuffer_srgb, 1,
             0
         };
-             int32_t format;                        _hdc = GetDC(std::any_cast<HWND>(hwnd));
-        if (uint32_t formats; !wglChoosePixelFormat(_hdc,  pixel_attributes, nullptr, 1, &format, &formats) || !formats)
+             int32_t format;                        hdc = GetDC(std::any_cast<HWND>(hwnd));
+        if (uint32_t formats; !wglChoosePixelFormat(hdc,  pixel_attributes, nullptr, 1, &format, &formats) || !formats)
         {
             std::exit(EXIT_FAILURE);
         }
-                                                      PIXELFORMATDESCRIPTOR pfd;
-        if (!DescribePixelFormat(_hdc, format, sizeof(PIXELFORMATDESCRIPTOR), &pfd))
+                                                     PIXELFORMATDESCRIPTOR pfd;
+        if (!DescribePixelFormat(hdc, format, sizeof(PIXELFORMATDESCRIPTOR), &pfd))
         {
             std::exit(EXIT_FAILURE);
         }
 
-        if (!SetPixelFormat(_hdc, format, &pfd))
+        if (!SetPixelFormat(hdc, format, &pfd))
         {
             std::exit(EXIT_FAILURE);
         }
@@ -79,6 +79,6 @@ namespace engine::win32
             0
         };
 
-        _hrc = wglCreateContextAttribs(_hdc, nullptr, context_attributes); wglMakeCurrent(_hdc, _hrc);
+        hrc = wglCreateContextAttribs(hdc, nullptr, context_attributes); wglMakeCurrent(hdc, hrc);
     }
 }

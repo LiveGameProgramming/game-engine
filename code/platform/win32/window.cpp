@@ -13,25 +13,25 @@ namespace engine::win32
         constexpr uint32_t extra = WS_EX_APPWINDOW;
         constexpr uint32_t style = WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_OVERLAPPEDWINDOW;
 
-        _hwnd = CreateWindowEx(extra, MAKEINTATOM(_atom), _title.c_str(),
-                               style, x, y, _size.width,  _size.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
+        hwnd = CreateWindowEx(extra, MAKEINTATOM(atom), title_.c_str(),
+                              style, x, y, size_.width, size_.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
     }
 
     void Window::destroy() const
     {
-        DestroyWindow(_hwnd);
+        DestroyWindow(hwnd);
 
         unregister_window_class();
     }
 
     void Window::display() const
     {
-        ShowWindow(_hwnd, SW_SHOW);
+        ShowWindow(hwnd, SW_SHOW);
     }
 
     std::any Window::handle() const
     {
-        return _hwnd;
+        return hwnd;
     }
 
     void Window::register_window_class()
@@ -43,14 +43,14 @@ namespace engine::win32
             .lpfnWndProc   = WindowEvents::process,
             .hInstance     = GetModuleHandle(nullptr),
             .hCursor       = LoadCursor(nullptr, IDC_ARROW),
-            .lpszClassName = _title.c_str(),
+            .lpszClassName = title_.c_str(),
         };
 
-        _atom = RegisterClassEx(&classex);
+        atom = RegisterClassEx(&classex);
     }
 
-    void Window::unregister_window_class()  const
+    void Window::unregister_window_class() const
     {
-        UnregisterClass(MAKEINTATOM(_atom), GetModuleHandle(nullptr));
+        UnregisterClass(MAKEINTATOM(atom), GetModuleHandle(nullptr));
     }
 }

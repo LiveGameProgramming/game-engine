@@ -2,12 +2,12 @@
 
 namespace engine::core
 {
-    template <typename T> class Singleton
+    template <typename Manager> class Singleton
     {
     public:
-        static T& instance()
+        static Manager& instance()
         {
-            static T instance; return instance;
+            static Manager instance; return instance;
         }
 
         Singleton& operator=(const Singleton&) = delete;
