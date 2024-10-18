@@ -2,11 +2,26 @@
 
 namespace engine::gl
 {
-    using  PFNGLCLEARPROC      = void(APIENTRY*)(uint32_t flags);
-    using  PFNGLCLEARCOLORPROC = void(APIENTRY*)(float r, float g, float b, float a);
-    using  PFNGLENABLEPROC     = void(APIENTRY*)(uint32_t flag);
+    #pragma region OpenGL Core
 
-    inline PFNGLCLEARPROC        glClear;
-    inline PFNGLCLEARCOLORPROC   glClearColor;
-    inline PFNGLENABLEPROC       glEnable;
+    using  PFNGLCLEARPROC      = void(APIENTRY*)(uint32_t);
+    using  PFNGLCLEARCOLORPROC = void(APIENTRY*)(float, float, float, float);
+    using  PFNGLENABLEPROC     = void(APIENTRY*)(uint32_t);
+
+    inline PFNGLCLEARPROC      glClear;
+    inline PFNGLCLEARCOLORPROC glClearColor;
+    inline PFNGLENABLEPROC     glEnable;
+
+    #pragma endregion
+    #pragma region OpenGL Extensions
+
+    using  PFNGLCREATEBUFFERSPROC   = void(APIENTRY*)(int32_t,       uint32_t*);
+    using  PFNGLDELETEBUFFERSPROC   = void(APIENTRY*)(int32_t, const uint32_t*);
+    using  PFNGLNAMEDBUFFERDATAPROC = void(APIENTRY*)(uint32_t,       int64_t, const void*, uint32_t);
+
+    inline PFNGLCREATEBUFFERSPROC   glCreateBuffers;
+    inline PFNGLDELETEBUFFERSPROC   glDeleteBuffers;
+    inline PFNGLNAMEDBUFFERDATAPROC glNamedBufferData;
+
+    #pragma endregion
 }
