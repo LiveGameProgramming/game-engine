@@ -12,4 +12,9 @@ namespace engine::gl
     {
         glDeleteBuffers(1, &handle_);
     }
+
+    void Buffer::data(const core::BufferData& buffer, const uint32_t usage) const
+    {
+        glNamedBufferData(handle_, buffer.size(), buffer.data(), usage);
+    }
 }
