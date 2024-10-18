@@ -9,6 +9,7 @@ namespace engine::gl
         glClear      = reinterpret_cast<PFNGLCLEARPROC>(GetProcAddress(instance,      "glClear"));
         glClearColor = reinterpret_cast<PFNGLCLEARCOLORPROC>(GetProcAddress(instance, "glClearColor"));
         glEnable     = reinterpret_cast<PFNGLENABLEPROC>(GetProcAddress(instance,     "glEnable"));
+        glDrawArrays = reinterpret_cast<PFNGLDRAWARRAYSPROC>(GetProcAddress(instance, "glDrawArrays"));
 
         FreeLibrary(instance);
     }
