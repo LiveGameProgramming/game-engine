@@ -12,4 +12,9 @@ namespace engine::gl
     {
         glClear(flags);
     }
+
+    void Commands::draw_arrays(const uint32_t primitive, const int32_t count)
+    {
+        glDrawArrays(primitive, 0, count);
+    }
 }

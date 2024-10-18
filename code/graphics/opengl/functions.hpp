@@ -7,10 +7,12 @@ namespace engine::gl
     using  PFNGLCLEARPROC      = void(APIENTRY*)(uint32_t);
     using  PFNGLCLEARCOLORPROC = void(APIENTRY*)(float, float, float, float);
     using  PFNGLENABLEPROC     = void(APIENTRY*)(uint32_t);
+    using  PFNGLDRAWARRAYSPROC = void(APIENTRY*)(uint32_t, int32_t, int32_t);
 
     inline PFNGLCLEARPROC      glClear;
     inline PFNGLCLEARCOLORPROC glClearColor;
     inline PFNGLENABLEPROC     glEnable;
+    inline PFNGLDRAWARRAYSPROC glDrawArrays;
 
     #pragma endregion
     #pragma region OpenGL Extensions
