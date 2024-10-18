@@ -44,9 +44,11 @@ namespace engine::win32
                 {
                     case   SC_SCREENSAVE:
                     case   SC_MONITORPOWER:
-                    return 0;
-                default:
-                    break;
+                    {
+                        return 0;
+                    }
+                    default:
+                        break;
                 }
             }
             default:
