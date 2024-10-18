@@ -7,7 +7,6 @@ namespace engine::core
 {
     class Window
     {
-    friend class WindowManager;
     public:
         virtual void create()        = 0;
         virtual void destroy() const = 0;
@@ -19,6 +18,8 @@ namespace engine::core
         [[nodiscard]] virtual std::any handle() const = 0;
 
     protected:
+        friend class WindowManager;
+
         window_state  state { };
         window_size  _size  { };
 

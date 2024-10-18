@@ -6,9 +6,8 @@
 
 namespace engine::core
 {
-    class WindowManager final : public Singleton<WindowManager>  {
-                                                 WindowManager() = default;
-    friend class Singleton;
+    class WindowManager final : public Singleton<WindowManager>
+    {
     public:
         void create(const window_config& config);
         void destroy()    const;
@@ -23,8 +22,12 @@ namespace engine::core
         [[nodiscard]] bool is_active() const;
 
     private:
+        WindowManager() = default;
+
         std::unique_ptr<Window>       _window;
         std::unique_ptr<WindowEvents> _events;
         std::unique_ptr<Context>      _context;
+
+        friend class Singleton;
     };
 }
