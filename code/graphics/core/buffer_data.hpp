@@ -8,9 +8,9 @@ namespace engine::core
         [[nodiscard]] const void* data() const;
         [[nodiscard]] uint32_t    size() const;
 
-        template <typename Type>  static BufferData create(const std::vector<Type>& buffer)
+        template <typename type>  static BufferData create(const std::vector<type>& buffer)
         {
-            return { buffer.data(), static_cast<uint32_t>(buffer.size() * sizeof(Type)) };
+            return { buffer.data(), static_cast<uint32_t>(buffer.size() * sizeof(type)) };
         }
 
     private:
