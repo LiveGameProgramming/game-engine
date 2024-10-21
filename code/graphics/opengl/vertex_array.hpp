@@ -2,6 +2,8 @@
 
 #include "buffer.hpp"
 
+#include "core/vertex_attribute.hpp"
+
 namespace engine::gl
 {
     class VertexArray final : public Object
@@ -10,6 +12,9 @@ namespace engine::gl
         void create()  override;
         void destroy() override;
 
-        void bind() const;
+        void attach_vertices(const Buffer& buffer, int32_t stride) const;
+
+        void attribute(const core::vertex_attribute& attribute) const;
+        void bind()    const;
     };
 }
