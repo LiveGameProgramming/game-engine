@@ -20,6 +20,10 @@ namespace engine::gl
 
     void VertexArray::attribute(const core::vertex_attribute& attribute) const
     {
+        glVertexArrayAttribFormat(handle_,  attribute.index, attribute.size, attribute.type, 0, attribute.offset);
+        glVertexArrayAttribBinding(handle_, attribute.index, 0);
+
+        glEnableVertexArrayAttrib(handle_,  attribute.index);
     }
 
     void VertexArray::bind() const
