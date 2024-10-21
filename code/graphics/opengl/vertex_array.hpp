@@ -9,8 +9,8 @@ namespace engine::gl
     class VertexArray final : public Object
     {
     public:
-        void create()  override;
-        void destroy() override;
+        void create()     override;
+        void destroy()    override;
 
         void attach_vertices(const Buffer& buffer, int32_t stride) const;
 
