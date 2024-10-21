@@ -2,3 +2,4 @@
 add_library(engine_core INTERFACE)
 
 add_subdirectory(core)
+add_subdirectory(math)
