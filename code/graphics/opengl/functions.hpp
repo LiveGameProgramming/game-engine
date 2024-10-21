@@ -25,5 +25,13 @@ namespace engine::gl
     inline PFNGLDELETEBUFFERSPROC   glDeleteBuffers;
     inline PFNGLNAMEDBUFFERDATAPROC glNamedBufferData;
 
+    using  PFNGLCREATEVERTEXARRAYSPROC = void(APIENTRY*)(int32_t,       uint32_t*);
+    using  PFNGLDELETEVERTEXARRAYSPROC = void(APIENTRY*)(int32_t, const uint32_t*);
+    using  PFNGLBINDVERTEXARRAYPROC    = void(APIENTRY*)(uint32_t);
+
+    inline PFNGLCREATEVERTEXARRAYSPROC glCreateVertexArrays;
+    inline PFNGLDELETEVERTEXARRAYSPROC glDeleteVertexArrays;
+    inline PFNGLBINDVERTEXARRAYPROC    glBindVertexArray;
+
     #pragma endregion
 }
