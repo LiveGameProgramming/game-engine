@@ -47,5 +47,11 @@ namespace engine::gl
     inline PFNGLVERTEXARRATATTRIBBINDINGPROC glVertexArrayAttribBinding;
     inline PFNGLENABLEVERTEXARRAYATTRIPROC   glEnableVertexArrayAttrib;
 
+    using  PFNGLCREATESHADERPROC = uint32_t(APIENTRY*)(uint32_t);
+    using  PFNGLDELETESHADERPROC =     void(APIENTRY*)(uint32_t);
+
+    inline PFNGLCREATESHADERPROC glCreateShader;
+    inline PFNGLDELETESHADERPROC glDeleteShader;
+
     #pragma endregion
 }
