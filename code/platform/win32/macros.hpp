@@ -12,7 +12,8 @@ namespace engine::win32
     constexpr uint32_t color_bits            = 0x2014;
     constexpr uint32_t depth_bits            = 0x2022;
     constexpr uint32_t stencil_bits          = 0x2023;
-    constexpr uint32_t samples               = 0x2042;
+    constexpr uint32_t samples_buffer        = 0x2041;
+    constexpr uint32_t samples_per_pixel     = 0x2042;
     constexpr uint32_t framebuffer_srgb      = 0x20a9;
 
     constexpr uint32_t context_major_version = 0x2091;
