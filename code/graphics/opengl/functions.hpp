@@ -20,6 +20,7 @@ namespace engine::gl
 
     #pragma endregion
     #pragma region OpenGL Extensions
+    #pragma region Buffers
 
     using  PFNGLCREATEBUFFERSPROC   = void(APIENTRY*)(int32_t,       uint32_t*);
     using  PFNGLDELETEBUFFERSPROC   = void(APIENTRY*)(int32_t, const uint32_t*);
@@ -28,6 +29,9 @@ namespace engine::gl
     inline PFNGLCREATEBUFFERSPROC   glCreateBuffers;
     inline PFNGLDELETEBUFFERSPROC   glDeleteBuffers;
     inline PFNGLNAMEDBUFFERDATAPROC glNamedBufferData;
+
+    #pragma endregion
+    #pragma region VertexArray
 
     using  PFNGLCREATEVERTEXARRAYSPROC       = void(APIENTRY*)(int32_t,       uint32_t*);
     using  PFNGLDELETEVERTEXARRAYSPROC       = void(APIENTRY*)(int32_t, const uint32_t*);
@@ -47,6 +51,9 @@ namespace engine::gl
     inline PFNGLVERTEXARRATATTRIBBINDINGPROC glVertexArrayAttribBinding;
     inline PFNGLENABLEVERTEXARRAYATTRIPROC   glEnableVertexArrayAttrib;
 
+    #pragma endregion
+    #pragma region ShaderStage
+
     using  PFNGLCREATESHADERPROC     = uint32_t(APIENTRY*)(uint32_t);
     using  PFNGLDELETESHADERPROC     =     void(APIENTRY*)(uint32_t);
     using  PFNGLSHADERBINARYPROC     =     void(APIENTRY*)( int32_t, const uint32_t*, uint32_t, const void*,            int32_t);
@@ -56,6 +63,9 @@ namespace engine::gl
     inline PFNGLDELETESHADERPROC     glDeleteShader;
     inline PFNGLSHADERBINARYPROC     glShaderBinary;
     inline PFNGLSPECIALIZESHADERPROC glSpecializeShader;
+
+    #pragma endregion
+    #pragma region Shader
 
     using  PFNGLCREATEPROGRAMPROC = uint32_t(APIENTRY*)();
     using  PFNGLATTACHSHADERPROC  =     void(APIENTRY*)(uint32_t, uint32_t);
@@ -69,5 +79,6 @@ namespace engine::gl
     inline PFNGLUSEPROGRAMPROC    glUseProgram;
     inline PFNGLDELETEPROGRAMPROC glDeleteProgram;
 
+    #pragma endregion
     #pragma endregion
 }
