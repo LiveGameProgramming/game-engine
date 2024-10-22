@@ -1,5 +1,4 @@
 #include "context.hpp"
-#include "window.hpp"
 
 #include "functions.hpp"
 #include "macros.hpp"
@@ -40,19 +39,21 @@ namespace engine::win32
         wglChoosePixelFormat    =  reinterpret_cast<PFNWGLCHOOSEPIXELFORMATARBPROC>(wglGetProcAddress("wglChoosePixelFormatARB"));
     }
 
-    void Context::create(const std::any& hwnd)
+    void Context::create(const std::any& hwnd, const core::context_config& config)
     {
-        constexpr int32_t pixel_attributes[]
+        const int32_t pixel_attributes[]
         {
-            draw_to_window,   1,
-            support_opengl,   1,
-            double_buffer,    1,
-            acceleration,     full_acceleration,
-            pixel_type,       type_rgba,
-            color_bits,       24,
-            depth_bits,       24,
-            stencil_bits,     8,
-            framebuffer_srgb, 1,
+            draw_to_window,    1,
+            support_opengl,    1,
+            double_buffer,     1,
+            acceleration,      full_acceleration,
+            pixel_type,        type_rgba,
+            color_bits,        24,
+            depth_bits,        24,
+            stencil_bits,      8,
+            framebuffer_srgb,  1,
+            samples_buffer,    config.samples > 0 ? 1 : 0,
+            samples_per_pixel, config.samples,
             0
         };
              int32_t format;                        hdc = GetDC(std::any_cast<HWND>(hwnd));
@@ -71,10 +72,10 @@ namespace engine::win32
             std::exit(EXIT_FAILURE);
         }
 
-        constexpr int32_t context_attributes[]
+        const int32_t context_attributes[]
         {
-            context_major_version, core::Context::major_version,
-            context_minor_version, core::Context::minor_version,
+            context_major_version, config.major_version,
+            context_minor_version, config.minor_version,
             context_profile,       context_core_profile,
             0
         };
