@@ -18,6 +18,11 @@ namespace engine::gl
         glVertexArrayVertexBuffer(handle_, 0, buffer.handle(), 0, stride);
     }
 
+    void VertexArray::attach_indices(const Buffer& buffer) const
+    {
+        glVertexArrayElementBuffer(handle_, buffer.handle());
+    }
+
     void VertexArray::attribute(const core::vertex_attribute& attribute) const
     {
         glVertexArrayAttribFormat(handle_,  attribute.index, attribute.size, attribute.type, 0, attribute.offset);
