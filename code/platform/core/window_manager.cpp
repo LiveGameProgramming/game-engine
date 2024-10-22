@@ -3,17 +3,17 @@
 
 namespace engine::core
 {
-    void WindowManager::create(const window_config& config)
+    void WindowManager::create(const window_config& window_config, const context_config& context_config)
     {
         const auto factory = PlatformFactory::create();
 
         events = factory->create_events();
         window = factory->create_window();
 
-        window->title(config.title).size(config.size).create();
+        window->title(window_config.title).size(window_config.size).create();
 
         context = factory->create_context();
-        context->create(window->handle());
+        context->create(window->handle(), context_config);
     }
 
     void WindowManager::destroy() const
