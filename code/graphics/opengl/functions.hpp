@@ -65,7 +65,7 @@ namespace engine::gl
     inline PFNGLSPECIALIZESHADERPROC glSpecializeShader;
 
     #pragma endregion
-    #pragma region Shader
+    #pragma region ShaderProgram
 
     using  PFNGLCREATEPROGRAMPROC = uint32_t(APIENTRY*)();
     using  PFNGLATTACHSHADERPROC  =     void(APIENTRY*)(uint32_t, uint32_t);
