@@ -12,7 +12,7 @@ namespace engine::core
         const auto window  = factory->create_window();
         const auto context = factory->create_context();
 
-        window->title("CoreContext").size({ 0, 0 }).create();
+        window->create({ "CoreContext" });
 
         context->create_core(window->handle());
         context->init_functions();
