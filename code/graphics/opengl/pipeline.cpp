@@ -7,4 +7,9 @@ namespace engine::gl
     {
         glEnable(flag);
     }
+
+    void Pipeline::disable(const uint32_t flag)
+    {
+        glDisable(flag);
+    }
 }
