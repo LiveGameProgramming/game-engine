@@ -12,4 +12,5 @@ namespace engine::gl
     constexpr uint32_t triangles   = 0x0004;
 
     constexpr uint32_t type_float  = 0x1406;
+    constexpr uint32_t type_uint   = 0x1405;
 }
