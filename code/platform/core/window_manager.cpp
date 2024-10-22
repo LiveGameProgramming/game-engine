@@ -9,8 +9,7 @@ namespace engine::core
 
         events = factory->create_events();
         window = factory->create_window();
-
-        window->title(window_config.title).size(window_config.size).create();
+        window->create(window_config);
 
         context = factory->create_context();
         context->create(window->handle(), context_config);
@@ -41,12 +40,12 @@ namespace engine::core
 
     int32_t WindowManager::width() const
     {
-        return window->size_.width;
+        return window->size.width;
     }
 
     int32_t WindowManager::height() const
     {
-        return window->size_.height;
+        return window->size.height;
     }
 
     bool WindowManager::is_active() const

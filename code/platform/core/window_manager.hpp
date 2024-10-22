@@ -2,7 +2,6 @@
 
 #include "core/factory.hpp"
 #include "core/singleton.hpp"
-#include "core/window_config.hpp"
 
 namespace engine::core
 {

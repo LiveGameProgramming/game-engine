@@ -3,9 +3,9 @@
 
 namespace engine::win32
 {
-    void Window::create()
+    void Window::create(const core::window_config& config)
     {
-        register_window_class();
+        register_window_class(config.title);
 
         constexpr int32_t x = CW_USEDEFAULT;
         constexpr int32_t y = CW_USEDEFAULT;
@@ -13,8 +13,8 @@ namespace engine::win32
         constexpr uint32_t extra = WS_EX_APPWINDOW;
         constexpr uint32_t style = WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_OVERLAPPEDWINDOW;
 
-        hwnd = CreateWindowEx(extra, MAKEINTATOM(atom), title_.c_str(),
-                              style, x, y, size_.width, size_.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
+        hwnd = CreateWindowEx(extra, MAKEINTATOM(atom),       config.title.c_str(),
+                              style, x, y, config.size.width, config.size.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
     }
 
     void Window::destroy() const
@@ -34,7 +34,7 @@ namespace engine::win32
         return hwnd;
     }
 
-    void Window::register_window_class()
+    void Window::register_window_class(const std::string& title)
     {
         const WNDCLASSEX classex
         {
@@ -43,7 +43,7 @@ namespace engine::win32
             .lpfnWndProc   = WindowEvents::process,
             .hInstance     = GetModuleHandle(nullptr),
             .hCursor       = LoadCursor(nullptr, IDC_ARROW),
-            .lpszClassName = title_.c_str(),
+            .lpszClassName = title.c_str(),
         };
 
         atom = RegisterClassEx(&classex);
