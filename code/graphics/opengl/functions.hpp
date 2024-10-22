@@ -57,5 +57,17 @@ namespace engine::gl
     inline PFNGLSHADERBINARYPROC     glShaderBinary;
     inline PFNGLSPECIALIZESHADERPROC glSpecializeShader;
 
+    using  PFNGLCREATEPROGRAMPROC = uint32_t(APIENTRY*)();
+    using  PFNGLATTACHSHADERPROC  =     void(APIENTRY*)(uint32_t, uint32_t);
+    using  PFNGLLINKPROGRAMPROC   =     void(APIENTRY*)(uint32_t);
+    using  PFNGLUSEPROGRAMPROC    =     void(APIENTRY*)(uint32_t);
+    using  PFNGLDELETEPROGRAMPROC =     void(APIENTRY*)(uint32_t);
+
+    inline PFNGLCREATEPROGRAMPROC glCreateProgram;
+    inline PFNGLATTACHSHADERPROC  glAttachShader;
+    inline PFNGLLINKPROGRAMPROC   glLinkProgram;
+    inline PFNGLUSEPROGRAMPROC    glUseProgram;
+    inline PFNGLDELETEPROGRAMPROC glDeleteProgram;
+
     #pragma endregion
 }
