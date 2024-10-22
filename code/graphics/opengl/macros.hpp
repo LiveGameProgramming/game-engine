@@ -7,6 +7,9 @@ namespace engine::gl
     constexpr uint32_t framebuffer_srgb = 0x8DB9;
     constexpr uint32_t multisample      = 0x809D;
 
+    constexpr uint32_t vertex_stage     = 0x8B31;
+    constexpr uint32_t fragment_stage   = 0x8B30;
+
     constexpr uint32_t static_draw = 0x88E4;
 
     constexpr uint32_t triangles   = 0x0004;
