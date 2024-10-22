@@ -4,17 +4,19 @@ namespace engine::gl
 {
     #pragma region OpenGL Core
 
-    using  PFNGLCLEARPROC      = void(APIENTRY*)(uint32_t);
-    using  PFNGLCLEARCOLORPROC = void(APIENTRY*)(float, float, float, float);
-    using  PFNGLENABLEPROC     = void(APIENTRY*)(uint32_t);
-    using  PFNGLDISABLEPROC    = void(APIENTRY*)(uint32_t);
-    using  PFNGLDRAWARRAYSPROC = void(APIENTRY*)(uint32_t, int32_t, int32_t);
+    using  PFNGLCLEARPROC        = void(APIENTRY*)(uint32_t);
+    using  PFNGLCLEARCOLORPROC   = void(APIENTRY*)(float, float, float, float);
+    using  PFNGLENABLEPROC       = void(APIENTRY*)(uint32_t);
+    using  PFNGLDISABLEPROC      = void(APIENTRY*)(uint32_t);
+    using  PFNGLDRAWARRAYSPROC   = void(APIENTRY*)(uint32_t, int32_t,  int32_t);
+    using  PFNGLDRAWELEMENTSPROC = void(APIENTRY*)(uint32_t, int32_t, uint32_t, const void*);
 
-    inline PFNGLCLEARPROC      glClear;
-    inline PFNGLCLEARCOLORPROC glClearColor;
-    inline PFNGLENABLEPROC     glEnable;
-    inline PFNGLDISABLEPROC    glDisable;
-    inline PFNGLDRAWARRAYSPROC glDrawArrays;
+    inline PFNGLCLEARPROC        glClear;
+    inline PFNGLCLEARCOLORPROC   glClearColor;
+    inline PFNGLENABLEPROC       glEnable;
+    inline PFNGLDISABLEPROC      glDisable;
+    inline PFNGLDRAWARRAYSPROC   glDrawArrays;
+    inline PFNGLDRAWELEMENTSPROC glDrawElements;
 
     #pragma endregion
     #pragma region OpenGL Extensions
@@ -31,6 +33,7 @@ namespace engine::gl
     using  PFNGLDELETEVERTEXARRAYSPROC       = void(APIENTRY*)(int32_t, const uint32_t*);
     using  PFNGLBINDVERTEXARRAYPROC          = void(APIENTRY*)(uint32_t);
     using  PFNGLVERTEXARRAYVERTEXBUFFERPROC  = void(APIENTRY*)(uint32_t, uint32_t, uint32_t, uint64_t,           int32_t);
+    using  PFNGLVERTEXARRAYELEMENTBUFFERPROC = void(APIENTRY*)(uint32_t, uint32_t);
     using  PFNGLVERTEXARRAYATTRIBFORMATPROC  = void(APIENTRY*)(uint32_t, uint32_t,  int32_t, uint32_t, uint8_t, uint32_t);
     using  PFNGLVERTEXARRATATTRIBBINDINGPROC = void(APIENTRY*)(uint32_t, uint32_t, uint32_t);
     using  PFNGLENABLEVERTEXARRAYATTRIPROC   = void(APIENTRY*)(uint32_t, uint32_t);
@@ -39,6 +42,7 @@ namespace engine::gl
     inline PFNGLDELETEVERTEXARRAYSPROC       glDeleteVertexArrays;
     inline PFNGLBINDVERTEXARRAYPROC          glBindVertexArray;
     inline PFNGLVERTEXARRAYVERTEXBUFFERPROC  glVertexArrayVertexBuffer;
+    inline PFNGLVERTEXARRAYELEMENTBUFFERPROC glVertexArrayElementBuffer;
     inline PFNGLVERTEXARRAYATTRIBFORMATPROC  glVertexArrayAttribFormat;
     inline PFNGLVERTEXARRATATTRIBBINDINGPROC glVertexArrayAttribBinding;
     inline PFNGLENABLEVERTEXARRAYATTRIPROC   glEnableVertexArrayAttrib;
