@@ -18,6 +18,11 @@ namespace engine::gl
         glAttachShader(handle_, stage.handle());
     }
 
+    void Shader::push_mat4(const  int32_t  location, const float* data) const
+    {
+        glProgramUniformMatrix4fv(handle_, location, 1, 0, data);
+    }
+
     void Shader::link() const
     {
         glLinkProgram(handle_);
