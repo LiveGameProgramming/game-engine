@@ -7,14 +7,14 @@ namespace engine::gl
     class ShaderStage final : public Object
     {
     public:
-    explicit ShaderStage(uint32_t type);
-
         void create()  override;
         void destroy() override;
 
         void source(const std::vector<char>& source) const;
 
+    explicit ShaderStage(uint32_t type);
+
     private:
-        uint32_t type_ { };
+        uint32_t type { };
     };
 }
