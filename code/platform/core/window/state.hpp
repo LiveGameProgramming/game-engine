@@ -1,8 +1,8 @@
 #pragma once
 
-namespace engine::core
+namespace engine::core::window
 {
-    enum class window_state
+    enum class state
     {
         hidden,
         active,
