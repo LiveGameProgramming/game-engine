@@ -1,4 +1,4 @@
-#pragma once
+#include "functions.hpp"
 
 namespace engine::math
 {
