@@ -77,6 +77,7 @@ namespace engine::win32
             context_major_version, config.major_version,
             context_minor_version, config.minor_version,
             context_profile,       context_core_profile,
+            context_flags,         context_no_error,
             0
         };
 

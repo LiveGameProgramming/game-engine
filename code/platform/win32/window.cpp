@@ -13,8 +13,19 @@ namespace engine::win32
         constexpr uint32_t extra = WS_EX_APPWINDOW;
         constexpr uint32_t style = WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_OVERLAPPEDWINDOW;
 
+        RECT frame
+        {
+            .right  = config.size.width,
+            .bottom = config.size.height,
+        };
+
+        AdjustWindowRectEx(&frame, style, 0, extra);
+
+        const int32_t frame_width  = frame.right  - frame.left;
+        const int32_t frame_height = frame.bottom - frame.top;
+
         hwnd = CreateWindowEx(extra, MAKEINTATOM(atom),       config.title.c_str(),
-                              style, x, y, config.size.width, config.size.height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
+                              style, x, y, frame_width, frame_height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
     }
 
     void Window::destroy() const
