@@ -79,6 +79,10 @@ namespace engine::gl
     inline PFNGLUSEPROGRAMPROC    glUseProgram;
     inline PFNGLDELETEPROGRAMPROC glDeleteProgram;
 
+    using  PFNGLPROGRAMUNIFORMMATRIX4FVPROC = void(APIENTRY*)(uint32_t, int32_t, int32_t, uint8_t, const float*);
+
+    inline PFNGLPROGRAMUNIFORMMATRIX4FVPROC glProgramUniformMatrix4fv;
+
     #pragma endregion
     #pragma endregion
 }
