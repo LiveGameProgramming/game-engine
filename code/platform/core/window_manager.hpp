@@ -8,7 +8,7 @@ namespace engine::core
     class WindowManager final : public Singleton<WindowManager>
     {
     public:
-        void create(const window_config& window_config, const context_config& context_config);
+        void create(const window::config& window_config, const context::config& context_config);
         void destroy()    const;
         void update()     const;
 

@@ -1,8 +1,8 @@
 #pragma once
 
-namespace engine::core
+namespace engine::core::context
 {
-    struct context_config
+    struct config
     {
         int32_t major_version { 4 };
         int32_t minor_version { 6 };

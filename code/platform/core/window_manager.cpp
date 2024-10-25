@@ -3,7 +3,7 @@
 
 namespace engine::core
 {
-    void WindowManager::create(const window_config& window_config, const context_config& context_config)
+    void WindowManager::create(const window::config& window_config, const context::config& context_config)
     {
         const auto factory = PlatformFactory::create();
 
@@ -29,13 +29,13 @@ namespace engine::core
 
     void WindowManager::display() const
     {
-        window->state = window_state::active;
+        window->state = window::state::active;
         window->display();
     }
 
     void WindowManager::close() const
     {
-        window->state = window_state::closed;
+        window->state = window::state::closed;
     }
 
     int32_t WindowManager::width() const
@@ -50,6 +50,6 @@ namespace engine::core
 
     bool WindowManager::is_active() const
     {
-        return window->state == window_state::active;
+        return window->state == window::state::active;
     }
 }

@@ -3,7 +3,7 @@
 
 namespace engine::win32
 {
-    void Window::create(const core::window_config& config)
+    void Window::create(const core::window::config& config)
     {
         register_window_class(config.title);
 

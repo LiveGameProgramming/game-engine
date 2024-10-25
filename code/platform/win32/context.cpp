@@ -39,7 +39,7 @@ namespace engine::win32
         wglChoosePixelFormat    =  reinterpret_cast<PFNWGLCHOOSEPIXELFORMATARBPROC>(wglGetProcAddress("wglChoosePixelFormatARB"));
     }
 
-    void Context::create(const std::any& hwnd, const core::context_config& config)
+    void Context::create(const std::any& hwnd, const core::context::config& config)
     {
         const int32_t pixel_attributes[]
         {
