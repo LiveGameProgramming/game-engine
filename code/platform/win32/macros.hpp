@@ -19,5 +19,7 @@ namespace engine::win32
     constexpr uint32_t context_major_version = 0x2091;
     constexpr uint32_t context_minor_version = 0x2092;
     constexpr uint32_t context_profile       = 0x9126;
+    constexpr uint32_t context_flags         = 0x2094;
     constexpr uint32_t context_core_profile  = 0x00000001;
+    constexpr uint32_t context_no_error      = 0x00000008;
 }
