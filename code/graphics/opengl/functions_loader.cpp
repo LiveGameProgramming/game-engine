@@ -53,6 +53,8 @@ namespace engine::gl
         glUseProgram    = reinterpret_cast<PFNGLUSEPROGRAMPROC>(wglGetProcAddress("glUseProgram"));
         glDeleteProgram = reinterpret_cast<PFNGLDELETEPROGRAMPROC>(wglGetProcAddress("glDeleteProgram"));
 
+        glProgramUniformMatrix4fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4FVPROC>(wglGetProcAddress("glProgramUniformMatrix4fv"));
+
         #pragma endregion
     }
 }
