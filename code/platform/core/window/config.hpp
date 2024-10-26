@@ -1,12 +1,12 @@
 #pragma once
 
-#include "window/size.hpp"
+#include "size.hpp"
 
 namespace engine::core::window
 {
     struct config
     {
-         std::string title { "Game Template" };
-        window::size size  { };
+        std::string title { "Game Template" };
+               size size  { };
     };
 }
