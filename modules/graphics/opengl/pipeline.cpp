@@ -1,7 +1,7 @@
 #include "pipeline.hpp"
 #include "functions.hpp"
 
-namespace engine::gl
+namespace engine::opengl
 {
     void Pipeline::enable(const uint32_t flag)
     {

@@ -1,7 +1,7 @@
 #include "buffer.hpp"
 #include "functions.hpp"
 
-namespace engine::gl
+namespace engine::opengl
 {
     void Buffer::create()
     {

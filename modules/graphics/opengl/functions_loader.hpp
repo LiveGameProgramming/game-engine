@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::gl
+namespace engine::opengl
 {
     class FunctionsLoader
     {

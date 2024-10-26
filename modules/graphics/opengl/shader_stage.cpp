@@ -2,7 +2,7 @@
 #include "functions.hpp"
 #include "macros.hpp"
 
-namespace engine::gl
+namespace engine::opengl
 {
     ShaderStage::ShaderStage(const uint32_t type)
         : type { type }

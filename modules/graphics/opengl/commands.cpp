@@ -2,7 +2,7 @@
 #include "functions.hpp"
 #include "macros.hpp"
 
-namespace engine::gl
+namespace engine::opengl
 {
     void Commands::clear(const float r, const float g, const float b, const float a)
     {

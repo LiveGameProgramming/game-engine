@@ -2,9 +2,9 @@
 
 #include "buffer.hpp"
 
-#include "core/vertex_attribute.hpp"
+#include "core/vertex/attribute.hpp"
 
-namespace engine::gl
+namespace engine::opengl
 {
     class VertexArray final : public Object
     {
@@ -15,7 +15,7 @@ namespace engine::gl
         void attach_vertices(const Buffer& buffer, int32_t stride) const;
         void attach_indices(const  Buffer& buffer)                 const;
 
-        void attribute(const core::vertex_attribute& attribute)    const;
+        void attribute(const core::vertex::attribute& attribute)   const;
         void bind()    const;
     };
 }

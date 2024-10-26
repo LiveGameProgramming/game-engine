@@ -1,7 +1,7 @@
 #include "shader.hpp"
 #include "functions.hpp"
 
-namespace engine::gl
+namespace engine::opengl
 {
     void Shader::create()
     {

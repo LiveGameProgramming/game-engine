@@ -1,8 +1,8 @@
 #pragma once
 
-namespace engine::core
+namespace engine::core::vertex
 {
-    struct vertex_attribute
+    struct attribute
     {
         uint32_t index;
          int32_t  size;

@@ -5,7 +5,7 @@
 
 #include "core/buffer_data.hpp"
 
-namespace engine::gl
+namespace engine::opengl
 {
     class Buffer final : public Object
     {
