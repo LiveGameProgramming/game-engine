@@ -1,7 +1,7 @@
 #include "mat4.hpp"
 #include "functions.hpp"
 
-namespace engine::math
+namespace engine::core
 {
     void mat4::identity()
     {

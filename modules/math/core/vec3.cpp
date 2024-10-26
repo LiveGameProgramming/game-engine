@@ -1,6 +1,6 @@
 #include "vec3.hpp"
 
-namespace engine::math
+namespace engine::core
 {
     vec3::vec3(const float value)
         : x { value }
