@@ -7,11 +7,11 @@ namespace engine::core
     {
         const auto factory = PlatformFactory::create();
 
-        events = factory->create_events();
-        window = factory->create_window();
-        window->create(window_config);
+        window  =  factory->create_window();
+        events  =  factory->create_events();
+        context =  factory->create_context();
 
-        context = factory->create_context();
+         window->create(window_config);
         context->create(window->handle(), context_config);
     }
 
@@ -23,7 +23,7 @@ namespace engine::core
 
     void WindowManager::update() const
     {
-        context->swap_buffers();
+        context->update();
         events->update();
     }
 
