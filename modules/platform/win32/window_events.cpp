@@ -52,9 +52,9 @@ namespace engine::win32
                 }
             }
             default:
-                 DefWindowProc(hwnd, msg, wparam, lparam);
+                return DefWindowProc(hwnd, msg, wparam, lparam);
         }
 
-        return 1;
+        return 0;
     }
 }
