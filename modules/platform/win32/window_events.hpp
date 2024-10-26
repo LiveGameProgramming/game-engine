@@ -11,7 +11,6 @@ namespace engine::win32
 
     private:
         static LRESULT process(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
-
-        friend class Window;
+        friend class   Window;
     };
 }
