@@ -1,5 +1,4 @@
 #include "context.hpp"
-
 #include "functions.hpp"
 #include "macros.hpp"
 
@@ -18,7 +17,7 @@ namespace engine::win32
 
     void Context::create_core(const std::any& hwnd)
     {
-        constexpr PIXELFORMATDESCRIPTOR pfd
+        constexpr PIXELFORMATDESCRIPTOR  pfd
         {
             .nSize      = sizeof(PIXELFORMATDESCRIPTOR),
             .dwFlags    = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER,
@@ -61,7 +60,7 @@ namespace engine::win32
         {
             std::exit(EXIT_FAILURE);
         }
-                                                     PIXELFORMATDESCRIPTOR pfd;
+                                                     PIXELFORMATDESCRIPTOR    pfd;
         if (!DescribePixelFormat(hdc, format, sizeof(PIXELFORMATDESCRIPTOR), &pfd))
         {
             std::exit(EXIT_FAILURE);
