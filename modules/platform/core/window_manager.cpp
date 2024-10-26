@@ -52,4 +52,9 @@ namespace engine::core
     {
         return window->state == window::state::active;
     }
+
+    WindowManager& WindowManager::instance()
+    {
+        static WindowManager instance; return instance;
+    }
 }

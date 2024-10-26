@@ -1,11 +1,10 @@
 #pragma once
 
 #include "core/factory.hpp"
-#include "core/singleton.hpp"
 
 namespace engine::core
 {
-    class WindowManager final : public Singleton<WindowManager>
+    class WindowManager
     {
     public:
         void create(const window::config& window_config, const context::config& context_config);
@@ -15,18 +14,17 @@ namespace engine::core
         void display()    const;
         void close()      const;
 
-        [[nodiscard]] int32_t width()  const;
-        [[nodiscard]] int32_t height() const;
+        [[nodiscard]] int32_t width()    const;
+        [[nodiscard]] int32_t height()   const;
 
-        [[nodiscard]] bool is_active() const;
+        [[nodiscard]] bool   is_active() const;
+        static WindowManager& instance();
 
     private:
-        WindowManager() = default;
-
         std::unique_ptr<Window>       window  { };
         std::unique_ptr<WindowEvents> events  { };
         std::unique_ptr<Context>      context { };
 
-        friend class Singleton;
+        WindowManager() = default;
     };
 }
