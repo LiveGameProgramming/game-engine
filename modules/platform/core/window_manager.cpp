@@ -56,4 +56,9 @@ namespace engine::core
     {
         static WindowManager instance; return instance;
     }
+
+    WindowManager& WindowManager::instance()
+    {
+        static WindowManager instance; return instance;
+    }
 }
