@@ -1,6 +1,3 @@
-#include "context.hpp"
-#include "window.hpp"
-
 #include "platform_factory.hpp"
 
 namespace engine::core

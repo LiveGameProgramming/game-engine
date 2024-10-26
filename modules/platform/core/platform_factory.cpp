@@ -1,8 +1,6 @@
 #include "platform_factory.hpp"
 
-#ifdef _WINDOWS
 #include "win32/factory.hpp"
-#endif
 
 namespace engine::core
 {

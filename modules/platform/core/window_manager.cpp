@@ -29,7 +29,6 @@ namespace engine::core
 
     void WindowManager::display() const
     {
-        window->state = window::state::active;
         window->display();
     }
 
@@ -50,7 +49,7 @@ namespace engine::core
 
     bool WindowManager::is_active() const
     {
-        return window->state == window::state::active;
+        return window->state != window::state::closed;
     }
 
     WindowManager& WindowManager::instance()
