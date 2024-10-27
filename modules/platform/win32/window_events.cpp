@@ -42,8 +42,8 @@ namespace engine::win32
             {
                 switch (wparam)
                 {
-                    case   SC_SCREENSAVE:
-                    case   SC_MONITORPOWER:
+                    case SC_SCREENSAVE:
+                    case SC_MONITORPOWER:
                     {
                         return 0;
                     }
