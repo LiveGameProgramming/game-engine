@@ -31,8 +31,8 @@ namespace engine::core
 
     void mat4::perspective(const float fov, const float aspect, const float near, const float far)
     {
-        const float angle = radians(fov);
-        const float value = tan(angle / 2.0f);
+        const float angle = math::radians(fov);
+        const float value = math::tan(angle / 2.0f);
         const float range = far - near;
 
         columns[0].x =    1.0f / (value * aspect);
@@ -40,6 +40,10 @@ namespace engine::core
         columns[2].z = - (near + far)        / range;
         columns[2].w = -  1.0f;
         columns[3].z = - (2.0f * far * near) / range;
+    }
+
+    void mat4::look_at(const vec3& eye, const vec3& target, const vec3& up)
+    {
     }
 
     constexpr const column& mat4::operator[](const int32_t index) const

@@ -1,8 +1,10 @@
 #pragma once
 
-namespace engine::core
+namespace engine::core::math
 {
+    float epsilon();
     float radians(float degrees);
 
-    float tan(float value);
+    float sqrt(float value);
+    float tan(float  value);
 }
