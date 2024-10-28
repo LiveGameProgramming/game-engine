@@ -15,8 +15,8 @@ namespace engine::core
         [[nodiscard]] float    dot(const vec3& other) const;
         [[nodiscard]] float length()     const;
 
-              vec3 operator-(const  vec3& other) const;
-        const vec3 operator*=(const vec3& other) const;
+              vec3  operator-(const  vec3&  other) const;
+        const vec3& operator*=(float value);
 
         float x { };
         float y { };
