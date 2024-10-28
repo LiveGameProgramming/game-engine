@@ -19,7 +19,7 @@ namespace engine::core
 
     void vec3::normalize()
     {
-        if (const float magnitude = length(); magnitude >= math::epsilon())
+        if (const float     magnitude = length(); magnitude >= math::epsilon())
         {
             *this *= 1.0f / magnitude;
         }

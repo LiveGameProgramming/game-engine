@@ -67,7 +67,7 @@ namespace engine::core
         columns[3].x = -s.dot(eye);
         columns[3].y = -u.dot(eye);
         columns[3].z =  f.dot(eye);
-        columns[3].w = 1.0f;
+        columns[3].w =  1.0f;
     }
 
     constexpr const column& mat4::operator[](const int32_t index) const
