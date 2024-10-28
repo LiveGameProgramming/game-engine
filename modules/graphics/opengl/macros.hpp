@@ -6,6 +6,7 @@ namespace engine::opengl
 
     constexpr uint32_t framebuffer_srgb = 0x8DB9;
     constexpr uint32_t multisample      = 0x809D;
+    constexpr uint32_t cull_face        = 0x0B44;
 
     constexpr uint32_t shader_binary    = 0x9551;
     constexpr uint32_t vertex_stage     = 0x8B31;
