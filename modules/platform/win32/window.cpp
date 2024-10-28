@@ -26,6 +26,7 @@ namespace engine::win32
 
         hwnd = CreateWindowEx(extra, MAKEINTATOM(atom),       config.title.c_str(),
                               style, x, y, frame_width, frame_height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
+        size = config.size;
     }
 
     void Window::destroy() const

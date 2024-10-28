@@ -21,4 +21,14 @@ namespace engine::core::math
     {
         return std::tan(value);
     }
+
+    float sin(const float value)
+    {
+        return std::sin(value);
+    }
+
+    float cos(const float value)
+    {
+        return std::cos(value);
+    }
 }
