@@ -14,5 +14,7 @@ namespace engine::opengl
         void destroy()  override;
 
         void data(const core::BufferData& buffer, uint32_t usage = static_draw) const;
+
+        void bind(uint32_t location = 0)  const;
     };
 }

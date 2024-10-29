@@ -1,5 +1,6 @@
 #include "buffer.hpp"
 #include "functions.hpp"
+#include "macros.hpp"
 
 namespace engine::opengl
 {
@@ -16,5 +17,10 @@ namespace engine::opengl
     void Buffer::data(const core::BufferData& buffer, const uint32_t usage) const
     {
         glNamedBufferData(handle_, buffer.size(), buffer.data(), usage);
+    }
+
+    void Buffer::bind(const uint32_t location) const
+    {
+        glBindBufferBase(uniform_buffer, location, handle_);
     }
 }

@@ -24,10 +24,12 @@ namespace engine::opengl
 
     using  PFNGLCREATEBUFFERSPROC   = void(APIENTRY*)(int32_t,       uint32_t*);
     using  PFNGLDELETEBUFFERSPROC   = void(APIENTRY*)(int32_t, const uint32_t*);
+    using  PFNGLBINDBUFFERBASEPROC  = void(APIENTRY*)(uint32_t,      uint32_t,              uint32_t);
     using  PFNGLNAMEDBUFFERDATAPROC = void(APIENTRY*)(uint32_t,       int64_t, const void*, uint32_t);
 
     inline PFNGLCREATEBUFFERSPROC   glCreateBuffers;
     inline PFNGLDELETEBUFFERSPROC   glDeleteBuffers;
+    inline PFNGLBINDBUFFERBASEPROC  glBindBufferBase;
     inline PFNGLNAMEDBUFFERDATAPROC glNamedBufferData;
 
     #pragma endregion
