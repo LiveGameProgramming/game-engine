@@ -1,5 +1,5 @@
 #include "mat4.hpp"
-#include "functions.hpp"
+#include "math/functions.hpp"
 
 namespace engine::core
 {

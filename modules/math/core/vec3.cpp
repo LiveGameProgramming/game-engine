@@ -1,5 +1,5 @@
 #include "vec3.hpp"
-#include "functions.hpp"
+#include "math/functions.hpp"
 
 namespace engine::core
 {
