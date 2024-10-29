@@ -19,6 +19,11 @@ namespace engine::opengl
         glNamedBufferData(handle_, buffer.size(), buffer.data(), usage);
     }
 
+    void Buffer::sub_data(const core::BufferData& buffer, const int32_t offset) const
+    {
+        glNamedBufferSubData(handle_, offset, buffer.size(), buffer.data());
+    }
+
     void Buffer::bind(const uint32_t location) const
     {
         glBindBufferBase(uniform_buffer, location, handle_);

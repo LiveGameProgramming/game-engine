@@ -12,6 +12,10 @@ namespace engine::core
         {
             return { buffer.data(), static_cast<uint32_t>(buffer.size() * sizeof(type)) };
         }
+        template <typename type>  static BufferData create(const type* data)
+        {
+            return { data, static_cast<uint32_t>(sizeof(type)) };
+        }
 
     private:
         BufferData(const void* data, uint32_t size);

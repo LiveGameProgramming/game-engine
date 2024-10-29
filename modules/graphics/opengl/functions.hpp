@@ -22,15 +22,17 @@ namespace engine::opengl
     #pragma region OpenGL Extensions
     #pragma region Buffers
 
-    using  PFNGLCREATEBUFFERSPROC   = void(APIENTRY*)(int32_t,       uint32_t*);
-    using  PFNGLDELETEBUFFERSPROC   = void(APIENTRY*)(int32_t, const uint32_t*);
-    using  PFNGLBINDBUFFERBASEPROC  = void(APIENTRY*)(uint32_t,      uint32_t,              uint32_t);
-    using  PFNGLNAMEDBUFFERDATAPROC = void(APIENTRY*)(uint32_t,       int64_t, const void*, uint32_t);
+    using  PFNGLCREATEBUFFERSPROC      = void(APIENTRY*)(int32_t,       uint32_t*);
+    using  PFNGLDELETEBUFFERSPROC      = void(APIENTRY*)(int32_t, const uint32_t*);
+    using  PFNGLBINDBUFFERBASEPROC     = void(APIENTRY*)(uint32_t,      uint32_t,                 uint32_t);
+    using  PFNGLNAMEDBUFFERDATAPROC    = void(APIENTRY*)(uint32_t,          int64_t, const void*, uint32_t);
+    using  PFNGLNAMEDBUFFERSUBDATAPROC = void(APIENTRY*)(uint32_t, int64_t, int64_t, const void*);
 
-    inline PFNGLCREATEBUFFERSPROC   glCreateBuffers;
-    inline PFNGLDELETEBUFFERSPROC   glDeleteBuffers;
-    inline PFNGLBINDBUFFERBASEPROC  glBindBufferBase;
-    inline PFNGLNAMEDBUFFERDATAPROC glNamedBufferData;
+    inline PFNGLCREATEBUFFERSPROC      glCreateBuffers;
+    inline PFNGLDELETEBUFFERSPROC      glDeleteBuffers;
+    inline PFNGLBINDBUFFERBASEPROC     glBindBufferBase;
+    inline PFNGLNAMEDBUFFERDATAPROC    glNamedBufferData;
+    inline PFNGLNAMEDBUFFERSUBDATAPROC glNamedBufferSubData;
 
     #pragma endregion
     #pragma region VertexArray
