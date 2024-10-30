@@ -3,7 +3,7 @@
 
 namespace win32
 {
-    void Window::create(const base::window::config& config)
+    void Window::create(const window::config& config)
     {
         constexpr int32_t x = CW_USEDEFAULT;
         constexpr int32_t y = CW_USEDEFAULT;
