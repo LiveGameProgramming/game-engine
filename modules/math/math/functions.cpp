@@ -2,6 +2,11 @@
 
 namespace engine::math
 {
+    float pi()
+    {
+        return std::numbers::pi_v<float>;
+    }
+
     float epsilon()
     {
         return std::numeric_limits<float>::epsilon();
