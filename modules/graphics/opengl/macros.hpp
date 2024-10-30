@@ -2,11 +2,17 @@
 
 namespace engine::opengl
 {
-    constexpr uint32_t color_buffer_bit = 0x00004000;
+    constexpr uint32_t color_buffer = 0x00004000;
+    constexpr uint8_t  depth_buffer = 0x00000100;
+
+    #pragma region Pipeline
 
     constexpr uint32_t framebuffer_srgb = 0x8DB9;
     constexpr uint32_t multisample      = 0x809D;
     constexpr uint32_t cull_face        = 0x0B44;
+    constexpr uint8_t  depth_test       = 0x0B71;
+
+    #pragma endregion
 
     constexpr uint32_t shader_binary    = 0x9551;
     constexpr uint32_t vertex_stage     = 0x8B31;
