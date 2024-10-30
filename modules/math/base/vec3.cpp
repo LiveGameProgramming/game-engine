@@ -3,18 +3,23 @@
 
 namespace engine::base
 {
-    vec3::vec3(const float value)
+    constexpr vec3::vec3(const float value)
         : x { value }
         , y { value }
         , z { value }
     {
     }
 
-    vec3::vec3(const float x, const float y, const float z)
+    constexpr vec3::vec3(const float x, const float y, const float z)
         : x { x }
         , y { y }
         , z { z }
     {
+    }
+
+    vec3 vec3::normalized()
+    {
+        normalize(); return *this;
     }
 
     void vec3::normalize()
