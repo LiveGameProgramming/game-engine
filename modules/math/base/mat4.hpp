@@ -3,7 +3,7 @@
 #include "vec3.hpp"
 #include "column.hpp"
 
-namespace engine::core
+namespace engine::base
 {
     struct mat4
     {

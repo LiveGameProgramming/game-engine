@@ -1,6 +1,6 @@
 #include "functions.hpp"
 
-namespace engine::core::math
+namespace engine::base::math
 {
     float epsilon()
     {

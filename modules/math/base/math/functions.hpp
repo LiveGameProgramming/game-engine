@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::core::math
+namespace engine::base::math
 {
     float epsilon();
     float radians(float degrees);
