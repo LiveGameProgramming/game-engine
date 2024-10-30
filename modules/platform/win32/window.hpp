@@ -7,7 +7,7 @@ namespace win32
     class Window final : public base::Window
     {
     public:
-        void create(const core::window::config& config) override;
+        void create(const base::window::config& config) override;
         void destroy()                            const override;
         void show()                               const override;
 

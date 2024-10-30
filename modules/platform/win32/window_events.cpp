@@ -1,6 +1,6 @@
 #include "window_events.hpp"
 
-#include "core/window_manager.hpp"
+#include "base/window_manager.hpp"
 
 namespace win32
 {
@@ -12,7 +12,7 @@ namespace win32
         {
             if (msg.message == WM_QUIT)
             {
-                core::WindowManager::instance().close();
+                base::WindowManager::instance().close();
                 break;
             }
 
