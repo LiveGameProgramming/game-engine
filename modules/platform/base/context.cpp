@@ -1,6 +1,6 @@
 #include "platform_factory.hpp"
 
-namespace engine::core
+namespace engine::base
 {
     void Context::init_extensions()
     {

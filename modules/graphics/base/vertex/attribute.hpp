@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::core::vertex
+namespace engine::base::vertex
 {
     struct attribute
     {

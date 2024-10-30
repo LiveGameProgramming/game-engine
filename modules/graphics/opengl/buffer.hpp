@@ -3,8 +3,8 @@
 #include "object.hpp"
 #include "macros.hpp"
 
-#include "core/buffer/data.hpp"
-#include "core/buffer/location.hpp"
+#include "base/buffer/data.hpp"
+#include "base/buffer/location.hpp"
 
 namespace engine::opengl
 {

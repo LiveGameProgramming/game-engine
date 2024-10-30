@@ -4,7 +4,7 @@
 #include "window_events.hpp"
 #include "context.hpp"
 
-namespace engine::core
+namespace engine::base
 {
     class Factory
     {

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "core/window_events.hpp"
+#include "base/window_events.hpp"
 
 namespace engine::win32
 {
-    class WindowEvents final : public core::WindowEvents
+    class WindowEvents final : public base::WindowEvents
     {
     public:
         void update()  const override;

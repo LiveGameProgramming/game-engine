@@ -5,17 +5,17 @@
 
 namespace engine::win32
 {
-    std::unique_ptr<core::Window> Factory::create_window()
+    std::unique_ptr<base::Window> Factory::create_window()
     {
         return std::make_unique<Window>();
     }
 
-    std::unique_ptr<core::WindowEvents> Factory::create_events()
+    std::unique_ptr<base::WindowEvents> Factory::create_events()
     {
         return std::make_unique<WindowEvents>();
     }
 
-    std::unique_ptr<core::Context> Factory::create_context()
+    std::unique_ptr<base::Context> Factory::create_context()
     {
         return std::make_unique<Context>();
     }

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "core/factory.hpp"
+#include "factory.hpp"
 
-namespace engine::core
+namespace engine::base
 {
     class WindowManager
     {
