@@ -10,10 +10,8 @@ namespace engine::win32
         void create(const      std::any& hwnd, const context::config& config) override;
         void create_core(const std::any& hwnd)                                override;
 
-        void destroy()         const override;
-        void update()          const override;
-
-        void init_functions()  const override;
+        void destroy()   const override;
+        void update()    const override;
 
     private:
         HGLRC hrc { };

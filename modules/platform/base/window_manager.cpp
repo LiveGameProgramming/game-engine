@@ -18,13 +18,13 @@ namespace engine::base
     void WindowManager::destroy() const
     {
         context->destroy();
-        window->destroy();
+         window->destroy();
     }
 
     void WindowManager::update() const
     {
         context->update();
-        events->update();
+         events->update();
     }
 
     void WindowManager::display() const

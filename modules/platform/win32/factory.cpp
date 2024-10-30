@@ -2,6 +2,7 @@
 #include "window.hpp"
 #include "window_events.hpp"
 #include "context.hpp"
+#include "context_functions.hpp"
 
 namespace engine::win32
 {
@@ -18,5 +19,10 @@ namespace engine::win32
     std::unique_ptr<base::Context> Factory::create_context()
     {
         return std::make_unique<Context>();
+    }
+
+    std::unique_ptr<base::ContextFunctions> Factory::create_functions()
+    {
+        return std::make_unique<ContextFunctions>();
     }
 }
