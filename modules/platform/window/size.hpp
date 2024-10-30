@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::base::window
+namespace engine::window
 {
     struct size
     {

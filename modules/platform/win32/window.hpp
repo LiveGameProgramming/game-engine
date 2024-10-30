@@ -7,11 +7,11 @@ namespace engine::win32
     class Window final : public base::Window
     {
     public:
-        void create(const base::window::config& config) override;
-        void destroy()                            const override;
-        void display()                            const override;
+        void create(const window::config& config) override;
+        void destroy()                      const override;
+        void display()                      const override;
 
-        [[nodiscard]] std::any handle()           const override;
+        [[nodiscard]] std::any handle()     const override;
 
     private:
         void   register_window_class(const std::string& title);

@@ -23,10 +23,10 @@ namespace engine::opengl
         glVertexArrayElementBuffer(handle_, buffer.handle());
     }
 
-    void VertexArray::attribute(const base::vertex::attribute& attribute) const
+    void VertexArray::attribute(const vertex::attribute& attribute)   const
     {
-        glVertexArrayAttribFormat(handle_,  attribute.index,   attribute.size, attribute.type, 0, attribute.offset);
-        glVertexArrayAttribBinding(handle_, attribute.index,   0);
+        glVertexArrayAttribFormat(handle_,  attribute.index, attribute.size, attribute.type, 0, attribute.offset);
+        glVertexArrayAttribBinding(handle_, attribute.index, 0);
 
         glEnableVertexArrayAttrib(handle_,  attribute.index);
     }
