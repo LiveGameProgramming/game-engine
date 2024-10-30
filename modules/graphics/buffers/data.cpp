@@ -1,6 +1,6 @@
 #include "data.hpp"
 
-namespace engine::base::buffer
+namespace engine::buffers
 {
     data::data(const void* data, const uint32_t size)
         :  ptr_ { data }
