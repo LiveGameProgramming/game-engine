@@ -27,7 +27,7 @@ namespace engine::base
          window->create({ "CoreContext" });
         context->create_core(window->handle());
 
-      functions->init();
+        functions->init();
 
         context->destroy();
          window->destroy();
