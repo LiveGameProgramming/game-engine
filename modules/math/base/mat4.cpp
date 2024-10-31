@@ -44,13 +44,9 @@ namespace engine::base
 
     void mat4::look_at(const vec3& eye, const vec3& target, const vec3& up)
     {
-        vec3 f = target - eye;
-        vec3 s = f.cross(up);
-
-        f.normalize();
-        s.normalize();
-
-        const vec3 u = s.cross(f);
+        const vec3 f = (target - eye).normalized();
+        const vec3 s =    f.cross(up).normalized();
+        const vec3 u =    s.cross(f);
 
         columns[0].x = s.x;
         columns[1].x = s.y;

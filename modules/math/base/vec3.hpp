@@ -9,9 +9,9 @@ namespace engine::base
         constexpr vec3(float value);
         constexpr vec3(float x, float y, float z);
 
-        vec3 normalized();
-        void normalize();
-
+                      void   normalize();
+                const vec3&  normalized();
+        [[nodiscard]] vec3   normalized()             const;
         [[nodiscard]] vec3   cross(const vec3& other) const;
         [[nodiscard]] float    dot(const vec3& other) const;
         [[nodiscard]] float length()     const;

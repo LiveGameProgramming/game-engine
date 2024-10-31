@@ -17,14 +17,20 @@ namespace engine::base
     {
     }
 
-    vec3 vec3::normalized()
+    const vec3& vec3::normalized()
     {
         normalize(); return *this;
     }
 
+    vec3 vec3::normalized() const
+    {
+          vec3 result = *this;
+        return result.normalized();
+    }
+
     void vec3::normalize()
     {
-        if (const float     magnitude = length(); magnitude >= math::epsilon())
+        if (const float magnitude = length(); magnitude >= math::epsilon())
         {
             *this *= 1.0f / magnitude;
         }

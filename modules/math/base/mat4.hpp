@@ -19,9 +19,8 @@ namespace engine::base
         constexpr const column& operator[](int32_t index) const;
         constexpr       column& operator[](int32_t index);
 
-        mat4 operator*(const mat4& other) const;
-             operator  const float*()     const;
-
+        [[maybe_unused]] operator  const float*()     const;
+                    mat4 operator*(const mat4& other) const;
     private:
         column columns[4] { };
     };
