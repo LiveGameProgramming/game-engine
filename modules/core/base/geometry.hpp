@@ -2,9 +2,9 @@
 
 namespace engine::base
 {
-    template <typename vertex> struct geometry
+    template <typename vertex, typename face> struct geometry
     {
-        std::vector<vertex>   vertices;
-        std::vector<uint32_t> indices;
+        std::vector<vertex> vertices;
+        std::vector<face>   faces;
     };
 }
