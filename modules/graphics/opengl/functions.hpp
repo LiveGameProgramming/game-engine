@@ -10,6 +10,7 @@ namespace engine::opengl
     using  PFNGLDISABLEPROC      = void(APIENTRY*)(uint32_t);
     using  PFNGLDRAWARRAYSPROC   = void(APIENTRY*)(uint32_t, int32_t,  int32_t);
     using  PFNGLDRAWELEMENTSPROC = void(APIENTRY*)(uint32_t, int32_t, uint32_t, const void*);
+    using  PFNGLPOLYGONMODEPROC  = void(APIENTRY*)(uint32_t,          uint32_t);
 
     inline PFNGLCLEARPROC        glClear;
     inline PFNGLCLEARCOLORPROC   glClearColor;
@@ -17,6 +18,7 @@ namespace engine::opengl
     inline PFNGLDISABLEPROC      glDisable;
     inline PFNGLDRAWARRAYSPROC   glDrawArrays;
     inline PFNGLDRAWELEMENTSPROC glDrawElements;
+    inline PFNGLPOLYGONMODEPROC  glPolygonMode;
 
     #pragma endregion
     #pragma region OpenGL Extensions

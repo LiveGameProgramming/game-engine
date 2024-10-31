@@ -11,6 +11,9 @@ namespace engine::opengl
     constexpr uint32_t multisample      = 0x809D;
     constexpr uint32_t cull_face        = 0x0B44;
     constexpr uint32_t depth_test       = 0x0B71;
+    constexpr uint32_t front_and_back   = 0x0408;
+    constexpr uint32_t mode_lines       = 0x1B01;
+    constexpr uint32_t mode_solid       = 0x1B02;
 
     #pragma endregion
 
