@@ -1,11 +1,11 @@
 #include "window_manager.hpp"
-#include "platform_factory.hpp"
+#include "platform_module.hpp"
 
 namespace engine::base
 {
     void WindowManager::create(const window::config& window_config, const context::config& context_config)
     {
-        const auto factory = PlatformFactory::create();
+        const auto factory = PlatformModule::create_factory();
 
         window  =  factory->create_window();
         events  =  factory->create_events();

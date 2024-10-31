@@ -12,7 +12,5 @@ namespace engine::base
 
         virtual void destroy()   const = 0;
         virtual void update()    const = 0;
-
-        static  void init_extensions();
     };
 }
