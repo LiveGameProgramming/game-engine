@@ -37,6 +37,7 @@ namespace engine::opengl
 
         #pragma endregion
 
+        enable(depth_test);
         enable(cull_face);
     }
 }
