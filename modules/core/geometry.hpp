@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::base
+namespace engine
 {
     template <typename vertex, typename face> struct geometry
     {

@@ -1,6 +1,6 @@
 #include "file.hpp"
 
-namespace engine::base
+namespace engine
 {
     std::vector<char> File::read(const std::string& path, const int32_t mode)
     {
