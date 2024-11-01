@@ -1,7 +1,11 @@
 #include "functions.hpp"
 #include "constants.hpp"
 
+<<<<<<<< HEAD:modules/core/math/vec3.cpp
 namespace math
+========
+namespace engine
+>>>>>>>> 10b8969 (Remove unused base modules and reorganize code structure):modules/math/vec3.cpp
 {
     vec3::vec3(const float value)
         : x { value }

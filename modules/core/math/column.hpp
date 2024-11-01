@@ -1,6 +1,10 @@
 #pragma once
 
+<<<<<<<< HEAD:modules/core/math/column.hpp
 namespace math
+========
+namespace engine
+>>>>>>>> 10b8969 (Remove unused base modules and reorganize code structure):modules/math/column.hpp
 {
     struct column
     {

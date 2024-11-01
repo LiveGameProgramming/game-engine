@@ -1,6 +1,10 @@
 #include "column.hpp"
 
+<<<<<<<< HEAD:modules/core/math/column.cpp
 namespace math
+========
+namespace engine
+>>>>>>>> 10b8969 (Remove unused base modules and reorganize code structure):modules/math/column.cpp
 {
     column column::operator+(const column& other) const
     {

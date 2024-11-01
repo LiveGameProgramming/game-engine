@@ -2,7 +2,7 @@
 
 #include "win32/factory.hpp"
 
-namespace engine::base
+namespace engine
 {
     void PlatformModule::init()
     {
@@ -26,7 +26,7 @@ namespace engine::base
          window->destroy();
     }
 
-    std::unique_ptr<Factory> PlatformModule::create_factory()
+    std::unique_ptr<base::Factory> PlatformModule::create_factory()
     {
         #ifdef _WINDOWS
         return std::make_unique<win32::Factory>();
