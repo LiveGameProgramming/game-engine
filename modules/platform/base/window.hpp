@@ -14,9 +14,6 @@ namespace engine::base
 
         [[nodiscard]] virtual std::any handle()     const = 0;
 
-    protected:
-        friend class WindowManager;
-
         window::state state { };
         window::size  size  { };
     };
