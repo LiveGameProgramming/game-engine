@@ -1,6 +1,6 @@
 #include "column.hpp"
 
-namespace engine::base
+namespace engine
 {
     column column::operator+(const column& other) const
     {

@@ -1,7 +1,7 @@
 #include "vec3.hpp"
 #include "math/functions.hpp"
 
-namespace engine::base
+namespace engine
 {
     constexpr vec3::vec3(const float value)
         : x { value }

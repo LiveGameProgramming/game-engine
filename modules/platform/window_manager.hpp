@@ -1,8 +1,8 @@
 #pragma once
 
-#include "factory.hpp"
+#include "base/factory.hpp"
 
-namespace engine::base
+namespace engine
 {
     class WindowManager
     {
@@ -22,9 +22,9 @@ namespace engine::base
         static WindowManager& instance();
 
     private:
-        std::unique_ptr<Window>       window  { };
-        std::unique_ptr<WindowEvents> events  { };
-        std::unique_ptr<Context>      context { };
+        std::unique_ptr<base::Window>       window  { };
+        std::unique_ptr<base::WindowEvents> events  { };
+        std::unique_ptr<base::Context>      context { };
 
         WindowManager() = default;
     };

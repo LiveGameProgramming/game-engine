@@ -1,7 +1,7 @@
 #include "window_manager.hpp"
 #include "platform_module.hpp"
 
-namespace engine::base
+namespace engine
 {
     void WindowManager::create(const window::config& window_config, const context::config& context_config)
     {

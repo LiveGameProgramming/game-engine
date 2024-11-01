@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::base
+namespace engine
 {
     struct rgb
     {
