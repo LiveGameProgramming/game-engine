@@ -5,13 +5,10 @@ namespace engine::win32
 {
     void Window::create(const window::config& config)
     {
-        register_window_class(config.title);
-
         constexpr int32_t x = CW_USEDEFAULT;
         constexpr int32_t y = CW_USEDEFAULT;
 
-        constexpr uint32_t extra = WS_EX_APPWINDOW;
-        constexpr uint32_t style = WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_OVERLAPPEDWINDOW;
+        register_window_class(config.title);
 
         RECT frame
         {
@@ -24,9 +21,9 @@ namespace engine::win32
         const int32_t frame_width  = frame.right  - frame.left;
         const int32_t frame_height = frame.bottom - frame.top;
 
-        hwnd = CreateWindowEx(extra, MAKEINTATOM(atom),       config.title.c_str(),
-                              style, x, y, frame_width, frame_height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
         size = config.size;
+        hwnd = CreateWindowEx(extra, MAKEINTATOM(atom), config.title.c_str(),
+                              style, x, y, frame_width, frame_height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
     }
 
     void Window::destroy() const

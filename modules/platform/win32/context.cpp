@@ -15,7 +15,7 @@ namespace engine::win32
         SwapBuffers(hdc);
     }
 
-    void Context::create_core(const std::any& hwnd)
+    void Context::create(const std::any& hwnd)
     {
         constexpr PIXELFORMATDESCRIPTOR  pfd
         {
@@ -46,8 +46,7 @@ namespace engine::win32
             stencil_bits,      8,
             framebuffer_srgb,  1,
             samples_buffer,    config.samples > 0 ? 1 : 0,
-            samples_per_pixel, config.samples,
-            0
+            samples_per_pixel, config.samples,  0
         };
              int32_t format;                        hdc = GetDC(std::any_cast<HWND>(hwnd));
         if (uint32_t formats; !wglChoosePixelFormat(hdc,  pixel_attributes, nullptr, 1, &format, &formats) || !formats)
@@ -70,8 +69,7 @@ namespace engine::win32
             context_major_version, config.major_version,
             context_minor_version, config.minor_version,
             context_profile,       context_core_profile,
-            context_flags,         context_no_error,
-            0
+            context_flags,         context_no_error,  0
         };
 
         hrc = wglCreateContextAttribs(hdc, nullptr, context_attributes); wglMakeCurrent(hdc, hrc);

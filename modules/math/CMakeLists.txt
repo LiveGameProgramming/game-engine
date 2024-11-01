@@ -6,3 +6,6 @@ add_library(${PROJECT_NAME})
 add_subdirectory(base)
 add_subdirectory(math)
 #=======================================================================================================================
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_precompile_headers(${PROJECT_NAME}  PUBLIC headers.hpp)
+#=======================================================================================================================

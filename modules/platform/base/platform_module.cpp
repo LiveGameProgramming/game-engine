@@ -6,17 +6,10 @@ namespace engine::base
 {
     void PlatformModule::init()
     {
-        init_context_extensions();
+        init_context_functions();
     }
 
-    std::unique_ptr<Factory> PlatformModule::create_factory()
-    {
-        #ifdef _WINDOWS
-        return std::make_unique<win32::Factory>();
-        #endif
-    }
-
-    void PlatformModule::init_context_extensions()
+    void PlatformModule::init_context_functions()
     {
         const auto factory   = create_factory();
 
@@ -25,11 +18,18 @@ namespace engine::base
         const auto functions = factory->create_functions();
 
          window->create({ "CoreContext" });
-        context->create_core(window->handle());
+        context->create(window->handle());
 
         functions->init();
 
         context->destroy();
          window->destroy();
+    }
+
+    std::unique_ptr<Factory> PlatformModule::create_factory()
+    {
+        #ifdef _WINDOWS
+        return std::make_unique<win32::Factory>();
+        #endif
     }
 }
