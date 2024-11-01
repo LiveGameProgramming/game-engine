@@ -1,7 +1,7 @@
 #include "graphics_module.hpp"
 
-#include "opengl/functions_loader.hpp"
 #include "opengl/pipeline.hpp"
+#include "opengl/functions_loader.hpp"
 
 namespace engine::base
 {
