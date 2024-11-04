@@ -14,16 +14,18 @@ namespace engine
         void open()       const;
         void close()      const;
 
-        [[nodiscard]] bool is_active()  const;
+        [[nodiscard]] bool is_active() const;
 
-        [[nodiscard]] int32_t  width()  const;
-        [[nodiscard]] int32_t height()  const;
+        [[nodiscard]] int32_t  width() const;
+        [[nodiscard]] int32_t height() const;
+        [[nodiscard]] float    ratio() const;
 
         static WindowManager& instance();
 
         #pragma region Callbacks
 
-        void resize(const window::size& size) const;
+        void resize(const std::function<void()>& callback) const;
+        void resize(const window::size& size)              const;
 
         #pragma endregion
 

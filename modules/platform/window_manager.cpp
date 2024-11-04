@@ -47,6 +47,11 @@ namespace engine
         return window->size.height;
     }
 
+    float WindowManager::ratio() const
+    {
+        return window->size.ratio;
+    }
+
     bool WindowManager::is_active() const
     {
         return window->state != window::state::closed;
@@ -57,8 +62,16 @@ namespace engine
         static WindowManager instance; return instance;
     }
 
+    void WindowManager::resize(const std::function<void()>& callback) const
+    {
+        events->on_resize_callback = callback;
+    }
+
     void WindowManager::resize(const window::size& size) const
     {
         window->size = size;
+
+        if (events->on_resize_callback)
+            events->on_resize_callback();
     }
 }

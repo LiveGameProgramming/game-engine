@@ -12,7 +12,7 @@ namespace engine
         void scale(const     vec3& scale);
         void translate(const vec3& translation);
 
-        void perspective(float fov, float aspect, float near, float far);
+        void perspective(float fov, float aspect, float near = 0.1f, float far = 100.0f);
 
         void look_at(const vec3& eye, const vec3& target, const vec3& up = vec3::up());
 

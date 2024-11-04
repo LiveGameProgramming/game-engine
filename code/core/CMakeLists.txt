@@ -1,13 +1,9 @@
 #=======================================================================================================================
-project(platform_module)
+project(engine_core)
 #=======================================================================================================================
-add_library(${PROJECT_NAME})
+add_library(${PROJECT_NAME} INTERFACE)
 #=======================================================================================================================
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_precompile_headers(${PROJECT_NAME}  PUBLIC headers.hpp)
+target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 #=======================================================================================================================
-target_sources(${PROJECT_NAME} PRIVATE window_manager.cpp platform_module.cpp)
-#=======================================================================================================================
-add_subdirectory(window)
-add_subdirectory(win32)
+target_link_libraries(${PROJECT_NAME} INTERFACE math_module)
 #=======================================================================================================================
