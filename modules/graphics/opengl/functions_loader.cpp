@@ -13,6 +13,7 @@ namespace engine::opengl
         glDrawArrays   = reinterpret_cast<PFNGLDRAWARRAYSPROC>(GetProcAddress(instance,   "glDrawArrays"));
         glDrawElements = reinterpret_cast<PFNGLDRAWELEMENTSPROC>(GetProcAddress(instance, "glDrawElements"));
         glPolygonMode  = reinterpret_cast<PFNGLPOLYGONMODEPROC>(GetProcAddress(instance,  "glPolygonMode"));
+        glViewport     = reinterpret_cast<PFNGLVIEWPORTPROC>(GetProcAddress(instance,     "glViewport"));
 
         FreeLibrary(instance);
     }

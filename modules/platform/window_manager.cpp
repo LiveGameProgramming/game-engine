@@ -27,9 +27,9 @@ namespace engine
          events->update();
     }
 
-    void WindowManager::display() const
+    void WindowManager::open() const
     {
-        window->display();
+        window->show();
     }
 
     void WindowManager::close() const
@@ -55,5 +55,10 @@ namespace engine
     WindowManager& WindowManager::instance()
     {
         static WindowManager instance; return instance;
+    }
+
+    void WindowManager::resize(const window::size& size) const
+    {
+        window->size = size;
     }
 }

@@ -21,7 +21,6 @@ namespace engine::win32
         const int32_t frame_width  = frame.right  - frame.left;
         const int32_t frame_height = frame.bottom - frame.top;
 
-        size = config.size;
         hwnd = CreateWindowEx(extra, MAKEINTATOM(atom), config.title.c_str(),
                               style, x, y, frame_width, frame_height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
     }
@@ -33,7 +32,7 @@ namespace engine::win32
         unregister_window_class();
     }
 
-    void Window::display() const
+    void Window::show()  const
     {
         ShowWindow(hwnd, SW_SHOW);
     }

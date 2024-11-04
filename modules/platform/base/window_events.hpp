@@ -6,5 +6,7 @@ namespace engine::base
     {
     public:
         virtual void update() const = 0;
+
+        std::function<void()> on_resize_callback;
     };
 }

@@ -4,6 +4,11 @@
 
 namespace engine::opengl
 {
+    void Commands::viewport(const int32_t x, const int32_t y, const int32_t width, const int32_t height)
+    {
+        glViewport(x, y, width, height);
+    }
+
     void Commands::clear(const float r, const float g, const float b, const float a)
     {
         glClearColor(r, g, b, a);

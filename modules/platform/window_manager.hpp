@@ -11,7 +11,7 @@ namespace engine
         void destroy()    const;
         void update()     const;
 
-        void display()    const;
+        void open()       const;
         void close()      const;
 
         [[nodiscard]] bool is_active()  const;
@@ -20,6 +20,12 @@ namespace engine
         [[nodiscard]] int32_t height()  const;
 
         static WindowManager& instance();
+
+        #pragma region Callbacks
+
+        void resize(const window::size& size) const;
+
+        #pragma endregion
 
     private:
         std::unique_ptr<base::Window>       window  { };

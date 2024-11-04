@@ -31,6 +31,10 @@ namespace engine::win32
             }
             case WM_SIZE:
             {
+                const int32_t width  = LOWORD(lparam);
+                const int32_t height = HIWORD(lparam);
+
+                WindowManager::instance().resize({ width, height });
                 return 0;
             }
             case WM_ERASEBKGND:

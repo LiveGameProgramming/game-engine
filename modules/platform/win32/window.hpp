@@ -9,7 +9,7 @@ namespace engine::win32
     public:
         void create(const window::config& config) override;
         void destroy()                      const override;
-        void display()                      const override;
+        void show()                         const override;
 
         [[nodiscard]] std::any handle()     const override;
 
