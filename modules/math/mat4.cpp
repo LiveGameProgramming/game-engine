@@ -42,7 +42,7 @@ namespace engine
         columns[3].z = - (2.0f * far * near) / range;
     }
 
-    void mat4::look_at(const vec3& eye, const vec3& target, const vec3& up)
+    void mat4::look(const vec3& eye, const vec3& target, const vec3& up)
     {
         const vec3 f = (target - eye).normalized();
         const vec3 s =    f.cross(up).normalized();

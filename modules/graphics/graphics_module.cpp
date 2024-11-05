@@ -12,11 +12,9 @@ namespace engine
 
     void GraphicsModule::init_opengl_state()
     {
-        using namespace opengl;
+        opengl::FunctionsLoader::init_core();
+        opengl::FunctionsLoader::init_extensions();
 
-        FunctionsLoader::init_core();
-        FunctionsLoader::init_extensions();
-
-        Pipeline::default_state();
+        opengl::Pipeline::default_state();
     }
 }

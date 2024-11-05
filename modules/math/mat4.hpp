@@ -14,7 +14,7 @@ namespace engine
 
         void perspective(float fov, float aspect, float near = 0.1f, float far = 100.0f);
 
-        void look_at(const vec3& eye, const vec3& target, const vec3& up = vec3::up());
+        void look(const vec3& eye, const vec3& target, const vec3& up = vec3::up());
 
         constexpr const column& operator[](int32_t index) const;
         constexpr       column& operator[](int32_t index);
