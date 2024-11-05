@@ -2,7 +2,7 @@
 
 namespace engine
 {
-    struct quaternion
+    struct quat
     {
         float w { 1.0f };
         float x { };
