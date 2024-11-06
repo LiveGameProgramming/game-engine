@@ -5,28 +5,28 @@ namespace engine
 {
     void mat4::identity()
     {
-        columns[0].x = 1.0f;
-        columns[1].y = 1.0f;
-        columns[2].z = 1.0f;
-        columns[3].w = 1.0f;
+        data[0].x = 1.0f;
+        data[1].y = 1.0f;
+        data[2].z = 1.0f;
+        data[3].w = 1.0f;
 
-        columns[3].x = 0.0f;
-        columns[3].y = 0.0f;
-        columns[3].z = 0.0f;
+        data[3].x = 0.0f;
+        data[3].y = 0.0f;
+        data[3].z = 0.0f;
     }
 
     void mat4::scale(const vec3& scale)
     {
-        columns[0] *= scale.x;
-        columns[1] *= scale.y;
-        columns[2] *= scale.z;
+        data[0] *= scale.x;
+        data[1] *= scale.y;
+        data[2] *= scale.z;
     }
 
     void mat4::translate(const vec3& translation)
     {
-        columns[3] += columns[0] * translation.x +
-                      columns[1] * translation.y +
-                      columns[2] * translation.z;
+        data[3] += data[0] * translation.x +
+                   data[1] * translation.y +
+                   data[2] * translation.z;
     }
 
     void mat4::perspective(const float fov, const float aspect, const float near, const float far)
@@ -35,11 +35,11 @@ namespace engine
         const float value = tan(angle / 2.0f);
         const float range = far - near;
 
-        columns[0].x =    1.0f / (value * aspect);
-        columns[1].y =    1.0f /  value;
-        columns[2].z = - (near + far)        / range;
-        columns[2].w = -  1.0f;
-        columns[3].z = - (2.0f * far * near) / range;
+        data[0].x =    1.0f / (value * aspect);
+        data[1].y =    1.0f /  value;
+        data[2].z = - (near + far)        / range;
+        data[2].w = -  1.0f;
+        data[3].z = - (2.0f * far * near) / range;
     }
 
     void mat4::look(const vec3& eye, const vec3& target, const vec3& up)
@@ -48,32 +48,38 @@ namespace engine
         const vec3 s =    f.cross(up).normalized();
         const vec3 u =    s.cross(f);
 
-        columns[0].x = s.x;
-        columns[1].x = s.y;
-        columns[2].x = s.z;
+        data[0].x = s.x;
+        data[1].x = s.y;
+        data[2].x = s.z;
 
-        columns[0].y = u.x;
-        columns[1].y = u.y;
-        columns[2].y = u.z;
+        data[0].y = u.x;
+        data[1].y = u.y;
+        data[2].y = u.z;
 
-        columns[0].z = -f.x;
-        columns[1].z = -f.y;
-        columns[2].z = -f.z;
+        data[0].z = -f.x;
+        data[1].z = -f.y;
+        data[2].z = -f.z;
 
-        columns[3].x = -s.dot(eye);
-        columns[3].y = -u.dot(eye);
-        columns[3].z =  f.dot(eye);
-        columns[3].w =  1.0f;
+        data[3].x = -s.dot(eye);
+        data[3].y = -u.dot(eye);
+        data[3].z =  f.dot(eye);
+        data[3].w =  1.0f;
     }
 
     constexpr const column& mat4::operator[](const int32_t index) const
     {
-        return columns[index];
+        return data[index];
     }
 
     constexpr column& mat4::operator[](const int32_t index)
     {
-        return columns[index];
+        return data[index];
+    }
+
+    const mat4& mat4::operator*=(const mat4& other)
+    {
+        *this = *this * other;
+        return  *this;
     }
 
     mat4 mat4::operator*(const mat4& other) const
@@ -81,15 +87,15 @@ namespace engine
         mat4 result;
 
         for (int32_t i  = 0;  i < 4; ++i)
-              result[i] = columns[0] * other[i].x +
-                          columns[1] * other[i].y +
-                          columns[2] * other[i].z +
-                          columns[3] * other[i].w;
+              result[i] = data[0] * other[i].x +
+                          data[1] * other[i].y +
+                          data[2] * other[i].z +
+                          data[3] * other[i].w;
         return result;
     }
 
     mat4::operator const float*() const
     {
-        return &columns[0].x;
+        return &data[0].x;
     }
 }

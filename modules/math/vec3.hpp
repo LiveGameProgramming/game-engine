@@ -4,21 +4,22 @@ namespace engine
 {
     struct vec3
     {
-        constexpr vec3() = default;
+        vec3(float value);
 
-        constexpr vec3(float value);
+        constexpr vec3() = default;
         constexpr vec3(float x, float y, float z);
 
-                      void   normalize();
-                const vec3&  normalized();
-        [[nodiscard]] vec3   normalized()             const;
-        [[nodiscard]] vec3   cross(const vec3& other) const;
-        [[nodiscard]] float    dot(const vec3& other) const;
-        [[nodiscard]] float length()     const;
+                const vec3& normalized();
+        [[nodiscard]] vec3  normalized()             const;
+        [[nodiscard]] vec3  cross(const vec3& other) const;
+        [[nodiscard]] float   dot(const vec3& other) const;
 
-              vec3  operator-(const  vec3&  other)    const;
+        #pragma region Operators
+
+              vec3  operator-(const  vec3& other)    const;
         const vec3& operator*=(float value);
 
+        #pragma endregion
         #pragma region Constants
 
         static constexpr vec3 front() { return {  0.0f,  0.0f,  1.0f }; }
@@ -35,5 +36,9 @@ namespace engine
         float x { };
         float y { };
         float z { };
+
+    private:
+        [[nodiscard]] float length() const;
+                      void  normalize();
     };
 }

@@ -16,12 +16,19 @@ namespace engine
 
         void look(const vec3& eye, const vec3& target, const vec3& up = vec3::up());
 
+        #pragma region Operators
+
         constexpr const column& operator[](int32_t index) const;
         constexpr       column& operator[](int32_t index);
 
-        [[maybe_unused]] operator  const float*()     const;
-                    mat4 operator*(const mat4& other) const;
+        const mat4& operator*=(const mat4& other);
+              mat4  operator*(const  mat4& other) const;
+
+        [[maybe_unused]] operator const float*()  const;
+
+        #pragma endregion
+
     private:
-        column columns[4] { };
+        column data[4] { };
     };
 }

@@ -3,7 +3,7 @@
 
 namespace engine
 {
-    constexpr vec3::vec3(const float value)
+    vec3::vec3(const float value)
         : x { value }
         , y { value }
         , z { value }
