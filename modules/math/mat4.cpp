@@ -1,5 +1,5 @@
 #include "mat4.hpp"
-#include "math/functions.hpp"
+#include "functions.hpp"
 
 namespace engine
 {
@@ -31,8 +31,8 @@ namespace engine
 
     void mat4::perspective(const float fov, const float aspect, const float near, const float far)
     {
-        const float angle = math::radians(fov);
-        const float value = math::tan(angle / 2.0f);
+        const float angle = radians(fov);
+        const float value = tan(angle / 2.0f);
         const float range = far - near;
 
         columns[0].x =    1.0f / (value * aspect);

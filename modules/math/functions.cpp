@@ -1,6 +1,6 @@
 #include "functions.hpp"
 
-namespace engine::math
+namespace engine
 {
     float pi()
     {

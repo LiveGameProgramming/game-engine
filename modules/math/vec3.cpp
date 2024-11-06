@@ -1,5 +1,5 @@
 #include "vec3.hpp"
-#include "math/functions.hpp"
+#include "functions.hpp"
 
 namespace engine
 {
@@ -30,7 +30,7 @@ namespace engine
 
     void vec3::normalize()
     {
-        if (const float magnitude = length(); magnitude >= math::epsilon())
+        if (const float magnitude = length(); magnitude >= epsilon())
         {
             *this *= 1.0f / magnitude;
         }
@@ -48,7 +48,7 @@ namespace engine
 
     float vec3::length() const
     {
-        return math::sqrt(dot(*this));
+        return sqrt(dot(*this));
     }
 
     vec3 vec3::operator-(const vec3& other) const

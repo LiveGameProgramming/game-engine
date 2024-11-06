@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::math
+namespace engine
 {
     #pragma region Constants
 
