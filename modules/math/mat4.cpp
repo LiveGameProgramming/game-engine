@@ -5,14 +5,12 @@ namespace engine
 {
     void mat4::identity()
     {
+        memset(data, 0, sizeof(data));
+
         data[0].x = 1.0f;
         data[1].y = 1.0f;
         data[2].z = 1.0f;
         data[3].w = 1.0f;
-
-        data[3].x = 0.0f;
-        data[3].y = 0.0f;
-        data[3].z = 0.0f;
     }
 
     void mat4::scale(const vec3& scale)
