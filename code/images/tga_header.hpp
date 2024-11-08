@@ -6,9 +6,9 @@ namespace engine::images
 
     struct tga_header
     {
-        uint8_t  identsize;
-        uint8_t   map_type;
-        uint8_t image_type;
+        uint8_t   identsize;
+        uint8_t    map_type;
+        uint8_t  image_type;
 
         uint16_t map_origin;
         uint16_t map_length;
