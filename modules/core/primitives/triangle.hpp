@@ -4,7 +4,7 @@ namespace engine::primitives
 {
     struct triangle
     {
-        static constexpr int32_t elements = 3;
+        static constexpr int32_t elements { 3 };
 
         uint32_t a;
         uint32_t b;
