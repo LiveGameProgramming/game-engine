@@ -6,6 +6,12 @@ namespace engine::opengl
     void FunctionsLoader::init_core()
     {
         const auto     instance = LoadLibrary("opengl32.dll");
+
+        if (instance == nullptr)
+        {
+            std::exit(EXIT_FAILURE);
+        }
+
         glClear        = reinterpret_cast<PFNGLCLEARPROC>(GetProcAddress(instance,        "glClear"));
         glClearColor   = reinterpret_cast<PFNGLCLEARCOLORPROC>(GetProcAddress(instance,   "glClearColor"));
         glEnable       = reinterpret_cast<PFNGLENABLEPROC>(GetProcAddress(instance,       "glEnable"));
