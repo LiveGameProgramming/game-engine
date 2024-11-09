@@ -5,7 +5,7 @@ namespace engine::opengl
 {
     void FunctionsLoader::init_core()
     {
-        const auto     instance = LoadLibrary("opengl32.dll");
+        const auto   instance = LoadLibrary("opengl32.dll");
 
         if (instance == nullptr)
         {

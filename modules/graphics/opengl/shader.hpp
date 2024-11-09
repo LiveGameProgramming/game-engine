@@ -15,6 +15,6 @@ namespace engine::opengl
         void link() const;
         void bind() const;
 
-        [[maybe_unused]]  void push(int32_t location, const float* data) const;
+        [[maybe_unused]]  void push(const float* data, int32_t location = 0) const;
     };
 }
