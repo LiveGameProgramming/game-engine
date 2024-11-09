@@ -1,12 +1,10 @@
 #=======================================================================================================================
-project(module_graphics)
+add_library(module_graphics)
 #=======================================================================================================================
-add_library(${PROJECT_NAME})
+target_include_directories(module_graphics PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+ target_precompile_headers(module_graphics PUBLIC headers.hpp)
 #=======================================================================================================================
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_precompile_headers(${PROJECT_NAME}  PUBLIC headers.hpp)
-#=======================================================================================================================
-target_sources(${PROJECT_NAME} PRIVATE graphics_module.cpp)
+target_sources(module_graphics PRIVATE graphics_module.cpp)
 #=======================================================================================================================
 add_subdirectory(buffers)
 add_subdirectory(opengl)

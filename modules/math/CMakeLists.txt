@@ -1,10 +1,8 @@
 #=======================================================================================================================
-project(module_math)
+add_library(module_math)
 #=======================================================================================================================
-add_library(${PROJECT_NAME})
+target_include_directories(module_math PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+ target_precompile_headers(module_math PUBLIC headers.hpp)
 #=======================================================================================================================
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_precompile_headers(${PROJECT_NAME}  PUBLIC headers.hpp)
-#=======================================================================================================================
-target_sources(${PROJECT_NAME} PRIVATE functions.cpp mat4.cpp column.cpp vec3.cpp quat.cpp)
+target_sources(module_math PRIVATE functions.cpp mat4.cpp column.cpp vec3.cpp quat.cpp)
 #=======================================================================================================================

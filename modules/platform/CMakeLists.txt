@@ -1,12 +1,10 @@
 #=======================================================================================================================
-project(module_platform)
+add_library(module_platform)
 #=======================================================================================================================
-add_library(${PROJECT_NAME})
+target_include_directories(module_platform PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+ target_precompile_headers(module_platform PUBLIC headers.hpp)
 #=======================================================================================================================
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_precompile_headers(${PROJECT_NAME}  PUBLIC headers.hpp)
-#=======================================================================================================================
-target_sources(${PROJECT_NAME} PRIVATE window_manager.cpp platform_module.cpp)
+target_sources(module_platform PRIVATE window_manager.cpp platform_module.cpp)
 #=======================================================================================================================
 add_subdirectory(window)
 add_subdirectory(win32)

@@ -1,10 +1,8 @@
 #=======================================================================================================================
-project(module_core)
+add_library(module_core)
 #=======================================================================================================================
-add_library(${PROJECT_NAME})
+target_include_directories(module_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+ target_precompile_headers(module_core PUBLIC headers.hpp)
 #=======================================================================================================================
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_precompile_headers(${PROJECT_NAME}  PUBLIC headers.hpp)
-#=======================================================================================================================
-target_sources(${PROJECT_NAME} PRIVATE time.cpp file.cpp)
+target_sources(module_core PRIVATE time.cpp file.cpp)
 #=======================================================================================================================
