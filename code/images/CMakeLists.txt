@@ -1,3 +1,4 @@
 #=======================================================================================================================
-target_sources(${PROJECT_NAME} PRIVATE tga_loader.cpp)
+target_link_libraries(game_engine PRIVATE module_core)
+       target_sources(game_engine PRIVATE tga_loader.cpp)
 #=======================================================================================================================
