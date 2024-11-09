@@ -7,18 +7,19 @@ namespace engine::images
     {
         tga_header header { };
 
-        std::ifstream file(path, std::ios::binary);
-        assert(file.is_open());
+        std::ifstream stream(path, std::ios::binary);
+        assert(stream.is_open());
 
-        file.read(reinterpret_cast<char*>(&header), sizeof(tga_header));
-        assert(file.gcount() == sizeof(tga_header));
+        stream.read(reinterpret_cast<char*>(&header), sizeof(tga_header));
+        assert(stream.gcount() == sizeof(tga_header));
 
         const auto channels = header.bits_per_pixel / 8;
         const auto size     = header.width * header.height * channels;
 
         std::vector<char> content(size);
-        file.read(content.data(), size);
-        assert(file.gcount()  ==  size);
+
+        stream.read(content.data(), size);
+        assert(stream.gcount()  ==  size);
 
         return { header.width, header.height, content };
     }

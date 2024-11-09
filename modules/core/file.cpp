@@ -14,6 +14,7 @@ namespace engine
 
         stream.seekg(0, std::ios::beg);
         stream.read(content.data(), size);
+        assert(stream.gcount()  ==  size);
 
         return content;
     }
