@@ -94,11 +94,13 @@ namespace engine::opengl
     #pragma endregion
     #pragma region Textures
 
-    using  PFNGLCREATETEXTURESPROC = void(APIENTRY*)(uint32_t, int32_t, uint32_t*);
-    using  PFNGLDELETETEXTURESPROC = void(APIENTRY*)(int32_t,     const uint32_t*);
+    using  PFNGLCREATETEXTURESPROC  = void(APIENTRY*)(uint32_t, int32_t, uint32_t*);
+    using  PFNGLDELETETEXTURESPROC  = void(APIENTRY*)(int32_t,     const uint32_t*);
+    using  PFNGLBINDTEXTUREUNITPROC = void(APIENTRY*)(uint32_t,          uint32_t);
 
-    inline PFNGLCREATETEXTURESPROC glCreateTextures;
-    inline PFNGLDELETETEXTURESPROC glDeleteTextures;
+    inline PFNGLCREATETEXTURESPROC  glCreateTextures;
+    inline PFNGLDELETETEXTURESPROC  glDeleteTextures;
+    inline PFNGLBINDTEXTUREUNITPROC glBindTextureUnit;
 
     #pragma endregion
     #pragma endregion

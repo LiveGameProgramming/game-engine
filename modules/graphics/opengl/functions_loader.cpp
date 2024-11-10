@@ -68,8 +68,9 @@ namespace engine::opengl
         #pragma endregion
         #pragma region Textures
 
-        glCreateTextures = reinterpret_cast<PFNGLCREATETEXTURESPROC>(wglGetProcAddress("glCreateTextures"));
-        glDeleteTextures = reinterpret_cast<PFNGLDELETETEXTURESPROC>(wglGetProcAddress("glDeleteTextures"));
+        glCreateTextures  = reinterpret_cast<PFNGLCREATETEXTURESPROC>(wglGetProcAddress("glCreateTextures"));
+        glDeleteTextures  = reinterpret_cast<PFNGLDELETETEXTURESPROC>(wglGetProcAddress("glDeleteTextures"));
+        glBindTextureUnit = reinterpret_cast<PFNGLBINDTEXTUREUNITPROC>(wglGetProcAddress("glBindTextureUnit"));
 
         #pragma endregion
     }
