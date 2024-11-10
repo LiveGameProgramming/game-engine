@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::image
+namespace engine::base
 {
     struct image
     {
