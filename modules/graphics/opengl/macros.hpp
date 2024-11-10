@@ -2,9 +2,6 @@
 
 namespace engine::opengl
 {
-    constexpr uint32_t color_buffer = 0x00004000;
-    constexpr uint32_t depth_buffer = 0x00000100;
-
     #pragma region Pipeline
 
     constexpr uint32_t framebuffer_srgb = 0x8DB9;
@@ -16,6 +13,9 @@ namespace engine::opengl
     constexpr uint32_t mode_solid       = 0x1B02;
 
     #pragma endregion
+
+    constexpr uint32_t color_buffer = 0x00004000;
+    constexpr uint32_t depth_buffer = 0x00000100;
 
     constexpr uint32_t shader_binary    = 0x9551;
     constexpr uint32_t vertex_stage     = 0x8B31;
@@ -31,4 +31,14 @@ namespace engine::opengl
 
     constexpr uint32_t type_float       = 0x1406;
     constexpr uint32_t type_uint        = 0x1405;
+    constexpr uint32_t type_ubyte       = 0x1401;
+
+    #pragma region Textures
+
+    constexpr uint32_t texture_2d       = 0x0DE1;
+
+    constexpr uint32_t type_rgb8        = 0x8051;
+    constexpr uint32_t type_rgb         = 0x1907;
+
+    #pragma endregion
 }
