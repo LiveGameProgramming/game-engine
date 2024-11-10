@@ -4,7 +4,7 @@
 
 namespace engine::image
 {
-    class TgaLoader
+    class Tga
     {
     public:
         static image load(const std::string& path);
