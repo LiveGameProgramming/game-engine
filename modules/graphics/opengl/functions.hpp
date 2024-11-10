@@ -92,5 +92,14 @@ namespace engine::opengl
     inline PFNGLPROGRAMUNIFORMMATRIX4FVPROC glProgramUniformMatrix4fv;
 
     #pragma endregion
+    #pragma region Textures
+
+    using  PFNGLCREATETEXTURESPROC = void(APIENTRY*)(uint32_t, int32_t, uint32_t*);
+    using  PFNGLDELETETEXTURESPROC = void(APIENTRY*)(int32_t,     const uint32_t*);
+
+    inline PFNGLCREATETEXTURESPROC glCreateTextures;
+    inline PFNGLDELETETEXTURESPROC glDeleteTextures;
+
+    #pragma endregion
     #pragma endregion
 }

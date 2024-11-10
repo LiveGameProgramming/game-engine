@@ -66,5 +66,11 @@ namespace engine::opengl
         glProgramUniformMatrix4fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4FVPROC>(wglGetProcAddress("glProgramUniformMatrix4fv"));
 
         #pragma endregion
+        #pragma region Textures
+
+        glCreateTextures = reinterpret_cast<PFNGLCREATETEXTURESPROC>(wglGetProcAddress("glCreateTextures"));
+        glDeleteTextures = reinterpret_cast<PFNGLDELETETEXTURESPROC>(wglGetProcAddress("glDeleteTextures"));
+
+        #pragma endregion
     }
 }
