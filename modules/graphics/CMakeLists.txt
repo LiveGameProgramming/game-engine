@@ -6,6 +6,6 @@ target_include_directories(module_graphics PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 #=======================================================================================================================
 target_sources(module_graphics PRIVATE graphics_module.cpp)
 #=======================================================================================================================
-add_subdirectory(buffers)
+add_subdirectory(buffer)
 add_subdirectory(opengl)
 #=======================================================================================================================

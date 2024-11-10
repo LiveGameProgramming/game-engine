@@ -13,12 +13,12 @@ namespace engine::opengl
         glDeleteBuffers(1, &handle_);
     }
 
-    void Buffer::data(const buffers::data& data, const uint32_t usage) const
+    void Buffer::data(const buffer::data& data, const uint32_t usage) const
     {
         glNamedBufferData(handle_, data.size(), data.ptr(), usage);
     }
 
-    void Buffer::update(const buffers::data& data, const int32_t offset) const
+    void Buffer::update(const buffer::data& data, const int32_t offset) const
     {
         glNamedBufferSubData(handle_, offset, data.size(), data.ptr());
     }
