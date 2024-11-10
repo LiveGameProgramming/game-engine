@@ -1,8 +1,8 @@
 #=======================================================================================================================
-add_library(module_resources)
+add_library(resources)
 #=======================================================================================================================
-target_include_directories(module_resources PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
- target_precompile_headers(module_resources PUBLIC headers.hpp)
+target_include_directories(resources PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+ target_precompile_headers(resources PUBLIC headers.hpp)
 #=======================================================================================================================
 add_subdirectory(image)
 #=======================================================================================================================
