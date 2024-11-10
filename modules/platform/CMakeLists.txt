@@ -4,7 +4,7 @@ add_library(platform)
 target_include_directories(platform PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
  target_precompile_headers(platform PUBLIC headers.hpp)
 #=======================================================================================================================
-target_sources(platform PRIVATE platform_module.cpp window_manager.cpp)
+target_sources(platform PRIVATE platform.cpp window_manager.cpp)
 #=======================================================================================================================
 add_subdirectory(window)
 add_subdirectory(win32)

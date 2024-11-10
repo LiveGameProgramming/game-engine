@@ -4,7 +4,7 @@ add_library(graphics)
 target_include_directories(graphics PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
  target_precompile_headers(graphics PUBLIC headers.hpp)
 #=======================================================================================================================
-target_sources(graphics PRIVATE graphics_module.cpp)
+target_sources(graphics PRIVATE graphics.cpp)
 #=======================================================================================================================
 add_subdirectory(buffer)
 add_subdirectory(opengl)

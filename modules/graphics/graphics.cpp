@@ -1,4 +1,4 @@
-#include "graphics_module.hpp"
+#include "graphics.hpp"
 
 #include "opengl/commands.hpp"
 #include "opengl/pipeline.hpp"
@@ -6,12 +6,12 @@
 
 namespace engine
 {
-    void GraphicsModule::init()
+    void Graphics::init()
     {
         init_opengl_state();
     }
 
-    void GraphicsModule::init_opengl_state()
+    void Graphics::init_opengl_state()
     {
         opengl::FunctionsLoader::init_core();
         opengl::FunctionsLoader::init_extensions();

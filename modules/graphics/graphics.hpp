@@ -2,7 +2,7 @@
 
 namespace engine
 {
-    class GraphicsModule
+    class Graphics
     {
     public:
         static void init();
