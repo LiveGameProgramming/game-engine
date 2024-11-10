@@ -1,9 +1,6 @@
 #=======================================================================================================================
-add_library(game_engine)
+add_library(game_engine INTERFACE)
 #=======================================================================================================================
-target_include_directories(game_engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-#=======================================================================================================================
-target_link_libraries(game_engine PRIVATE module_math)
-#=======================================================================================================================
-add_subdirectory(images)
+target_include_directories(game_engine INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
+     target_link_libraries(game_engine INTERFACE module_math)
 #=======================================================================================================================

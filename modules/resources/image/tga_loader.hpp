@@ -2,7 +2,7 @@
 
 #include "image.hpp"
 
-namespace engine::images
+namespace engine::image
 {
     class TgaLoader
     {

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::images
+namespace engine::image
 {
     #pragma pack(push, 1)
 

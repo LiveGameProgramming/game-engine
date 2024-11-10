@@ -1,9 +1,8 @@
 #=======================================================================================================================
-add_subdirectory(core)
-add_subdirectory(math)
+add_library(module_resources)
 #=======================================================================================================================
-add_subdirectory(graphics)
-add_subdirectory(platform)
+target_include_directories(module_resources PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+ target_precompile_headers(module_resources PUBLIC headers.hpp)
 #=======================================================================================================================
-add_subdirectory(resources)
+add_subdirectory(image)
 #=======================================================================================================================
