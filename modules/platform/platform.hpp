@@ -4,7 +4,7 @@
 
 namespace engine
 {
-    class PlatformModule
+    class Platform
     {
     public:
         static void init();

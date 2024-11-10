@@ -1,15 +1,15 @@
-#include "platform_module.hpp"
+#include "platform.hpp"
 
 #include "win32/factory.hpp"
 
 namespace engine
 {
-    void PlatformModule::init()
+    void Platform::init()
     {
         init_context_functions();
     }
 
-    void PlatformModule::init_context_functions()
+    void Platform::init_context_functions()
     {
         const auto factory   = create_factory();
 
@@ -26,7 +26,7 @@ namespace engine
          window->destroy();
     }
 
-    std::unique_ptr<base::Factory> PlatformModule::create_factory()
+    std::unique_ptr<base::Factory> Platform::create_factory()
     {
         #ifdef _WINDOWS
         return std::make_unique<win32::Factory>();
