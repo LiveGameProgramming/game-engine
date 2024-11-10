@@ -1,12 +1,12 @@
 #pragma once
 
-#include "image.hpp"
+#include "base/image.hpp"
 
 namespace engine::image
 {
     class Tga
     {
     public:
-        static image load(const std::string& path);
+        static base::image load(const std::string& path);
     };
 }
