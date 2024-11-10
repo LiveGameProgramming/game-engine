@@ -1,9 +1,9 @@
-#include "tga_loader.hpp"
+#include "tga.hpp"
 #include "tga_header.hpp"
 
 namespace engine::image
 {
-    image TgaLoader::load(const std::string& path)
+    image Tga::load(const std::string& path)
     {
         tga_header header { };
 
