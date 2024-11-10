@@ -1,4 +1,3 @@
 #=======================================================================================================================
-target_precompile_headers(module_graphics PRIVATE headers.hpp)
-           target_sources(module_graphics PRIVATE data.cpp)
+target_sources(module_graphics PRIVATE data.cpp)
 #=======================================================================================================================
