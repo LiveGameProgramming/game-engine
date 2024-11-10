@@ -9,7 +9,7 @@ namespace engine
     {
         void identity();
 
-        void scale(const     vec3& scale);
+        void scale    (const vec3& scale);
         void translate(const vec3& translation);
 
         void perspective(float fov, float aspect, float near = 0.1f, float far = 100.0f);
@@ -22,9 +22,9 @@ namespace engine
         constexpr       column& operator[](int32_t index);
 
         const mat4& operator*=(const mat4& other);
-              mat4  operator*(const  mat4& other) const;
+              mat4  operator* (const  mat4& other) const;
 
-        [[maybe_unused]] operator const float*()  const;
+        [[maybe_unused]] operator const float*()   const;
 
         #pragma endregion
 

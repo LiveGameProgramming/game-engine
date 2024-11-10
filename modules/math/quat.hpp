@@ -17,9 +17,10 @@ namespace engine
     private:
         [[nodiscard]] float length() const;
                       void  normalize();
+
+        float w { 1.0f };
         float x { };
         float y { };
         float z { };
-        float w { 1.0f };
     };
 }

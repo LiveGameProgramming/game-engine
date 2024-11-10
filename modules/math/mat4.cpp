@@ -85,10 +85,13 @@ namespace engine
         mat4 result;
 
         for (int32_t i  = 0;  i < 4; ++i)
-              result[i] = data[0] * other[i].x +
-                          data[1] * other[i].y +
-                          data[2] * other[i].z +
-                          data[3] * other[i].w;
+        {
+            result[i] = data[0] * other[i].x +
+                        data[1] * other[i].y +
+                        data[2] * other[i].z +
+                        data[3] * other[i].w;
+        }
+
         return result;
     }
 

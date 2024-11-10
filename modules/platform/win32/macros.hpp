@@ -2,6 +2,8 @@
 
 namespace engine::win32
 {
+    #pragma region Pixel
+
     constexpr uint32_t draw_to_window        = 0x2001;
     constexpr uint32_t support_opengl        = 0x2010;
     constexpr uint32_t double_buffer         = 0x2011;
@@ -16,10 +18,15 @@ namespace engine::win32
     constexpr uint32_t samples_per_pixel     = 0x2042;
     constexpr uint32_t framebuffer_srgb      = 0x20a9;
 
+    #pragma endregion
+    #pragma region Context
+
     constexpr uint32_t context_major_version = 0x2091;
     constexpr uint32_t context_minor_version = 0x2092;
     constexpr uint32_t context_profile       = 0x9126;
     constexpr uint32_t context_flags         = 0x2094;
     constexpr uint32_t context_core_profile  = 0x00000001;
     constexpr uint32_t context_no_error      = 0x00000008;
+
+    #pragma endregion
 }

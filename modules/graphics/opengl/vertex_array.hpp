@@ -13,7 +13,7 @@ namespace engine::opengl
         void destroy()    override;
 
         void attach_vertices(const Buffer& buffer, int32_t stride) const;
-        void attach_indices(const  Buffer& buffer)                 const;
+        void attach_indices (const Buffer& buffer)                 const;
 
         void attribute(const vertex::attribute& attribute)         const;
         void bind()    const;

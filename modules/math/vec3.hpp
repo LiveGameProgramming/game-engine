@@ -16,7 +16,7 @@ namespace engine
 
         #pragma region Operators
 
-              vec3  operator-(const  vec3& other)    const;
+              vec3  operator- (const vec3& other)    const;
         const vec3& operator*=(float value);
 
         #pragma endregion
