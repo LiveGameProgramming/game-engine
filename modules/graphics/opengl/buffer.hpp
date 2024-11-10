@@ -14,9 +14,9 @@ namespace engine::opengl
         void create()  override;
         void destroy() override;
 
-        void     data(const buffers::data& data, uint32_t usage  = static_draw)               const;
-        void sub_data(const buffers::data& data,  int32_t offset = buffers::location::camera) const;
+        void   data(const buffers::data& data, uint32_t usage  = static_draw) const;
+        void update(const buffers::data& data,  int32_t offset = 0)           const;
 
-        void bind(uint32_t location = 0)  const;
+        void bind(uint32_t location = buffers::location::camera) const;
     };
 }

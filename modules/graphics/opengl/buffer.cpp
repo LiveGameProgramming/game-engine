@@ -1,6 +1,5 @@
 #include "buffer.hpp"
 #include "functions.hpp"
-#include "macros.hpp"
 
 namespace engine::opengl
 {
@@ -19,7 +18,7 @@ namespace engine::opengl
         glNamedBufferData(handle_, data.size(), data.ptr(), usage);
     }
 
-    void Buffer::sub_data(const buffers::data& data, const int32_t offset) const
+    void Buffer::update(const buffers::data& data, const int32_t offset) const
     {
         glNamedBufferSubData(handle_, offset, data.size(), data.ptr());
     }

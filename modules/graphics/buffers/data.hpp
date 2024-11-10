@@ -4,9 +4,6 @@ namespace engine::buffers
 {
     struct data
     {
-        [[nodiscard]] const void* ptr() const;
-        [[nodiscard]] uint32_t   size() const;
-
         template <typename type> static data create(const std::vector<type>& buffer)
         {
             return { buffer.data(), static_cast<uint32_t>(buffer.size() * sizeof(type)) };
@@ -15,6 +12,9 @@ namespace engine::buffers
         {
             return { data, static_cast<uint32_t>(sizeof(type)) };
         }
+
+        [[nodiscard]] const void* ptr() const;
+        [[nodiscard]] uint32_t   size() const;
 
     private:
         data(const void* data, uint32_t size);
