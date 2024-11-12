@@ -13,6 +13,7 @@ namespace engine
         void translate(const vec3& translation);
 
         void perspective(float fov, float aspect, float near = 0.1f, float far = 100.0f);
+        void orthographic(float left, float right, float bottom, float top, float near = -1.0f, float far = 1.0f);
 
         void look(const vec3& eye, const vec3& target, const vec3& up = vec3::up());
 

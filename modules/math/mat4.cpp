@@ -40,6 +40,18 @@ namespace engine
         data[3].z = - (2.0f * far * near) / range;
     }
 
+    void mat4::orthographic(const float left, const float right, const float bottom, const float top, const float near, const float far)
+    {
+        data[0].x =   2.0f / (right - left);
+        data[1].y =   2.0f / (top   - bottom);
+        data[2].z = - 2.0f / (far   - near);
+
+        data[3].x = - (right + left)   / (right - left);
+        data[3].y = - (top   + bottom) / (top   - bottom);
+        data[3].z = - (far   + near)   / (far   - near);
+        data[3].w = 1.0;
+    }
+
     void mat4::look(const vec3& eye, const vec3& target, const vec3& up)
     {
         const vec3 f = (target - eye).normalized();
