@@ -94,13 +94,30 @@ namespace engine::opengl
     #pragma endregion
     #pragma region Textures
 
-    using  PFNGLCREATETEXTURESPROC  = void(APIENTRY*)(uint32_t, int32_t, uint32_t*);
-    using  PFNGLDELETETEXTURESPROC  = void(APIENTRY*)(int32_t,     const uint32_t*);
-    using  PFNGLBINDTEXTUREUNITPROC = void(APIENTRY*)(uint32_t,          uint32_t);
+    using  PFNGLCREATETEXTURESPROC    = void(APIENTRY*)(uint32_t, int32_t, uint32_t*);
+    using  PFNGLDELETETEXTURESPROC    = void(APIENTRY*)(int32_t,     const uint32_t*);
+    using  PFNGLBINDTEXTUREUNITPROC   = void(APIENTRY*)(uint32_t,          uint32_t);
+    using  PFNGLTEXTURESTORAGE2DPROC  = void(APIENTRY*)(uint32_t, int32_t, uint32_t, int32_t, int32_t);
+    using  PFNGLTEXTURESUBIMAGE2DPROC = void(APIENTRY*)(uint32_t, int32_t,  int32_t, int32_t, int32_t, int32_t, uint32_t, uint32_t, const void*);
 
-    inline PFNGLCREATETEXTURESPROC  glCreateTextures;
-    inline PFNGLDELETETEXTURESPROC  glDeleteTextures;
-    inline PFNGLBINDTEXTUREUNITPROC glBindTextureUnit;
+    inline PFNGLCREATETEXTURESPROC    glCreateTextures;
+    inline PFNGLDELETETEXTURESPROC    glDeleteTextures;
+    inline PFNGLBINDTEXTUREUNITPROC   glBindTextureUnit;
+    inline PFNGLTEXTURESTORAGE2DPROC  glTextureStorage2D;
+    inline PFNGLTEXTURESUBIMAGE2DPROC glTextureSubImage2D;
+
+    #pragma endregion
+    #pragma region Samplers
+
+    using  PFNGLCREATESAMPLERSPROC    = void(APIENTRY*)(int32_t,       uint32_t*);
+    using  PFNGLDELETESAMPLERSPROC    = void(APIENTRY*)(int32_t, const uint32_t*);
+    using  PFNGLBINDSAMPLERPROC       = void(APIENTRY*)(uint32_t,      uint32_t);
+    using  PFNGLSAMPLERPARAMETERIPROC = void(APIENTRY*)(uint32_t,      uint32_t, int32_t);
+
+    inline PFNGLCREATESAMPLERSPROC    glCreateSamplers;
+    inline PFNGLDELETESAMPLERSPROC    glDeleteSamplers;
+    inline PFNGLBINDSAMPLERPROC       glBindSampler;
+    inline PFNGLSAMPLERPARAMETERIPROC glSamplerParameteri;
 
     #pragma endregion
     #pragma endregion

@@ -33,12 +33,22 @@ namespace engine::opengl
     constexpr uint32_t type_uint        = 0x1405;
     constexpr uint32_t type_ubyte       = 0x1401;
 
-    #pragma region Textures
+    namespace texture
+    {
+        constexpr uint32_t texture_2d = 0x0DE1;
 
-    constexpr uint32_t texture_2d       = 0x0DE1;
+        constexpr uint32_t rgb8       = 0x8051;
+        constexpr uint32_t rgb        = 0x1907;
+    }
 
-    constexpr uint32_t type_rgb8        = 0x8051;
-    constexpr uint32_t type_rgb         = 0x1907;
+    namespace sampler
+    {
+        constexpr uint32_t wrap_s     = 0x2802;
+        constexpr uint32_t wrap_t     = 0x2803;
+        constexpr uint32_t mag_filter = 0x2800;
+        constexpr uint32_t min_filter = 0x2801;
 
-    #pragma endregion
+        constexpr uint32_t repeat     = 0x2901;
+        constexpr uint32_t linear     = 0x2601;
+    }
 }

@@ -68,9 +68,19 @@ namespace engine::opengl
         #pragma endregion
         #pragma region Textures
 
-        glCreateTextures  = reinterpret_cast<PFNGLCREATETEXTURESPROC>(wglGetProcAddress("glCreateTextures"));
-        glDeleteTextures  = reinterpret_cast<PFNGLDELETETEXTURESPROC>(wglGetProcAddress("glDeleteTextures"));
-        glBindTextureUnit = reinterpret_cast<PFNGLBINDTEXTUREUNITPROC>(wglGetProcAddress("glBindTextureUnit"));
+        glCreateTextures    = reinterpret_cast<PFNGLCREATETEXTURESPROC>(wglGetProcAddress("glCreateTextures"));
+        glDeleteTextures    = reinterpret_cast<PFNGLDELETETEXTURESPROC>(wglGetProcAddress("glDeleteTextures"));
+        glBindTextureUnit   = reinterpret_cast<PFNGLBINDTEXTUREUNITPROC>(wglGetProcAddress("glBindTextureUnit"));
+        glTextureStorage2D  = reinterpret_cast<PFNGLTEXTURESTORAGE2DPROC>(wglGetProcAddress("glTextureStorage2D"));
+        glTextureSubImage2D = reinterpret_cast<PFNGLTEXTURESUBIMAGE2DPROC>(wglGetProcAddress("glTextureSubImage2D"));
+
+        #pragma endregion
+        #pragma region Samplers
+
+        glCreateSamplers    = reinterpret_cast<PFNGLCREATESAMPLERSPROC>(wglGetProcAddress("glCreateSamplers"));
+        glDeleteSamplers    = reinterpret_cast<PFNGLDELETESAMPLERSPROC>(wglGetProcAddress("glDeleteSamplers"));
+        glBindSampler       = reinterpret_cast<PFNGLBINDSAMPLERPROC>(wglGetProcAddress("glBindSampler"));
+        glSamplerParameteri = reinterpret_cast<PFNGLSAMPLERPARAMETERIPROC>(wglGetProcAddress("glSamplerParameteri"));
 
         #pragma endregion
     }

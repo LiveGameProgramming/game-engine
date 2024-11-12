@@ -21,6 +21,15 @@ namespace engine::image
         stream.read(content.data(), size);
         assert(stream.gcount()  ==  size);
 
+        #pragma region Swap R and B
+
+        for (auto i = 0; i < size; i+= channels)
+        {
+            std::swap(content[i], content[i + 2]);
+        }
+
+        #pragma endregion
+
         return { header.width, header.height, content };
     }
 }
