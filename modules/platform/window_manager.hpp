@@ -2,9 +2,11 @@
 
 #include "base/factory.hpp"
 
+#include "window_events.hpp"
+
 namespace engine
 {
-    class WindowManager
+    class WindowManager final : public WindowEvents
     {
     public:
         void create(const window::config& window_config, const context::config& context_config);
@@ -14,6 +16,8 @@ namespace engine
         void open()       const;
         void close()      const;
 
+        void resize(const window::size& size) const;
+
         [[nodiscard]] bool is_active() const;
 
         [[nodiscard]] int32_t  width() const;
@@ -21,13 +25,6 @@ namespace engine
         [[nodiscard]] float    ratio() const;
 
         static WindowManager& instance();
-
-        #pragma region Callbacks
-
-        void resize(const std::function<void()>& callback) const;
-        void resize(const window::size& size)              const;
-
-        #pragma endregion
 
     private:
         std::unique_ptr<base::Window>       window  { };

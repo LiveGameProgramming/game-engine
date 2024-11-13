@@ -62,16 +62,11 @@ namespace engine
         static WindowManager instance; return instance;
     }
 
-    void WindowManager::resize(const std::function<void()>& callback) const
-    {
-        events->on_resize_callback = callback;
-    }
-
     void WindowManager::resize(const window::size& size) const
     {
         window->size = size;
 
-        if (events->on_resize_callback)
-            events->on_resize_callback();
+        if (resize_callback)
+            resize_callback();
     }
 }

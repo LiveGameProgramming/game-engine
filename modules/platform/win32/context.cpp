@@ -1,6 +1,6 @@
 #include "context.hpp"
-#include "functions.hpp"
-#include "macros.hpp"
+#include "context_macros.hpp"
+#include "context_functions.hpp"
 
 namespace engine::win32
 {

@@ -1,5 +1,4 @@
 #include "context_functions.hpp"
-#include "functions.hpp"
 
 namespace engine::win32
 {
