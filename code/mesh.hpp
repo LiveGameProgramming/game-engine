@@ -33,7 +33,7 @@ namespace engine
         std::unique_ptr<opengl::Buffer>      vertex_buffer { };
         std::unique_ptr<opengl::Buffer>       index_buffer { };
 
-        uint32_t primitive;
+        uint32_t primitive; // TODO remove this? not really needed?
          int32_t faces_ { };
     };
 }
