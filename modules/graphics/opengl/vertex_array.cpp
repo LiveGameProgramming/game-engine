@@ -13,14 +13,16 @@ namespace engine::opengl
         glDeleteVertexArrays(1, &handle_);
     }
 
-    void VertexArray::attach_vertices(const Buffer& buffer, const int32_t stride) const
+    void VertexArray::attach_vertices(const Buffer* buffer, const int32_t stride) const
     {
-        glVertexArrayVertexBuffer(handle_, 0, buffer.handle(), 0, stride);
+        assert(buffer);
+        glVertexArrayVertexBuffer(handle_, 0, buffer->handle(), 0, stride);
     }
 
-    void VertexArray::attach_indices(const Buffer& buffer) const
+    void VertexArray::attach_indices(const Buffer* buffer) const
     {
-        glVertexArrayElementBuffer(handle_, buffer.handle());
+        assert(buffer);
+        glVertexArrayElementBuffer(handle_, buffer->handle());
     }
 
     void VertexArray::attribute(const vertex::attribute& attribute) const
