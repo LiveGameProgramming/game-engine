@@ -20,7 +20,7 @@ namespace engine::win32
         }
     }
 
-    LRESULT WindowEvents::process(HWND hwnd, const UINT msg, const WPARAM wparam, const LPARAM lparam)
+    LRESULT WindowEvents::process(HWND hwnd, const uint32_t msg, const WPARAM wparam, const LPARAM lparam)
     {
         switch (msg)
         {

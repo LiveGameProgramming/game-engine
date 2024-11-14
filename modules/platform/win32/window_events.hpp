@@ -7,10 +7,8 @@ namespace engine::win32
     class WindowEvents final : public base::WindowEvents
     {
     public:
-        void update()  const override;
+        static LRESULT process(HWND hwnd, uint32_t msg, WPARAM wparam, LPARAM lparam);
 
-    private:
-        static LRESULT process(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
-        friend  class  Window;
+        void update()  const override;
     };
 }
