@@ -9,21 +9,21 @@ namespace engine
 
     float sqrt(const float value)
     {
-        return std::sqrt(value);
+        return std::sqrtf(value);
     }
 
     float tan(const float value)
     {
-        return std::tan(value);
+        return std::tanf(value);
     }
 
     float sin(const float value)
     {
-        return std::sin(value);
+        return std::sinf(value);
     }
 
     float cos(const float value)
     {
-        return std::cos(value);
+        return std::cosf(value);
     }
 }
