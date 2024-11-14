@@ -9,6 +9,6 @@ namespace engine::win32
     public:
         static LRESULT process(HWND hwnd, uint32_t msg, WPARAM wparam, LPARAM lparam);
 
-        void update()  const override;
+        void update() const override;
     };
 }
