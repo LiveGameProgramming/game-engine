@@ -41,18 +41,18 @@ namespace engine::opengl
         constexpr uint32_t mode_solid       = 0x1B02;
     }
 
-    constexpr uint32_t color_buffer = 0x00004000;
-    constexpr uint32_t depth_buffer = 0x00000100;
+    constexpr uint32_t color_buffer   = 0x00004000;
+    constexpr uint32_t depth_buffer   = 0x00000100;
 
-    constexpr uint32_t uniform_buffer   = 0x8A11;
+    constexpr uint32_t uniform_buffer = 0x8A11;
 
-    constexpr uint32_t static_draw      = 0x88E4;
-    constexpr uint32_t dynamic_draw     = 0x88E8;
+    constexpr uint32_t static_draw    = 0x88E4;
+    constexpr uint32_t dynamic_draw   = 0x88E8;
 
-    constexpr uint32_t triangles        = 0x0004;
-    constexpr uint32_t lines            = 0x0001;
+    constexpr uint32_t triangles      = 0x0004;
+    constexpr uint32_t lines          = 0x0001;
 
-    constexpr uint32_t type_float       = 0x1406;
-    constexpr uint32_t type_uint        = 0x1405;
-    constexpr uint32_t type_ubyte       = 0x1401;
+    constexpr uint32_t type_float     = 0x1406;
+    constexpr uint32_t type_uint      = 0x1405;
+    constexpr uint32_t type_ubyte     = 0x1401;
 }
