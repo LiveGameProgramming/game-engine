@@ -2,7 +2,5 @@
 
 #include <intrin.h>
 
-#include <numbers>
-#include <limits>
-
+#include <cstring>
 #include <cmath>

@@ -2,19 +2,9 @@
 
 namespace engine
 {
-    float pi()
-    {
-        return std::numbers::pi_v<float>;
-    }
-
-    float epsilon()
-    {
-        return std::numeric_limits<float>::epsilon();
-    }
-
     float radians(const float degrees)
     {
-        return degrees * 0.01745329251994329576923690768489f;
+        return degrees * 0.017453292519943295f;
     }
 
     float sqrt(const float value)

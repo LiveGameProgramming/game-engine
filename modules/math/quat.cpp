@@ -1,5 +1,6 @@
 #include "quat.hpp"
 #include "functions.hpp"
+#include "constants.hpp"
 
 namespace engine
 {
@@ -58,7 +59,7 @@ namespace engine
 
     void quat::normalize()
     {
-        if (const float magnitude = length(); magnitude >= epsilon())
+        if (const float magnitude = length(); magnitude >= epsilon)
         {
             w /= magnitude;
             x /= magnitude;

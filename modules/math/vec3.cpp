@@ -1,5 +1,6 @@
 #include "vec3.hpp"
 #include "functions.hpp"
+#include "constants.hpp"
 
 namespace engine
 {
@@ -30,7 +31,7 @@ namespace engine
 
     void vec3::normalize()
     {
-        if (const float magnitude = length(); magnitude >= epsilon())
+        if (const float magnitude = length(); magnitude >= epsilon)
         {
             *this *= 1.0f / magnitude;
         }
