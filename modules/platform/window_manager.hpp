@@ -2,11 +2,11 @@
 
 #include "base/factory.hpp"
 
-#include "window_events.hpp"
+#include "window_callbacks.hpp"
 
 namespace engine
 {
-    class WindowManager final : public WindowEvents
+    class WindowManager final : public WindowCallbacks
     {
     public:
         void create(const window::config& window_config, const context::config& context_config);

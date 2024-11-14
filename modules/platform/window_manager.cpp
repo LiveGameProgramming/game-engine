@@ -66,7 +66,7 @@ namespace engine
     {
         window->size = size;
 
-        if (resize_callback)
-            resize_callback();
+        if (_resize_callback)
+            _resize_callback();
     }
 }
