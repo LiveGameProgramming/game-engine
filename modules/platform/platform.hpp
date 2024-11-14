@@ -9,10 +9,9 @@ namespace engine
     public:
         static void init();
 
-    private:
         static std::unique_ptr<base::Factory> create_factory();
 
+    private:
         static void  init_context_functions();
-        friend class WindowManager;
     };
 }
