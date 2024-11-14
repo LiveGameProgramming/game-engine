@@ -6,16 +6,16 @@ namespace engine::opengl
 {
     void Pipeline::enable_solid_mode()
     {
-        glPolygonMode(front_and_back, mode_solid);
+        glPolygonMode(pipeline::front_and_back, pipeline::mode_solid);
 
-        enable(cull_face);
+        enable(pipeline::cull_face);
     }
 
     void Pipeline::enable_lines_mode()
     {
-        glPolygonMode(front_and_back, mode_lines);
+        glPolygonMode(pipeline::front_and_back, pipeline::mode_lines);
 
-        disable(cull_face);
+        disable(pipeline::cull_face);
     }
 
     void Pipeline::enable(const uint32_t flag)
@@ -30,14 +30,10 @@ namespace engine::opengl
 
     void Pipeline::default_state()
     {
-        #pragma region Framebuffers
+        enable(pipeline::srgb_framebuffer);
+        enable(pipeline::multisample);
 
-        enable(framebuffer_srgb);
-        enable(multisample);
-
-        #pragma endregion
-
-        enable(depth_test);
-        enable(cull_face);
+        enable(pipeline::depth_test);
+        enable(pipeline::cull_face);
     }
 }
