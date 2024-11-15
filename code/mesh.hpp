@@ -9,8 +9,6 @@ namespace engine
     class Mesh
     {
     public:
-    explicit Mesh(uint32_t  primitive);
-
         void create(int32_t stride);
         void destroy()  const;
 
@@ -33,7 +31,6 @@ namespace engine
         std::unique_ptr<opengl::Buffer>      vertex_buffer { };
         std::unique_ptr<opengl::Buffer>       index_buffer { };
 
-        uint32_t primitive; // TODO remove this? not really needed?
-         int32_t faces_ { };
+        int32_t faces_ { };
     };
 }

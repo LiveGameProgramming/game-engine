@@ -1,10 +1,8 @@
 #pragma once
 
-#include "vec2.hpp"
-
 namespace engine::vertex
 {
-    struct ui
+    struct sprite
     {
         vec2 position;
         vec2 uv;
