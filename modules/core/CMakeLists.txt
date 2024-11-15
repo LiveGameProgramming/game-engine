@@ -3,6 +3,5 @@ add_library(core)
 #=======================================================================================================================
 target_include_directories(core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
  target_precompile_headers(core PUBLIC headers.hpp)
-#=======================================================================================================================
-target_sources(core PRIVATE time.cpp file.cpp)
+            target_sources(core PUBLIC time.cpp file.cpp)
 #=======================================================================================================================
