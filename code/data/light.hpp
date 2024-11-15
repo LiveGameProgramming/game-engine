@@ -1,8 +1,5 @@
 #pragma once
 
-#include "rgb.hpp"
-#include "vec3.hpp"
-
 namespace engine::data
 {
     struct light
