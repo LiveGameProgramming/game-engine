@@ -1,6 +1,6 @@
 #include "mesh.hpp"
 
-namespace engine
+namespace engine::core
 {
     void Mesh::create(const int32_t stride)
     {
@@ -38,6 +38,6 @@ namespace engine
 
     int32_t Mesh::faces() const
     {
-        return faces_;
+        return _faces;
     }
 }
