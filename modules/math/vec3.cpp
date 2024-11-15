@@ -1,4 +1,3 @@
-#include "vec3.hpp"
 #include "functions.hpp"
 #include "constants.hpp"
 

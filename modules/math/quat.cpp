@@ -1,4 +1,3 @@
-#include "quat.hpp"
 #include "functions.hpp"
 #include "constants.hpp"
 

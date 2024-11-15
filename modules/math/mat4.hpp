@@ -1,6 +1,5 @@
 #pragma once
 
-#include "vec3.hpp"
 #include "column.hpp"
 
 namespace engine
@@ -9,8 +8,8 @@ namespace engine
     {
         void identity();
 
-        void scale    (const vec3& scale);
         void translate(const vec3& translation);
+        void     scale(const vec3& scale);
 
         void perspective(float fov, float aspect, float near = 0.1f, float far = 100.0f);
         void orthographic(float left, float right, float bottom, float top, float near = -1.0f, float far = 1.0f);
@@ -25,7 +24,7 @@ namespace engine
         const mat4& operator*=(const mat4& other);
               mat4  operator* (const  mat4& other) const;
 
-        [[maybe_unused]] operator const float*()   const;
+        [[maybe_unused]]   operator const float*() const;
 
         #pragma endregion
 
