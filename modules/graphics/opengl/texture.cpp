@@ -1,6 +1,4 @@
 #include "texture.hpp"
-#include "functions.hpp"
-#include "macros.hpp"
 
 namespace engine::opengl
 {

@@ -1,5 +1,4 @@
 #include "shader.hpp"
-#include "functions.hpp"
 
 namespace engine::opengl
 {

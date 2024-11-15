@@ -1,6 +1,4 @@
 #include "shader_stage.hpp"
-#include "functions.hpp"
-#include "macros.hpp"
 
 namespace engine::opengl
 {

@@ -1,5 +1,4 @@
 #include "sampler.hpp"
-#include "functions.hpp"
 
 namespace engine::opengl
 {

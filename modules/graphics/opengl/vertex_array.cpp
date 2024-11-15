@@ -1,5 +1,4 @@
 #include "vertex_array.hpp"
-#include "functions.hpp"
 
 namespace engine::opengl
 {
@@ -15,13 +14,11 @@ namespace engine::opengl
 
     void VertexArray::attach_vertices(const Buffer* buffer, const int32_t stride) const
     {
-        assert(buffer);
         glVertexArrayVertexBuffer(handle_, 0, buffer->handle(), 0, stride);
     }
 
     void VertexArray::attach_indices(const Buffer* buffer) const
     {
-        assert(buffer);
         glVertexArrayElementBuffer(handle_, buffer->handle());
     }
 

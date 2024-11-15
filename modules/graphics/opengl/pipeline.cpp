@@ -1,6 +1,4 @@
 #include "pipeline.hpp"
-#include "functions.hpp"
-#include "macros.hpp"
 
 namespace engine::opengl
 {

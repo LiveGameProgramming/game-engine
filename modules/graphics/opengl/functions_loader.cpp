@@ -1,5 +1,4 @@
 #include "functions_loader.hpp"
-#include "functions.hpp"
 
 namespace engine::opengl
 {
