@@ -2,11 +2,6 @@
 
 namespace engine
 {
-    Mesh::Mesh(const uint32_t primitive)
-        : primitive { primitive }
-    {
-    }
-
     void Mesh::create(const int32_t stride)
     {
          vertex_array = std::make_unique<opengl::VertexArray>();

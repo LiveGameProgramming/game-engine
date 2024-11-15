@@ -1,20 +1,38 @@
 #include "model.hpp"
-#include "opengl/commands.hpp"
 
-#include "primitive/triangle.hpp"
+#include "opengl/commands.hpp"
 
 namespace engine::renderer
 {
-    void Model::draw(const opengl::VertexArray* vertex_array, const opengl::Texture* texture, const mat4& model, const int32_t faces) const
+    void Model::begin() const
     {
-        _shader->push(model);
+        _shader->bind();
+    }
 
-        assert(texture);
+    void Model::draw(const Mesh* mesh, const mat4& matrix, const opengl::Texture* texture) const
+    {
+        _shader->push(matrix);
+
         texture->bind();
+                                                                                          mesh->bind();
+        opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->faces());
+    }
 
-        assert(vertex_array);
-        vertex_array->bind();
+    void Model::draw(const Mesh* mesh, const mat4& matrix, const rgb& color) const
+    {
+        _shader->push(matrix);
+        _buffer->update(buffer::data::create(&color));
+                                                                                          mesh->bind();
+        opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->faces());
+    }
 
-        opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * faces);
+    void Model::attach(opengl::Buffer* buffer)
+    {
+        _buffer = buffer;
+    }
+
+    void Model::attach(opengl::Shader* shader)
+    {
+        _shader = shader;
     }
 }

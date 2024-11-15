@@ -1,16 +1,25 @@
 #pragma once
 
-#include "opengl/vertex_array.hpp"
-#include "opengl/renderer.hpp"
-#include "opengl/texture.hpp"
+#include "mesh.hpp"
 
-#include "mat4.hpp"
+#include "opengl/shader.hpp"
+#include "opengl/texture.hpp"
 
 namespace engine::renderer
 {
-    class Model final : public opengl::Renderer
+    class Model
     {
     public:
-        void draw(const opengl::VertexArray* vertex_array, const opengl::Texture* texture, const mat4& model, int32_t faces) const;
+        void begin()    const;
+
+        void draw(const Mesh* mesh, const mat4& matrix, const opengl::Texture* texture) const;
+        void draw(const Mesh* mesh, const mat4& matrix, const rgb& color)               const;
+
+        void attach(opengl::Buffer* buffer);
+        void attach(opengl::Shader* shader);
+
+    private:
+        opengl::Buffer* _buffer { };
+        opengl::Shader* _shader { };
     };
 }
