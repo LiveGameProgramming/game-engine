@@ -9,7 +9,7 @@ namespace engine::renderer
         _shader->bind();
     }
 
-    void Model::draw(const Mesh* mesh, const mat4& matrix, const opengl::Texture* texture) const
+    void Model::draw(const core::Mesh* mesh, const mat4& matrix, const opengl::Texture* texture) const
     {
         _shader->push(matrix);
 
@@ -18,7 +18,7 @@ namespace engine::renderer
         opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->faces());
     }
 
-    void Model::draw(const Mesh* mesh, const mat4& matrix, const rgb& color) const
+    void Model::draw(const core::Mesh* mesh, const mat4& matrix, const rgb& color) const
     {
         _shader->push(matrix);
         _buffer->update(buffer::data::create(&color));
