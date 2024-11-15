@@ -3,6 +3,5 @@ add_library(math)
 #=======================================================================================================================
 target_include_directories(math PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
  target_precompile_headers(math PUBLIC headers.hpp)
-#=======================================================================================================================
-target_sources(math PRIVATE functions.cpp mat4.cpp column.cpp vec3.cpp quat.cpp)
+            target_sources(math PUBLIC functions.cpp mat4.cpp column.cpp vec3.cpp quat.cpp)
 #=======================================================================================================================
