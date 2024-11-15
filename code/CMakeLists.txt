@@ -7,4 +7,5 @@ target_link_libraries(engine PRIVATE core math graphics)
        target_sources(engine PRIVATE mesh.cpp)
 #=======================================================================================================================
 add_subdirectory(renderer)
+add_subdirectory(tools)
 #=======================================================================================================================
