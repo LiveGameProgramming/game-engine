@@ -10,7 +10,6 @@ namespace engine::buffer
 
     const void* data::ptr() const
     {
-        assert(ptr_);
         return ptr_;
     }
 
