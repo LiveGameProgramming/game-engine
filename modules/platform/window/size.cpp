@@ -2,12 +2,25 @@
 
 namespace engine::window
 {
-    size& size::operator=(const size& other)
+    size::size(const int32_t width, const int32_t height)
+        : width_  { width  }
+        , height_ { height }
+        , ratio_  { static_cast<float>(width_) / static_cast<float>(height_) }
     {
-        width  = other.width;
-        height = other.height;
-        ratio  = static_cast<float>(width) / static_cast<float>(height);
+    }
 
-        return *this;
+    int32_t size::width() const
+    {
+        return width_;
+    }
+
+    int32_t size::height() const
+    {
+        return height_;
+    }
+
+    float size::ratio() const
+    {
+        return ratio_;
     }
 }

@@ -39,17 +39,17 @@ namespace engine
 
     int32_t WindowManager::width() const
     {
-        return window->size.width;
+        return window->size.width();
     }
 
     int32_t WindowManager::height() const
     {
-        return window->size.height;
+        return window->size.height();
     }
 
     float WindowManager::ratio() const
     {
-        return window->size.ratio;
+        return window->size.ratio();
     }
 
     bool WindowManager::is_active() const
