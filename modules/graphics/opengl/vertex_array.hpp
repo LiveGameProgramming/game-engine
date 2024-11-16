@@ -15,7 +15,7 @@ namespace opengl
         void attach_vertices(const Buffer* buffer, int32_t stride) const;
         void attach_elements(const Buffer* buffer)                 const;
 
-        void attribute(const core::vertex::attribute& attribute)         const;
+        void attribute(const core::vertex::attribute& attribute)   const;
         void bind()    const;
     };
 }

@@ -12,7 +12,7 @@ namespace win32
         {
             if (msg.message == WM_QUIT)
             {
-                WindowManager::instance().close();
+                core::WindowManager::instance().close();
                 break;
             }
 

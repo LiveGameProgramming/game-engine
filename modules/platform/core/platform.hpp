@@ -2,7 +2,7 @@
 
 #include "base/factory.hpp"
 
-namespace engine
+namespace core
 {
     class Platform
     {

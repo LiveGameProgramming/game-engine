@@ -1,10 +1,10 @@
 #pragma once
 
-namespace engine::core::vertex
+namespace core::vertex
 {
     struct sprite
     {
-        vec2 position;
-        vec2 uv;
+        math::vec2 position;
+        math::vec2 uv;
     };
 }
