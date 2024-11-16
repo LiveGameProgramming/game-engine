@@ -1,6 +1,6 @@
 #include "buffer.hpp"
 
-namespace opengl
+namespace engine::opengl
 {
     void Buffer::create()
     {

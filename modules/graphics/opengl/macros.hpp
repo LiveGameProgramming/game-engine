@@ -1,6 +1,6 @@
 #pragma once
 
-namespace opengl
+namespace engine::opengl
 {
     namespace shader
     {

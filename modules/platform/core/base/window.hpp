@@ -3,7 +3,7 @@
 #include "core/window/state.hpp"
 #include "core/window/config.hpp"
 
-namespace core::base
+namespace engine::core::base
 {
     class Window
     {

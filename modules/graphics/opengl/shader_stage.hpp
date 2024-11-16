@@ -2,7 +2,7 @@
 
 #include "object.hpp"
 
-namespace opengl
+namespace engine::opengl
 {
     class ShaderStage final : public Object
     {

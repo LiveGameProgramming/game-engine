@@ -1,6 +1,6 @@
 #include "commands.hpp"
 
-namespace opengl
+namespace engine::opengl
 {
     void Commands::viewport(const int32_t x, const int32_t y, const int32_t width, const int32_t height)
     {

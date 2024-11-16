@@ -2,7 +2,7 @@
 
 #include "core/base/context.hpp"
 
-namespace win32
+namespace engine::win32
 {
     class Context final : public core::base::Context
     {

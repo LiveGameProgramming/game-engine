@@ -2,7 +2,7 @@
 
 #include "opengl/commands.hpp"
 
-namespace graphics
+namespace engine::graphics
 {
     void ModelRenderer::begin() const
     {

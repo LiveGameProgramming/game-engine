@@ -1,6 +1,6 @@
 #include "sprite_generator.hpp"
 
-namespace tools
+namespace engine::tools
 {
     geometry SpriteGenerator::create(const math::rect& rect)
     {

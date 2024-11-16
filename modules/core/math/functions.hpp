@@ -1,6 +1,6 @@
 #pragma once
 
-namespace math
+namespace engine::math
 {
     float radians(float degrees);
 

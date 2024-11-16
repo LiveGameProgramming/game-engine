@@ -2,7 +2,7 @@
 #include "context_macros.hpp"
 #include "context_functions.hpp"
 
-namespace win32
+namespace engine::win32
 {
     void Context::destroy() const
     {

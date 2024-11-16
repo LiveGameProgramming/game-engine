@@ -1,6 +1,6 @@
 #pragma once
 
-namespace math
+namespace engine::math
 {
     struct vec3
     {

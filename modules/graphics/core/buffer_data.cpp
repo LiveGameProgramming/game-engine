@@ -1,6 +1,6 @@
 #include "buffer_data.hpp"
 
-namespace core
+namespace engine::core
 {
     buffer_data::buffer_data(const void* data, const uint32_t size)
         :  ptr_ { data }

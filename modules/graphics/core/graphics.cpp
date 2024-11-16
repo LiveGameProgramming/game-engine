@@ -3,7 +3,7 @@
 #include "opengl/pipeline.hpp"
 #include "opengl/functions_loader.hpp"
 
-namespace core
+namespace engine::core
 {
     void Graphics::init()
     {

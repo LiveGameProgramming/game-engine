@@ -2,7 +2,7 @@
 
 #include "core/vertex/sprite.hpp"
 
-namespace tools
+namespace engine::tools
 {
     using geometry = core::base::geometry<core::vertex::sprite, core::primitive::triangle>;
 

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace core
+namespace engine::core
 {
     using time_clock = std::chrono::high_resolution_clock;
     using time_point = std::chrono::high_resolution_clock::time_point;

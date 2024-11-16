@@ -4,7 +4,7 @@
 
 #include "window_callbacks.hpp"
 
-namespace core
+namespace engine::core
 {
     class WindowManager final : public WindowCallbacks
     {
