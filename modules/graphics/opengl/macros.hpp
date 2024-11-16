@@ -1,6 +1,6 @@
 #pragma once
 
-namespace opengl
+namespace engine::opengl
 {
     constexpr uint32_t color_buffer = 0x00004000;
     constexpr uint32_t depth_buffer = 0x00000100;

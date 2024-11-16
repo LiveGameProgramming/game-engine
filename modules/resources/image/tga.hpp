@@ -2,7 +2,7 @@
 
 #include "base/image.hpp"
 
-namespace image
+namespace engine::image
 {
     class Tga
     {

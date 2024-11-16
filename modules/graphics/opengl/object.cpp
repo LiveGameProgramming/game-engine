@@ -1,6 +1,6 @@
 #include "object.hpp"
 
-namespace opengl
+namespace engine::opengl
 {
     uint32_t Object::handle() const
     {

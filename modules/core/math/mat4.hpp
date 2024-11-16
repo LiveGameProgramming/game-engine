@@ -2,7 +2,7 @@
 
 #include "column.hpp"
 
-namespace math
+namespace engine::math
 {
     struct mat4
     {

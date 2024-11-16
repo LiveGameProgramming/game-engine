@@ -2,7 +2,7 @@
 
 #include "core/geometry.hpp"
 
-namespace tools
+namespace engine::tools
 {
     class SpriteGenerator
     {

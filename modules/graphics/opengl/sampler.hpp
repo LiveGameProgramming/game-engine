@@ -2,7 +2,7 @@
 
 #include "object.hpp"
 
-namespace opengl
+namespace engine::opengl
 {
     class Sampler final : public Object
     {

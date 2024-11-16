@@ -1,6 +1,6 @@
 #include "functions.hpp"
 
-namespace math
+namespace engine::math
 {
     float radians(const float degrees)
     {

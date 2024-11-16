@@ -1,7 +1,7 @@
 #include "window.hpp"
 #include "window_events.hpp"
 
-namespace win32
+namespace engine::win32
 {
     void Window::create(const core::window::config& config)
     {

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace win32
+namespace engine::win32
 {
     #pragma region Pixel
 
