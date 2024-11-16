@@ -1,7 +1,7 @@
 #include "functions.hpp"
 #include "constants.hpp"
 
-namespace engine::math
+namespace math
 {
     void quat::rotate(const vec3& axis, const float angle)
     {
