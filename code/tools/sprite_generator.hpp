@@ -1,10 +1,10 @@
 #pragma once
 
-#include "vertex/sprite.hpp"
+#include "core/vertex/sprite.hpp"
 
 namespace engine::tools
 {
-    using geometry = base::geometry<vertex::sprite, primitive::triangle>;
+    using geometry = base::geometry<core::vertex::sprite, primitive::triangle>;
 
     class SpriteGenerator
     {

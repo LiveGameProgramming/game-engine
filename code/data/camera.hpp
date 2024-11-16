@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::data
+namespace engine::core::data
 {
     struct camera
     {

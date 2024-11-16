@@ -1,6 +1,5 @@
 #=======================================================================================================================
-add_library(core)
-#=======================================================================================================================
-add_subdirectory(core)
-add_subdirectory(math)
+target_include_directories(graphics PUBLIC ..)
+ target_precompile_headers(graphics PUBLIC headers.hpp)
+            target_sources(graphics PUBLIC graphics.cpp buffer.cpp)
 #=======================================================================================================================

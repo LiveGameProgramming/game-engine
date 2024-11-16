@@ -3,8 +3,8 @@
 #include "object.hpp"
 #include "macros.hpp"
 
-#include "buffer/data.hpp"
-#include "buffer/location.hpp"
+#include "core/buffer.hpp"
+#include "core/buffer_location.hpp"
 
 namespace engine::opengl
 {
@@ -14,9 +14,10 @@ namespace engine::opengl
         void create()  override;
         void destroy() override;
 
-        void   data(const buffer::data& data, uint32_t usage  = static_draw) const;
-        void update(const buffer::data& data,  int32_t offset = 0)           const;
+        void   data(const core::data::buffer& buffer, uint32_t usage  = static_draw) const;
+        void update(const core::data::buffer& buffer,  int32_t offset = 0)           const;
 
-        void bind(uint32_t location = buffer::location::camera) const;
+        void bind(uint32_t location) const;
+        void bind(core::data::buffer_location location) const;
     };
 }
