@@ -1,6 +1,6 @@
 #include "shader.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     void Shader::create()
     {

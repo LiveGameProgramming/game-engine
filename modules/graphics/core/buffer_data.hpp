@@ -1,14 +1,14 @@
 #pragma once
 
-namespace engine::core::data
+namespace core
 {
-    struct buffer
+    struct buffer_data
     {
-        template <typename type> static buffer create(const std::vector<type>& buffer)
+        template <typename type> static buffer_data create(const std::vector<type>& buffer)
         {
             return { buffer.data(), static_cast<uint32_t>(buffer.size() * sizeof(type)) };
         }
-        template <typename type> static buffer create(const type* data)
+        template <typename type> static buffer_data create(const type* data)
         {
             return { data, static_cast<uint32_t>(sizeof(type)) };
         }
@@ -17,7 +17,7 @@ namespace engine::core::data
         [[nodiscard]] uint32_t   size() const;
 
     private:
-        buffer(const void* data, uint32_t size);
+        buffer_data(const void* data, uint32_t size);
 
         const void* ptr_ { };
         uint32_t   size_ { };

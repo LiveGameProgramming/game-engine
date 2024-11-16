@@ -1,9 +1,9 @@
 #pragma once
 
-#include "window/state.hpp"
-#include "window/config.hpp"
+#include "core/window/state.hpp"
+#include "core/window/config.hpp"
 
-namespace engine::base
+namespace core::base
 {
     class Window
     {

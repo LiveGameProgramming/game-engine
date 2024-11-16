@@ -1,6 +1,6 @@
 #include "time.hpp"
 
-namespace engine
+namespace core
 {
     void Time::init()
     {

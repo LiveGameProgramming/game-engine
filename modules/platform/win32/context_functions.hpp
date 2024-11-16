@@ -1,8 +1,8 @@
 #pragma once
 
-#include "base/context_functions.hpp"
+#include "core/base/context_functions.hpp"
 
-namespace engine::win32
+namespace win32
 {
     #pragma region Functions
 
@@ -14,7 +14,7 @@ namespace engine::win32
 
     #pragma endregion
 
-    class ContextFunctions final : public base::ContextFunctions
+    class ContextFunctions final : public core::base::ContextFunctions
     {
     public:
         void init() override;

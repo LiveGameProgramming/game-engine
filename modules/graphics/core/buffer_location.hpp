@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::core::data
+namespace core
 {
     enum class buffer_location
     {

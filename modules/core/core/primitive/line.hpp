@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::primitive
+namespace core::primitive
 {
     struct line
     {

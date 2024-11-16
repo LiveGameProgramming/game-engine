@@ -1,13 +1,13 @@
 #pragma once
 
-#include "base/window.hpp"
+#include "core/base/window.hpp"
 
-namespace engine::win32
+namespace win32
 {
-    class Window final : public base::Window
+    class Window final : public core::base::Window
     {
     public:
-        void create(const window::config& config) override;
+        void create(const core::window::config& config) override;
         void destroy()                      const override;
         void show()                         const override;
 

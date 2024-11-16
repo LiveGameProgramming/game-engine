@@ -1,8 +1,8 @@
 #pragma once
 
-#include "context/config.hpp"
+#include "core/context/config.hpp"
 
-namespace engine::base
+namespace core::base
 {
     class Context
     {

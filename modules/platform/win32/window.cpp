@@ -1,9 +1,9 @@
 #include "window.hpp"
 #include "window_events.hpp"
 
-namespace engine::win32
+namespace win32
 {
-    void Window::create(const window::config& config)
+    void Window::create(const core::window::config& config)
     {
         constexpr int32_t x = CW_USEDEFAULT;
         constexpr int32_t y = CW_USEDEFAULT;

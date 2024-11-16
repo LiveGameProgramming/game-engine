@@ -2,13 +2,13 @@
 
 #include "core/vertex/sprite.hpp"
 
-namespace engine::tools
+namespace tools
 {
-    using geometry = base::geometry<core::vertex::sprite, primitive::triangle>;
+    using geometry = core::base::geometry<core::vertex::sprite, core::primitive::triangle>;
 
     class SpriteGenerator
     {
     public:
-        static geometry create(const rect& rect);
+        static geometry create(const math::rect& rect);
     };
 }

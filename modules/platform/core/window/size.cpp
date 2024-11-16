@@ -1,6 +1,6 @@
 #include "size.hpp"
 
-namespace engine::window
+namespace core::window
 {
     size::size(const int32_t width, const int32_t height)
         : width_  { width  }

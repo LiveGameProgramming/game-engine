@@ -2,7 +2,7 @@
 
 #include "core/window_manager.hpp"
 
-namespace engine::win32
+namespace win32
 {
     void WindowEvents::update() const
     {
@@ -12,7 +12,7 @@ namespace engine::win32
         {
             if (msg.message == WM_QUIT)
             {
-                WindowManager::instance().close();
+                core::WindowManager::instance().close();
                 break;
             }
 
@@ -35,7 +35,7 @@ namespace engine::win32
                 const int32_t width  = LOWORD(lparam);
                 const int32_t height = HIWORD(lparam);
 
-                WindowManager::instance().resize({ width, height });
+                core::WindowManager::instance().resize({ width, height });
                 return 0;
             }
             case WM_ERASEBKGND:

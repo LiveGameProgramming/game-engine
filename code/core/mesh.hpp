@@ -2,7 +2,7 @@
 
 #include "opengl/vertex_array.hpp"
 
-namespace engine::core
+namespace core
 {
     class Mesh
     {
@@ -13,8 +13,8 @@ namespace engine::core
         template <typename vertex, typename face>
         void update(const  base::geometry<vertex, face>& geometry)
         {
-            vertex_buffer->data(data::buffer::create(geometry.vertices));
-             index_buffer->data(data::buffer::create(geometry.faces));
+            vertex_buffer->data(buffer_data::create(geometry.vertices));
+             index_buffer->data(buffer_data::create(geometry.faces));
                   _faces = geometry.faces.size();
         }
 

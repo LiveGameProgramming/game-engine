@@ -2,7 +2,7 @@
 #include "context_macros.hpp"
 #include "context_functions.hpp"
 
-namespace engine::win32
+namespace win32
 {
     void Context::destroy() const
     {
@@ -32,7 +32,7 @@ namespace engine::win32
         hrc = wglCreateContext(hdc); wglMakeCurrent(hdc, hrc);
     }
 
-    void Context::create(const std::any& hwnd, const context::config& config)
+    void Context::create(const std::any& hwnd, const core::context::config& config)
     {
         const int32_t pixel_attributes[]
         {

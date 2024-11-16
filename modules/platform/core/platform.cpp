@@ -2,7 +2,7 @@
 
 #include "win32/factory.hpp"
 
-namespace engine
+namespace core
 {
     void Platform::init()
     {

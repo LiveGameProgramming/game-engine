@@ -1,6 +1,6 @@
 #include "context_functions.hpp"
 
-namespace engine::win32
+namespace win32
 {
     void ContextFunctions::init()
     {
