@@ -2,8 +2,8 @@
 
 namespace engine
 {
-    void WindowCallbacks::resize_callback(const std::function<void()>& callback)
+    void WindowCallbacks::on_size(const std::function<void()>& callback)
     {
-        _resize_callback = callback;
+        size_callback = callback;
     }
 }
