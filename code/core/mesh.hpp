@@ -2,7 +2,7 @@
 
 #include "opengl/vertex_array.hpp"
 
-namespace core
+namespace engine::core
 {
     class Mesh
     {

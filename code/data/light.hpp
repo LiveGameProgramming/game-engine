@@ -4,8 +4,8 @@ namespace engine::core::data
 {
     struct light
     {
-        vec3  extra;  // position | direction
-        float ambient { };
-        rgb   color   { };
+        math::vec3 extra; // position | direction
+        float     ambient { };
+        math::rgb   color { };
     };
 }

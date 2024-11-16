@@ -4,8 +4,8 @@ namespace engine::core::vertex
 {
     struct model
     {
-        vec3 position;
-        vec3 normal;
-        vec2 uv;
+        math::vec3 position;
+        math::vec3 normal;
+        math::vec2 uv;
     };
 }

@@ -4,6 +4,6 @@ namespace engine::core::data
 {
     struct material
     {
-        rgb diffuse { };
+        math::rgb diffuse { };
     };
 }

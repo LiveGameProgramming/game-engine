@@ -4,7 +4,7 @@ namespace engine::core::data
 {
     struct camera
     {
-        mat4 view;
-        mat4 projection;
+        math::mat4 view;
+        math::mat4 projection;
     };
 }
