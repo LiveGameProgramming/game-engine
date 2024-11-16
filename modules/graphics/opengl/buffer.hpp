@@ -17,6 +17,6 @@ namespace engine::opengl
         void   data(const core::buffer::data& data, uint32_t usage  = static_draw) const;
         void update(const core::buffer::data& data,  int32_t offset = 0)           const;
 
-        void bind(uint32_t location) const;
+        void bind(uint32_t location = core::buffer::location::camera) const;
     };
 }
