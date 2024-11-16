@@ -12,8 +12,8 @@ namespace engine::win32
 
         RECT frame
         {
-            .right  = config.size.width,
-            .bottom = config.size.height
+            .right  = config.size.width(),
+            .bottom = config.size.height()
         };
 
         AdjustWindowRectEx(&frame, style, 0, extra);
