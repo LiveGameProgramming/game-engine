@@ -1,3 +1,5 @@
 #=======================================================================================================================
-target_sources(engine PRIVATE model.cpp sprite.cpp)
+target_include_directories(graphics PUBLIC ..)
+ target_precompile_headers(graphics PUBLIC headers.hpp)
+            target_sources(graphics PUBLIC graphics.cpp buffer.cpp)
 #=======================================================================================================================

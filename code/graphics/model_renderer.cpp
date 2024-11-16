@@ -1,15 +1,15 @@
-#include "model.hpp"
+#include "model_renderer.hpp"
 
 #include "opengl/commands.hpp"
 
-namespace engine::renderer
+namespace engine::graphics
 {
-    void Model::begin() const
+    void ModelRenderer::begin() const
     {
         _shader->bind();
     }
 
-    void Model::draw(const core::Mesh* mesh, const mat4& matrix, const opengl::Texture* texture) const
+    void ModelRenderer::draw(const core::Mesh* mesh, const mat4& matrix, const opengl::Texture* texture) const
     {
         _shader->push(matrix);
 
@@ -18,20 +18,20 @@ namespace engine::renderer
         opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->faces());
     }
 
-    void Model::draw(const core::Mesh* mesh, const mat4& matrix, const rgb& color) const
+    void ModelRenderer::draw(const core::Mesh* mesh, const mat4& matrix, const rgb& color) const
     {
         _shader->push(matrix);
-        _buffer->update(buffer::data::create(&color));
+        _buffer->update(core::data::buffer::create(&color));
                                                                                           mesh->bind();
         opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->faces());
     }
 
-    void Model::attach(opengl::Buffer* buffer)
+    void ModelRenderer::attach(opengl::Buffer* buffer)
     {
         _buffer = buffer;
     }
 
-    void Model::attach(opengl::Shader* shader)
+    void ModelRenderer::attach(opengl::Shader* shader)
     {
         _shader = shader;
     }

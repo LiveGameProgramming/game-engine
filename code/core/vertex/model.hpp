@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::vertex
+namespace engine::core::vertex
 {
     struct model
     {

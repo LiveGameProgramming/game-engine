@@ -5,9 +5,9 @@
 #include "opengl/shader.hpp"
 #include "opengl/texture.hpp"
 
-namespace engine::renderer
+namespace engine::graphics
 {
-    class Model
+    class ModelRenderer
     {
     public:
         void begin()    const;

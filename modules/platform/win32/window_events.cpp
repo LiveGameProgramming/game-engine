@@ -1,5 +1,6 @@
 #include "window_events.hpp"
-#include "window_manager.hpp"
+
+#include "core/window_manager.hpp"
 
 namespace win32
 {
