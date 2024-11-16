@@ -1,8 +1,8 @@
 #pragma once
 
-namespace engine::core
+namespace engine::core::buffer
 {
-    enum class buffer_location
+    enum location
     {
         camera,
         material,
