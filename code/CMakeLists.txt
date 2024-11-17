@@ -1,8 +1,11 @@
 #=======================================================================================================================
-add_library(engine)
+               add_library(engine)
 #=======================================================================================================================
-add_subdirectory(core)
-add_subdirectory(tools)
+target_include_directories(engine PUBLIC .)
+     target_link_libraries(engine PUBLIC core graphics platform resources)
 #=======================================================================================================================
-add_subdirectory(graphics)
+          add_subdirectory(core)
+
+          add_subdirectory(tools)
+          add_subdirectory(graphics)
 #=======================================================================================================================
