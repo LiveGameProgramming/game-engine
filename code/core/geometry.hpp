@@ -4,5 +4,5 @@
 
 namespace core
 {
-    using sprite_geometry = base::geometry<vertex::sprite, primitive::triangle>;
+    using sprite_geometry = geometry<vertex::sprite, primitive::triangle>;
 }

@@ -1,7 +1,7 @@
 #include "tga.hpp"
 #include "tga_header.hpp"
 
-namespace image
+namespace images
 {
     core::image Tga::load(const std::string& path)
     {

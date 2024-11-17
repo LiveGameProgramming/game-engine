@@ -1,3 +1,4 @@
 #=======================================================================================================================
-target_sources(resources PRIVATE tga.cpp)
+target_precompile_headers(resources PRIVATE headers.hpp)
+           target_sources(resources PRIVATE tga.cpp)
 #=======================================================================================================================

@@ -1,7 +1,7 @@
 #=======================================================================================================================
                add_library(engine)
 #=======================================================================================================================
-target_include_directories(engine PUBLIC ${CMAKE_SOURCE_DIR})
+target_include_directories(engine PUBLIC .)
      target_link_libraries(engine PUBLIC core graphics platform resources)
 #=======================================================================================================================
           add_subdirectory(core)

@@ -2,7 +2,7 @@
 
 #include "core/image.hpp"
 
-namespace image
+namespace images
 {
     class Tga
     {

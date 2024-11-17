@@ -1,6 +1,6 @@
 #pragma once
 
-namespace image
+namespace images
 {
     #pragma pack(push, 1)
 
