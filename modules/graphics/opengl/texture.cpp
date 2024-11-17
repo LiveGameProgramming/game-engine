@@ -25,9 +25,9 @@ namespace opengl
         glTextureStorage2D(handle_, levels, format_, width_, height_);
     }
 
-    void Texture::update(const uint32_t format, const void* pixels, const int32_t level) const
+    void Texture::update(const uint32_t format, const core::buffer::data& data, const int32_t level) const
     {
-        glTextureSubImage2D(handle_, level, 0, 0, width_, height_, format, type_ubyte, pixels);
+        glTextureSubImage2D(handle_, level, 0, 0, width_, height_, format, type_ubyte, data.first);
     }
 
     void Texture::bind(const uint32_t location) const

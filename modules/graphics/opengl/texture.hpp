@@ -2,6 +2,8 @@
 
 #include "object.hpp"
 
+#include "core/buffer/data.hpp"
+
 namespace opengl
 {
     class Texture final : public Object
@@ -13,7 +15,7 @@ namespace opengl
         void destroy() override;
 
         void storage(int32_t levels = 1) const;
-        void update(uint32_t format,     const void* pixels, int32_t level = 0) const;
+        void update(uint32_t format,     const core::buffer::data& data, int32_t level = 0) const;
 
         void bind(uint32_t location = 0) const;
 

@@ -4,14 +4,14 @@ namespace opengl
 {
     void Pipeline::enable_solid_mode()
     {
-        glPolygonMode(pipeline::front_and_back, pipeline::mode_solid);
+        glPolygonMode(pipeline::front_and_back, pipeline::solid);
 
         enable(pipeline::cull_face);
     }
 
     void Pipeline::enable_lines_mode()
     {
-        glPolygonMode(pipeline::front_and_back, pipeline::mode_lines);
+        glPolygonMode(pipeline::front_and_back, pipeline::lines);
 
         disable(pipeline::cull_face);
     }
@@ -28,7 +28,7 @@ namespace opengl
 
     void Pipeline::default_state()
     {
-        enable(pipeline::srgb_framebuffer);
+        enable(pipeline::srgb);
         enable(pipeline::multisample);
 
         enable(pipeline::depth_test);
