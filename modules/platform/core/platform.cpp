@@ -11,7 +11,7 @@ namespace core
 
     void Platform::init_context_functions()
     {
-        const auto factory   = create_factory();
+        const auto factory = create_factory();
 
         const auto window    = factory->create_window();
         const auto context   = factory->create_context();
