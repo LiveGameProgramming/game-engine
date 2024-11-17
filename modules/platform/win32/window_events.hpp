@@ -2,7 +2,7 @@
 
 #include "core/base/window_events.hpp"
 
-namespace engine::win32
+namespace win32
 {
     class WindowEvents final : public core::base::WindowEvents
     {

@@ -4,7 +4,7 @@
 #include "context.hpp"
 #include "context_functions.hpp"
 
-namespace engine::win32
+namespace win32
 {
     std::unique_ptr<core::base::Window> Factory::create_window()
     {

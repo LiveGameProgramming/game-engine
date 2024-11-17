@@ -2,7 +2,7 @@
 
 #include "core/context/config.hpp"
 
-namespace engine::core::base
+namespace core::base
 {
     class Context
     {

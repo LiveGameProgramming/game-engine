@@ -3,7 +3,7 @@
 #include "opengl/vertex_array.hpp"
 #include "core/base/geometry.hpp"
 
-namespace engine::core
+namespace core
 {
     class Mesh
     {
@@ -12,7 +12,7 @@ namespace engine::core
         void destroy()      const;
 
         template <typename vertex, typename face>
-        void update(const  ::core::base::geometry<vertex, face>& geometry)
+        void update(const  base::geometry<vertex, face>& geometry)
         {
             vertex_buffer->data(buffer::data::create(geometry.vertices));
              index_buffer->data(buffer::data::create(geometry.faces));

@@ -1,6 +1,6 @@
 #include "functions_loader.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     void FunctionsLoader::init_core()
     {

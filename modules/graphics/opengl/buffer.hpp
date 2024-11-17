@@ -6,7 +6,7 @@
 #include "core/buffer/data.hpp"
 #include "core/buffer/location.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     class Buffer final : public Object
     {

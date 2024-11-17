@@ -2,7 +2,7 @@
 
 #include "core/base/factory.hpp"
 
-namespace engine::win32
+namespace win32
 {
     class Factory final : public core::base::Factory
     {

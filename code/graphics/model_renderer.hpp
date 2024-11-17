@@ -5,7 +5,7 @@
 #include "opengl/shader.hpp"
 #include "opengl/texture.hpp"
 
-namespace engine::graphics
+namespace graphics
 {
     class ModelRenderer
     {

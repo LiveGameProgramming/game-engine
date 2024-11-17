@@ -2,7 +2,7 @@
 
 #include "core/window_manager.hpp"
 
-namespace engine::win32
+namespace win32
 {
     void WindowEvents::update() const
     {

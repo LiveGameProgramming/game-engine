@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::core::buffer
+namespace core::buffer
 {
     enum location
     {

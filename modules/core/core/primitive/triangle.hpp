@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::core::primitive
+namespace core::primitive
 {
     struct triangle
     {

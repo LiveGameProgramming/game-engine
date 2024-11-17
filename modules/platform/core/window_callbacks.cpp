@@ -1,6 +1,6 @@
 #include "window_callbacks.hpp"
 
-namespace engine::core
+namespace core
 {
     void WindowCallbacks::on_size(const std::function<void()>& callback)
     {

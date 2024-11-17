@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::core::data
+namespace core::data
 {
     struct light
     {

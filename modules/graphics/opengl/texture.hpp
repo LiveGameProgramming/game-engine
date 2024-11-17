@@ -2,7 +2,7 @@
 
 #include "object.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     class Texture final : public Object
     {

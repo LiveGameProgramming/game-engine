@@ -8,7 +8,9 @@
 
 #pragma region Headers
 
-#include "primitive/line.hpp"
 #include "primitive/triangle.hpp"
+#include "primitive/line.hpp"
+
+#include "base/geometry.hpp"
 
 #pragma endregion

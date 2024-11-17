@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::core
+namespace core
 {
     class File
     {
