@@ -1,12 +1,12 @@
 #pragma once
 
-#include "core/vertex/sprite.hpp"
+#include "core/geometry.hpp"
 
 namespace tools
 {
     class SpriteGenerator
     {
     public:
-        static core::base::geometry<core::vertex::sprite, core::primitive::triangle> create(const math::rect& rect);
+        static core::sprite_geometry create(const math::rect& rect);
     };
 }
