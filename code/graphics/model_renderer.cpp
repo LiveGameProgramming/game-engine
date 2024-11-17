@@ -15,7 +15,7 @@ namespace graphics
 
         texture->bind();
                                                                                           mesh->bind();
-        opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->faces());
+        opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->elements());
     }
 
     void ModelRenderer::draw(const core::Mesh* mesh, const math::mat4& matrix, const math::rgb& color) const
@@ -23,7 +23,7 @@ namespace graphics
         _shader->push(matrix);
         _buffer->update(core::buffer::data::create(&color));
                                                                                           mesh->bind();
-        opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->faces());
+        opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->elements());
     }
 
     void ModelRenderer::attach(opengl::Buffer* buffer)

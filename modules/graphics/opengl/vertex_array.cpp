@@ -17,7 +17,7 @@ namespace opengl
         glVertexArrayVertexBuffer(handle_, 0, buffer->handle(), 0, stride);
     }
 
-    void VertexArray::attach_indices(const Buffer* buffer) const
+    void VertexArray::attach_elements(const Buffer* buffer) const
     {
         glVertexArrayElementBuffer(handle_, buffer->handle());
     }
