@@ -1,17 +1,17 @@
 #pragma once
 
-#include "core/base/window.hpp"
+#include "base/window.hpp"
 
 namespace win32
 {
-    class Window final : public core::base::Window
+    class Window final : public base::Window
     {
     public:
         void create(const core::window::config& config) override;
-        void destroy()                      const override;
-        void show()                         const override;
+        void destroy()                            const override;
+        void show()                               const override;
 
-        [[nodiscard]] std::any handle()     const override;
+        [[nodiscard]] std::any handle()           const override;
 
     private:
         void   register_window_class(const std::string& title);

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace core::base
+namespace base
 {
     class WindowEvents
     {

@@ -5,7 +5,7 @@
 #include "context.hpp"
 #include "context_functions.hpp"
 
-namespace core::base
+namespace base
 {
     class Factory
     {

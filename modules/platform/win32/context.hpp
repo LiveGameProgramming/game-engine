@@ -1,10 +1,10 @@
 #pragma once
 
-#include "core/base/context.hpp"
+#include "base/context.hpp"
 
 namespace win32
 {
-    class Context final : public core::base::Context
+    class Context final : public base::Context
     {
     public:
         void create(const std::any& hwnd, const core::context::config& config) override;
