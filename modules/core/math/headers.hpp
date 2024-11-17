@@ -1,9 +1,9 @@
 #pragma once
 
-#include <intrin.h>
-
-#include <cstring>
 #include <cmath>
+#include <cstring>
+
+#include <intrin.h>
 
 #pragma region Headers
 

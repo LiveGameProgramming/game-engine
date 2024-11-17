@@ -13,8 +13,8 @@ namespace core
         template <typename vertex, typename face>
         void update(const  geometry<vertex, face>& geometry)
         {
-            _vertices_buffer->data(buffer::data::create(geometry.vertices));
-            _elements_buffer->data(buffer::data::create(geometry.faces));
+            _vertices_buffer->data(buffer::make_data(geometry.vertices));
+            _elements_buffer->data(buffer::make_data(geometry.faces));
 
             _elements = geometry.faces.size();
         }

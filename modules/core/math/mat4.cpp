@@ -48,7 +48,7 @@ namespace math
         data[3].x = - (right + left)   / (right - left);
         data[3].y = - (top   + bottom) / (top   - bottom);
         data[3].z = - (far   + near)   / (far   - near);
-        data[3].w = 1.0;
+        data[3].w =   1.0;
     }
 
     void mat4::look(const vec3& eye, const vec3& target, const vec3& up)

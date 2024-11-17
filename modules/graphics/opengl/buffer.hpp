@@ -14,8 +14,8 @@ namespace opengl
         void create()  override;
         void destroy() override;
 
-        void   data(const core::buffer::data& data, uint32_t usage  = static_draw) const;
-        void update(const core::buffer::data& data,  int32_t offset = 0)           const;
+        void   data(const core::buffer::data& data, uint32_t usage  = buffer::static_draw) const;
+        void update(const core::buffer::data& data,  int32_t offset = 0)                   const;
 
         void bind(uint32_t location = core::buffer::location::camera) const;
     };

@@ -14,16 +14,16 @@ namespace opengl
 
     void Buffer::data(const core::buffer::data& data, const uint32_t usage) const
     {
-        glNamedBufferData(handle_, data.size(), data.ptr(), usage);
+        glNamedBufferData(handle_, data.second, data.first, usage);
     }
 
     void Buffer::update(const core::buffer::data& data, const int32_t offset) const
     {
-        glNamedBufferSubData(handle_, offset, data.size(), data.ptr());
+        glNamedBufferSubData(handle_, offset, data.second, data.first);
     }
 
     void Buffer::bind(const uint32_t location) const
     {
-        glBindBufferBase(uniform_buffer, location, handle_);
+        glBindBufferBase(buffer::uniform, location, handle_);
     }
 }

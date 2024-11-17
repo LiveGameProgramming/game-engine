@@ -2,24 +2,14 @@
 
 namespace core::buffer
 {
-    struct data
+    using data = std::pair<const void*, uint32_t>;
+
+    template <typename type> static data make_data(const std::vector<type>& buffer)
     {
-        template <typename type> static data create(const std::vector<type>& buffer)
-        {
-            return { buffer.data(), static_cast<uint32_t>(buffer.size() * sizeof(type)) };
-        }
-        template <typename type> static data create(const type* data)
-        {
-            return { data, static_cast<uint32_t>(sizeof(type)) };
-        }
-
-        [[nodiscard]] const void* ptr() const;
-        [[nodiscard]] uint32_t   size() const;
-
-    private:
-        data(const void* data, uint32_t size);
-
-        const void* ptr_ { };
-        uint32_t   size_ { };
-    };
+        return std::make_pair(buffer.data(), static_cast<uint32_t>(buffer.size() * sizeof(type)));
+    }
+    template <typename type> static data make_data(const type* data)
+    {
+        return std::make_pair(data, static_cast<uint32_t>(sizeof(type)));
+    }
 }
