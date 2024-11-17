@@ -13,21 +13,22 @@ namespace core
         template <typename vertex, typename face>
         void update(const  geometry<vertex, face>& geometry)
         {
-            vertex_buffer->data(buffer::data::create(geometry.vertices));
-             index_buffer->data(buffer::data::create(geometry.faces));
-                  _faces = geometry.faces.size();
+            _vertices_buffer->data(buffer::data::create(geometry.vertices));
+            _elements_buffer->data(buffer::data::create(geometry.faces));
+
+            _elements = geometry.faces.size();
         }
 
         void attributes(const std::vector<vertex::attribute>& attributes) const;
         void bind()     const;
 
-        [[nodiscard]] int32_t faces() const;
+        [[nodiscard]] int32_t elements() const;
 
     private:
-        std::unique_ptr<opengl::VertexArray> vertex_array  { };
-        std::unique_ptr<opengl::Buffer>      vertex_buffer { };
-        std::unique_ptr<opengl::Buffer>       index_buffer { };
+        std::unique_ptr<opengl::VertexArray> _vertex_array { };
+        std::unique_ptr<opengl::Buffer>   _vertices_buffer { };
+        std::unique_ptr<opengl::Buffer>   _elements_buffer { };
 
-        int32_t _faces { };
+        int32_t _elements { };
     };
 }
