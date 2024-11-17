@@ -2,7 +2,7 @@
 
 #include "opengl/commands.hpp"
 
-namespace engine::graphics
+namespace graphics
 {
     void ModelRenderer::begin() const
     {
@@ -14,16 +14,16 @@ namespace engine::graphics
         _shader->push(matrix);
 
         texture->bind();
-                                                                                                mesh->bind();
-        opengl::Commands::draw_indexed(opengl::triangles, core::primitive::triangle::elements * mesh->faces());
+                                                                                                  mesh->bind();
+        opengl::Commands::draw_indexed(opengl::triangles, ::core::primitive::triangle::elements * mesh->faces());
     }
 
     void ModelRenderer::draw(const core::Mesh* mesh, const math::mat4& matrix, const math::rgb& color) const
     {
         _shader->push(matrix);
         _buffer->update(core::buffer::data::create(&color));
-                                                                                                mesh->bind();
-        opengl::Commands::draw_indexed(opengl::triangles, core::primitive::triangle::elements * mesh->faces());
+                                                                                                  mesh->bind();
+        opengl::Commands::draw_indexed(opengl::triangles, ::core::primitive::triangle::elements * mesh->faces());
     }
 
     void ModelRenderer::attach(opengl::Buffer* buffer)

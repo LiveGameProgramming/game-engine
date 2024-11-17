@@ -1,6 +1,6 @@
 #include "shader_stage.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     ShaderStage::ShaderStage(const uint32_t type)
         : type { type }

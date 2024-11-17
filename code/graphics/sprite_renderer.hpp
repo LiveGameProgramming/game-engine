@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::graphics
+namespace graphics
 {
     class SpriteRenderer
     {

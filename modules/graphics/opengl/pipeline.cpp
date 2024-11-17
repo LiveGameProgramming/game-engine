@@ -1,6 +1,6 @@
 #include "pipeline.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     void Pipeline::enable_solid_mode()
     {

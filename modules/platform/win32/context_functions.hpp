@@ -2,7 +2,7 @@
 
 #include "core/base/context_functions.hpp"
 
-namespace engine::win32
+namespace win32
 {
     #pragma region Functions
 

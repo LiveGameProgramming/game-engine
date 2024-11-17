@@ -1,6 +1,6 @@
 #include "texture.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     Texture::Texture(const uint32_t target, const uint32_t format, const int32_t width, const int32_t height)
         : target  { target }

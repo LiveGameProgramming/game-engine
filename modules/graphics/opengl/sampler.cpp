@@ -1,6 +1,6 @@
 #include "sampler.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     void Sampler::create()
     {

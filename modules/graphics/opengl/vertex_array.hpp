@@ -4,7 +4,7 @@
 
 #include "core/vertex/attribute.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     class VertexArray final : public Object
     {

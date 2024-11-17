@@ -1,6 +1,6 @@
 #include "mesh.hpp"
 
-namespace engine::core
+namespace core
 {
     void Mesh::create(const int32_t stride)
     {

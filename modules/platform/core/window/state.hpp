@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::core::window
+namespace core::window
 {
     enum class state
     {

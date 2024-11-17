@@ -2,7 +2,7 @@
 
 #include "size.hpp"
 
-namespace engine::core::window
+namespace core::window
 {
     struct config
     {

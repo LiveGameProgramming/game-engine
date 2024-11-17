@@ -1,6 +1,6 @@
 #include "vertex_array.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     void VertexArray::create()
     {

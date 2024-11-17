@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::core::context
+namespace core::context
 {
     struct config
     {

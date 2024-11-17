@@ -2,7 +2,7 @@
 
 #include "base/window.hpp"
 
-namespace engine::win32
+namespace win32
 {
     class Window final : public base::Window
     {

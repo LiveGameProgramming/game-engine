@@ -1,6 +1,6 @@
 #pragma once
 
-namespace engine::opengl
+namespace opengl
 {
     #pragma region OpenGL Core
 
