@@ -21,7 +21,7 @@ namespace graphics
     void ModelRenderer::draw(const core::Mesh* mesh, const math::mat4& matrix, const math::rgb& color) const
     {
         _shader->push(matrix);
-        _buffer->update(core::buffer::data::create(&color));
+        _buffer->update(core::buffer::make_data(&color));
                                                                                           mesh->bind();
         opengl::Commands::draw_indexed(opengl::triangles, primitive::triangle::elements * mesh->elements());
     }
