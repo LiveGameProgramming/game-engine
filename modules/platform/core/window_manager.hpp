@@ -1,30 +1,35 @@
 #pragma once
 
-#include "core/factory.hpp"
+#include "base/factory.hpp"
 
-namespace engine::core
+#include "window_callbacks.hpp"
+
+namespace core
 {
-    class WindowManager
+    class WindowManager final : public WindowCallbacks
     {
     public:
         void create(const window::config& window_config, const context::config& context_config);
         void destroy()    const;
         void update()     const;
 
-        void display()    const;
+        void open()       const;
         void close()      const;
 
-        [[nodiscard]] bool is_active()  const;
+        void resize(const window::size& size) const;
 
-        [[nodiscard]] int32_t  width()  const;
-        [[nodiscard]] int32_t height()  const;
+        [[nodiscard]] bool is_active() const;
+
+        [[nodiscard]] int32_t  width() const;
+        [[nodiscard]] int32_t height() const;
+        [[nodiscard]] float    ratio() const;
 
         static WindowManager& instance();
 
     private:
-        std::unique_ptr<Window>       window  { };
-        std::unique_ptr<WindowEvents> events  { };
-        std::unique_ptr<Context>      context { };
+        std::unique_ptr<base::Window>       window  { };
+        std::unique_ptr<base::WindowEvents> events  { };
+        std::unique_ptr<base::Context>      context { };
 
         WindowManager() = default;
     };

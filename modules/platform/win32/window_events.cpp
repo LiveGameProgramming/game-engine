@@ -2,7 +2,7 @@
 
 #include "core/window_manager.hpp"
 
-namespace engine::win32
+namespace win32
 {
     void WindowEvents::update() const
     {
@@ -21,7 +21,7 @@ namespace engine::win32
         }
     }
 
-    LRESULT WindowEvents::process(HWND hwnd, const UINT msg, const WPARAM wparam, const LPARAM lparam)
+    LRESULT WindowEvents::process(HWND hwnd, const uint32_t msg, const WPARAM wparam, const LPARAM lparam)
     {
         switch (msg)
         {
@@ -32,6 +32,10 @@ namespace engine::win32
             }
             case WM_SIZE:
             {
+                const int32_t width  = LOWORD(lparam);
+                const int32_t height = HIWORD(lparam);
+
+                core::WindowManager::instance().resize({ width, height });
                 return 0;
             }
             case WM_ERASEBKGND:
@@ -42,8 +46,8 @@ namespace engine::win32
             {
                 switch (wparam)
                 {
-                    case   SC_SCREENSAVE:
-                    case   SC_MONITORPOWER:
+                    case SC_SCREENSAVE:
+                    case SC_MONITORPOWER:
                     {
                         return 0;
                     }
@@ -52,9 +56,9 @@ namespace engine::win32
                 }
             }
             default:
-                 DefWindowProc(hwnd, msg, wparam, lparam);
+                return DefWindowProc(hwnd, msg, wparam, lparam);
         }
 
-        return 1;
+        return 0;
     }
 }

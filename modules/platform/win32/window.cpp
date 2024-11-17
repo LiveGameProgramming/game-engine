@@ -1,22 +1,19 @@
 #include "window.hpp"
 #include "window_events.hpp"
 
-namespace engine::win32
+namespace win32
 {
     void Window::create(const core::window::config& config)
     {
-        register_window_class(config.title);
-
         constexpr int32_t x = CW_USEDEFAULT;
         constexpr int32_t y = CW_USEDEFAULT;
 
-        constexpr uint32_t extra = WS_EX_APPWINDOW;
-        constexpr uint32_t style = WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_OVERLAPPEDWINDOW;
+        register_window_class(config.title);
 
         RECT frame
         {
-            .right  = config.size.width,
-            .bottom = config.size.height
+            .right  = config.size.width(),
+            .bottom = config.size.height()
         };
 
         AdjustWindowRectEx(&frame, style, 0, extra);
@@ -24,7 +21,7 @@ namespace engine::win32
         const int32_t frame_width  = frame.right  - frame.left;
         const int32_t frame_height = frame.bottom - frame.top;
 
-        hwnd = CreateWindowEx(extra, MAKEINTATOM(atom),       config.title.c_str(),
+        hwnd = CreateWindowEx(extra, MAKEINTATOM(atom), config.title.c_str(),
                               style, x, y, frame_width, frame_height, nullptr, nullptr, GetModuleHandle(nullptr), nullptr);
     }
 
@@ -35,7 +32,7 @@ namespace engine::win32
         unregister_window_class();
     }
 
-    void Window::display() const
+    void Window::show()  const
     {
         ShowWindow(hwnd, SW_SHOW);
     }

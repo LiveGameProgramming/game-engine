@@ -1,5 +1,6 @@
 #=======================================================================================================================
-target_include_directories(${PROJECT_NAME} PRIVATE PUBLIC ..)
-target_precompile_headers(${PROJECT_NAME}  PRIVATE PUBLIC headers.hpp)
-target_sources(${PROJECT_NAME}             PRIVATE window_manager.cpp context.cpp platform_factory.cpp)
+target_precompile_headers(platform PUBLIC headers.hpp)
+           target_sources(platform PUBLIC platform.cpp window_manager.cpp window_callbacks.cpp)
+#=======================================================================================================================
+         add_subdirectory(window)
 #=======================================================================================================================

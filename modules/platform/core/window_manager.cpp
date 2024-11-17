@@ -1,11 +1,11 @@
 #include "window_manager.hpp"
-#include "platform_factory.hpp"
+#include "platform.hpp"
 
-namespace engine::core
+namespace core
 {
     void WindowManager::create(const window::config& window_config, const context::config& context_config)
     {
-        const auto factory = PlatformFactory::create();
+        const auto factory = Platform::create_factory();
 
         window  =  factory->create_window();
         events  =  factory->create_events();
@@ -18,18 +18,18 @@ namespace engine::core
     void WindowManager::destroy() const
     {
         context->destroy();
-        window->destroy();
+         window->destroy();
     }
 
     void WindowManager::update() const
     {
         context->update();
-        events->update();
+         events->update();
     }
 
-    void WindowManager::display() const
+    void WindowManager::open() const
     {
-        window->display();
+        window->show();
     }
 
     void WindowManager::close() const
@@ -39,12 +39,17 @@ namespace engine::core
 
     int32_t WindowManager::width() const
     {
-        return window->size.width;
+        return window->size.width();
     }
 
     int32_t WindowManager::height() const
     {
-        return window->size.height;
+        return window->size.height();
+    }
+
+    float WindowManager::ratio() const
+    {
+        return window->size.ratio();
     }
 
     bool WindowManager::is_active() const
@@ -55,5 +60,13 @@ namespace engine::core
     WindowManager& WindowManager::instance()
     {
         static WindowManager instance; return instance;
+    }
+
+    void WindowManager::resize(const window::size& size) const
+    {
+        window->size = size;
+
+        if (size_callback)
+            size_callback();
     }
 }

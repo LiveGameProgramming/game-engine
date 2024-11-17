@@ -2,7 +2,7 @@
 
 #include "shader_stage.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     class Shader final : public Object
     {
@@ -12,9 +12,9 @@ namespace engine::opengl
 
         void attach(const ShaderStage& stage) const;
 
-        [[maybe_unused]]  void push_mat4(int32_t location, const float* data) const;
-
         void link() const;
         void bind() const;
+
+        [[maybe_unused]]  void push(const float* data, int32_t location = 0) const;
     };
 }

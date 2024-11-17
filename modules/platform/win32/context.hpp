@@ -1,19 +1,17 @@
 #pragma once
 
-#include "core/context.hpp"
+#include "base/context.hpp"
 
-namespace engine::win32
+namespace win32
 {
-    class Context final : public core::Context
+    class Context final : public base::Context
     {
     public:
-        void create(const      std::any& hwnd, const core::context::config& config) override;
-        void create_core(const std::any& hwnd)                                      override;
+        void create(const std::any& hwnd, const core::context::config& config) override;
+        void create(const std::any& hwnd)                                      override;
 
-        void destroy()         const override;
-        void update()          const override;
-
-        void init_functions()  const override;
+        void destroy()   const override;
+        void update()    const override;
 
     private:
         HGLRC hrc { };

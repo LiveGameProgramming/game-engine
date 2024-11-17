@@ -1,17 +1,24 @@
 #include "functions_loader.hpp"
-#include "functions.hpp"
 
-namespace engine::opengl
+namespace opengl
 {
     void FunctionsLoader::init_core()
     {
-        const auto     instance = LoadLibrary("opengl32.dll");
+        const auto   instance = LoadLibrary("opengl32.dll");
+
+        if (instance == nullptr)
+        {
+            std::exit(EXIT_FAILURE);
+        }
+
         glClear        = reinterpret_cast<PFNGLCLEARPROC>(GetProcAddress(instance,        "glClear"));
         glClearColor   = reinterpret_cast<PFNGLCLEARCOLORPROC>(GetProcAddress(instance,   "glClearColor"));
         glEnable       = reinterpret_cast<PFNGLENABLEPROC>(GetProcAddress(instance,       "glEnable"));
         glDisable      = reinterpret_cast<PFNGLDISABLEPROC>(GetProcAddress(instance,      "glDisable"));
         glDrawArrays   = reinterpret_cast<PFNGLDRAWARRAYSPROC>(GetProcAddress(instance,   "glDrawArrays"));
         glDrawElements = reinterpret_cast<PFNGLDRAWELEMENTSPROC>(GetProcAddress(instance, "glDrawElements"));
+        glPolygonMode  = reinterpret_cast<PFNGLPOLYGONMODEPROC>(GetProcAddress(instance,  "glPolygonMode"));
+        glViewport     = reinterpret_cast<PFNGLVIEWPORTPROC>(GetProcAddress(instance,     "glViewport"));
 
         FreeLibrary(instance);
     }
@@ -20,9 +27,11 @@ namespace engine::opengl
     {
         #pragma region Buffers
 
-        glCreateBuffers   = reinterpret_cast<PFNGLCREATEBUFFERSPROC>(wglGetProcAddress("glCreateBuffers"));
-        glDeleteBuffers   = reinterpret_cast<PFNGLDELETEBUFFERSPROC>(wglGetProcAddress("glDeleteBuffers"));
-        glNamedBufferData = reinterpret_cast<PFNGLNAMEDBUFFERDATAPROC>(wglGetProcAddress("glNamedBufferData"));
+        glCreateBuffers      = reinterpret_cast<PFNGLCREATEBUFFERSPROC>(wglGetProcAddress("glCreateBuffers"));
+        glDeleteBuffers      = reinterpret_cast<PFNGLDELETEBUFFERSPROC>(wglGetProcAddress("glDeleteBuffers"));
+        glBindBufferBase     = reinterpret_cast<PFNGLBINDBUFFERBASEPROC>(wglGetProcAddress("glBindBufferBase"));
+        glNamedBufferData    = reinterpret_cast<PFNGLNAMEDBUFFERDATAPROC>(wglGetProcAddress("glNamedBufferData"));
+        glNamedBufferSubData = reinterpret_cast<PFNGLNAMEDBUFFERSUBDATAPROC>(wglGetProcAddress("glNamedBufferSubData"));
 
         #pragma endregion
         #pragma region VertexArray
@@ -54,6 +63,23 @@ namespace engine::opengl
         glDeleteProgram = reinterpret_cast<PFNGLDELETEPROGRAMPROC>(wglGetProcAddress("glDeleteProgram"));
 
         glProgramUniformMatrix4fv = reinterpret_cast<PFNGLPROGRAMUNIFORMMATRIX4FVPROC>(wglGetProcAddress("glProgramUniformMatrix4fv"));
+
+        #pragma endregion
+        #pragma region Textures
+
+        glCreateTextures    = reinterpret_cast<PFNGLCREATETEXTURESPROC>(wglGetProcAddress("glCreateTextures"));
+        glDeleteTextures    = reinterpret_cast<PFNGLDELETETEXTURESPROC>(wglGetProcAddress("glDeleteTextures"));
+        glBindTextureUnit   = reinterpret_cast<PFNGLBINDTEXTUREUNITPROC>(wglGetProcAddress("glBindTextureUnit"));
+        glTextureStorage2D  = reinterpret_cast<PFNGLTEXTURESTORAGE2DPROC>(wglGetProcAddress("glTextureStorage2D"));
+        glTextureSubImage2D = reinterpret_cast<PFNGLTEXTURESUBIMAGE2DPROC>(wglGetProcAddress("glTextureSubImage2D"));
+
+        #pragma endregion
+        #pragma region Samplers
+
+        glCreateSamplers    = reinterpret_cast<PFNGLCREATESAMPLERSPROC>(wglGetProcAddress("glCreateSamplers"));
+        glDeleteSamplers    = reinterpret_cast<PFNGLDELETESAMPLERSPROC>(wglGetProcAddress("glDeleteSamplers"));
+        glBindSampler       = reinterpret_cast<PFNGLBINDSAMPLERPROC>(wglGetProcAddress("glBindSampler"));
+        glSamplerParameteri = reinterpret_cast<PFNGLSAMPLERPARAMETERIPROC>(wglGetProcAddress("glSamplerParameteri"));
 
         #pragma endregion
     }

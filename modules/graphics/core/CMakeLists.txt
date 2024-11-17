@@ -1,5 +1,4 @@
 #=======================================================================================================================
-target_include_directories(${PROJECT_NAME} PRIVATE PUBLIC ..)
-target_precompile_headers(${PROJECT_NAME}  PRIVATE PUBLIC headers.hpp)
-target_sources(${PROJECT_NAME}             PRIVATE buffer_data.cpp)
+target_precompile_headers(graphics PUBLIC headers.hpp)
+           target_sources(graphics PUBLIC PRIVATE graphics.cpp)
 #=======================================================================================================================
