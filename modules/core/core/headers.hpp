@@ -8,8 +8,6 @@
 
 #pragma region Headers
 
-#include "base/geometry.hpp"
-
 #include "primitive/line.hpp"
 #include "primitive/triangle.hpp"
 

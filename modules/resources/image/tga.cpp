@@ -3,7 +3,7 @@
 
 namespace engine::image
 {
-    base::image Tga::load(const std::string& path)
+    core::image Tga::load(const std::string& path)
     {
         tga_header header { };
 
