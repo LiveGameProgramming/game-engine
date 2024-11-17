@@ -1,10 +1,10 @@
 #pragma once
 
-#include "core/base/window_events.hpp"
+#include "base/window_events.hpp"
 
 namespace win32
 {
-    class WindowEvents final : public core::base::WindowEvents
+    class WindowEvents final : public base::WindowEvents
     {
     public:
         static LRESULT process(HWND hwnd, uint32_t msg, WPARAM wparam, LPARAM lparam);
