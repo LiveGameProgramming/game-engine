@@ -22,11 +22,6 @@ namespace opengl
         glNamedBufferSubData(handle_, offset, data.second, data.first);
     }
 
-    void Buffer::sub_data(const core::BufferData& buffer, const int32_t offset) const
-    {
-        glNamedBufferSubData(handle_, offset, buffer.size(), buffer.data());
-    }
-
     void Buffer::bind(const uint32_t location) const
     {
         glBindBufferBase(buffer::uniform, location, handle_);
