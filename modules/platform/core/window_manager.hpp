@@ -26,12 +26,6 @@ namespace core
 
         static WindowManager& instance();
 
-        #pragma region Callbacks
-
-        void resize(const window::size& size) const;
-
-        #pragma endregion
-
     private:
         std::unique_ptr<base::Window>       window  { };
         std::unique_ptr<base::WindowEvents> events  { };
