@@ -5,7 +5,7 @@ namespace core::window
     struct size
     {
         size() = default;
-        size(int32_t width, int32_t height);
+        size(int32_t  width, int32_t height);
 
         [[nodiscard]] int32_t width()  const;
         [[nodiscard]] int32_t height() const;
