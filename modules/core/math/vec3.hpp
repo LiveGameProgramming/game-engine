@@ -1,10 +1,6 @@
 #pragma once
 
-<<<<<<<< HEAD:modules/core/math/vec3.hpp
 namespace math
-========
-namespace engine
->>>>>>>> 10b8969 (Remove unused base modules and reorganize code structure):modules/math/vec3.hpp
 {
     struct vec3
     {

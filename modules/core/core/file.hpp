@@ -1,10 +1,6 @@
 #pragma once
 
-<<<<<<<< HEAD:modules/core/core/file.hpp
 namespace core
-========
-namespace engine
->>>>>>>> e522874 (Rename and reorganize asset and core module files):modules/resources/file.hpp
 {
     class File
     {
