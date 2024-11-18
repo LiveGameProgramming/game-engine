@@ -94,17 +94,19 @@ namespace opengl
     #pragma endregion
     #pragma region Textures
 
-    using  PFNGLCREATETEXTURESPROC    = void(APIENTRY*)(uint32_t, int32_t, uint32_t*);
-    using  PFNGLDELETETEXTURESPROC    = void(APIENTRY*)(int32_t,     const uint32_t*);
-    using  PFNGLBINDTEXTUREUNITPROC   = void(APIENTRY*)(uint32_t,          uint32_t);
-    using  PFNGLTEXTURESTORAGE2DPROC  = void(APIENTRY*)(uint32_t, int32_t, uint32_t, int32_t, int32_t);
-    using  PFNGLTEXTURESUBIMAGE2DPROC = void(APIENTRY*)(uint32_t, int32_t,  int32_t, int32_t, int32_t, int32_t, uint32_t, uint32_t, const void*);
+    using  PFNGLCREATETEXTURESPROC        = void(APIENTRY*)(uint32_t, int32_t, uint32_t*);
+    using  PFNGLDELETETEXTURESPROC        = void(APIENTRY*)(int32_t,     const uint32_t*);
+    using  PFNGLBINDTEXTUREUNITPROC       = void(APIENTRY*)(uint32_t,          uint32_t);
+    using  PFNGLTEXTURESTORAGE2DPROC      = void(APIENTRY*)(uint32_t, int32_t, uint32_t, int32_t, int32_t);
+    using  PFNGLTEXTURESUBIMAGE2DPROC     = void(APIENTRY*)(uint32_t, int32_t,  int32_t, int32_t, int32_t, int32_t, uint32_t, uint32_t, const void*);
+    using  PFNGLGENERATETEXTUREMIPMAPPROC = void(APIENTRY*)(uint32_t);
 
-    inline PFNGLCREATETEXTURESPROC    glCreateTextures;
-    inline PFNGLDELETETEXTURESPROC    glDeleteTextures;
-    inline PFNGLBINDTEXTUREUNITPROC   glBindTextureUnit;
-    inline PFNGLTEXTURESTORAGE2DPROC  glTextureStorage2D;
-    inline PFNGLTEXTURESUBIMAGE2DPROC glTextureSubImage2D;
+    inline PFNGLCREATETEXTURESPROC        glCreateTextures;
+    inline PFNGLDELETETEXTURESPROC        glDeleteTextures;
+    inline PFNGLBINDTEXTUREUNITPROC       glBindTextureUnit;
+    inline PFNGLTEXTURESTORAGE2DPROC      glTextureStorage2D;
+    inline PFNGLTEXTURESUBIMAGE2DPROC     glTextureSubImage2D;
+    inline PFNGLGENERATETEXTUREMIPMAPPROC glGenerateTextureMipmap;
 
     #pragma endregion
     #pragma region Samplers

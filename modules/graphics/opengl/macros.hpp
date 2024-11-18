@@ -42,7 +42,8 @@ namespace opengl
         constexpr uint32_t mag_filter = 0x2800;
         constexpr uint32_t min_filter = 0x2801;
 
-        constexpr uint32_t linear     = 0x2601;
+        constexpr uint32_t linear               = 0x2601;
+        constexpr uint32_t linear_mipmap_linear = 0x2703;
     }
 
     namespace pipeline
