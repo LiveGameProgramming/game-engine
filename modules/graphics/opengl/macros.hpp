@@ -42,7 +42,6 @@ namespace opengl
         constexpr uint32_t mag_filter = 0x2800;
         constexpr uint32_t min_filter = 0x2801;
 
-        constexpr uint32_t repeat     = 0x2901;
         constexpr uint32_t linear     = 0x2601;
     }
 

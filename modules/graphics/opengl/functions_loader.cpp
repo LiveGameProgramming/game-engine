@@ -82,5 +82,11 @@ namespace opengl
         glSamplerParameteri = reinterpret_cast<PFNGLSAMPLERPARAMETERIPROC>(wglGetProcAddress("glSamplerParameteri"));
 
         #pragma endregion
+        #pragma region Framebuffers
+
+        glCreateFramebuffers = reinterpret_cast<PFNGLCREATEFRAMEBUFFERSPROC>(wglGetProcAddress("glCreateFramebuffers"));
+        glDeleteBuffers      = reinterpret_cast<PFNGLDELETEBUFFERSPROC>(wglGetProcAddress("glDeleteBuffers"));
+
+        #pragma endregion
     }
 }

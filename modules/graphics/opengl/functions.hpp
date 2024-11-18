@@ -120,5 +120,14 @@ namespace opengl
     inline PFNGLSAMPLERPARAMETERIPROC glSamplerParameteri;
 
     #pragma endregion
+    #pragma region Framebuffers
+
+    using  PFNGLCREATEFRAMEBUFFERSPROC = void(APIENTRY*)(int32_t,       uint32_t*);
+    using  PFNGLDELETEFRAMEBUFFERSPROC = void(APIENTRY*)(int32_t, const uint32_t*);
+
+    inline PFNGLCREATEFRAMEBUFFERSPROC glCreateFramebuffers;
+    inline PFNGLDELETEFRAMEBUFFERSPROC glDeleteFramebuffers;
+
+    #pragma endregion
     #pragma endregion
 }
